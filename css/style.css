@@ -26,57 +26,39 @@ body {
 }
 
 /*Título*/
+/* Título centrado */
 h1 {
   color: var(--azul-profundo);
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
-  font-size:6rem ;
+  font-size: 6rem;
+  text-align: center;
 }
 
-/*Subrayado de título y subs*/
-.subrayado-h1 {
-  position: relative;
-  display: inline;
-  cursor: pointer;
-}
-
-.subrayado-h1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background-color: currentColor;
-  transition: width 0.4s ease;
-}
-
-.subrayado-h1:hover::after {
-  width: 100%;
-}
-
-
-h2 {
+/* Subrayado de palabra en h1 y h2 */
+.subrayado {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  font-size: 3rem;
 }
 
-h2::after {
+.subrayado::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -5px;
+  left: 0;
   width: 0;
   height: 2px;
   background-color: currentColor;
   transition: width 0.4s ease;
 }
 
-h2:hover::after {
+.subrayado:hover::after,
+.subrayado:focus::after {
   width: 100%;
 }
+
+
 
 /*Estilo cards*/
 .card-title {
