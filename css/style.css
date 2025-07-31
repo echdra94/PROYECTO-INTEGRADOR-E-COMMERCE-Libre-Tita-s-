@@ -79,26 +79,28 @@ h2:hover::after {
   border-radius: 1rem;
   transition: all 0.3s ease;
   text-align: left;
+  overflow: hidden;
+  }
+
+.card-img-top {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 /*opción cambio color fondo cards 2*/
 .card-equipo:hover {
   background-color: var(--azul-profundo);
   color: white;
-  text-align: center;
+  text-align: left;
 }
 .card-equipo:hover .card-title,
 .card-equipo:hover .card-text {
   color: white;
 }
-    /* Card title alineación hover */
-    .card-equipo .card-title {
-    text-align: left;
-    transition: all 0.3s ease;
-    }
-    .card-equipo:hover .card-title {
-    text-align: center;
-    }
 
     .card-equipo {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
