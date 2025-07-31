@@ -109,7 +109,20 @@ h2:hover::after {
   box-shadow: 0 12px 25px rgb(46, 43, 91);
 }
 
+.card-img-top{
 
+}
+
+.miBoton{
+     background-color: var(--amarillo); 
+  color: var(--azul-profundo);              
+  border: none;
+}
+
+.miBoton:hover {
+  background-color: var(--rosa); 
+  color: #ffffff;
+}
 /* Loader (creo ni se ve, quizá cuando la página sea más pesada) */
 
 /*#loader {
