@@ -11,12 +11,16 @@
   --rosa-pastel: #ED6B72;
   --turquesa-pastel: #7DC5AE;
 }
-
+html {
+  font-size: 12px;
+}
 /*Fondo cuerpo página*/
 body {
-  background-color: var(--turquesa-pastel);
+  background-color: white;
+  color: var(--azul-profundo);
   font-family: 'Rubik', sans-serif;
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 2rem;
   margin: 0;
   padding: 0;
 }
@@ -56,6 +60,7 @@ h2 {
   position: relative;
   display: inline-block;
   cursor: pointer;
+  font-size: 3rem;
 }
 
 h2::after {
@@ -75,7 +80,7 @@ h2:hover::after {
 
 /*Estilo cards*/
 .card-equipo {
-  background-color: var(--amarillo-pastel);
+  background-color: white;
   border-radius: 1rem;
   transition: all 0.3s ease;
   text-align: left;
@@ -116,7 +121,7 @@ h2:hover::after {
 }
 
 .miBoton{
-     background-color: var(--amarillo); 
+  background-color: var(--amarillo); 
   color: var(--azul-profundo);              
   border: none;
 }
@@ -124,6 +129,15 @@ h2:hover::after {
 .miBoton:hover {
   background-color: var(--rosa); 
   color: #ffffff;
+}
+/* Cambios para la version movil */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-weight: 700;
+  }
 }
 /* Loader (creo ni se ve, quizá cuando la página sea más pesada) */
 
