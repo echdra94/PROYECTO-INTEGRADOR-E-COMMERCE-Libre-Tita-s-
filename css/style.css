@@ -79,6 +79,14 @@ h2:hover::after {
 }
 
 /*Estilo cards*/
+.card-title {
+  font-size: 2.3rem;
+}
+
+p.card-text{
+  font-size: 1.5rem;
+}
+
 .card-equipo {
   background-color: white;
   border-radius: 1rem;
@@ -137,6 +145,12 @@ h2:hover::after {
   }
   h2 {
     font-weight: 700;
+  }
+  .card-title {
+    font-size: 2rem;
+  }
+  p.card-text{
+    font-size: 1.3rem;
   }
 }
 /* Loader (creo ni se ve, quizá cuando la página sea más pesada) */
