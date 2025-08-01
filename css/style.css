@@ -192,7 +192,15 @@ p{
   height: 40px;
   font-size: 1.5rem;
 }
-
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 550px;
+  overflow-y:hidden;
+  
+}
 }
 /* Loader (creo ni se ve, quizá cuando la página sea más pesada) */
 
