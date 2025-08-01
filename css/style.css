@@ -35,6 +35,21 @@ h1 {
   text-align: center;
 }
 
+h2{
+  font-weight: 700;
+  padding-top: 30px;
+  font-size: 2.5rem;
+}
+h5{
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+ul {
+  text-align: justify;
+}
+
+
 /* Subrayado de palabra en h1 y h2 */
 .subrayado {
   position: relative;
@@ -67,8 +82,17 @@ h1 {
 
 p.card-text{
   font-size: 1.5rem;
+  padding-inline: 10px;
 }
-
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 550px;
+  overflow-y:auto;
+  
+}
 .card-equipo {
   background-color: white;
   border-radius: 1rem;
@@ -107,23 +131,41 @@ p.card-text{
 }
 
 .card-img-top{
-
+  width: 100%;
+  height: 500px;
 }
 
+@media (max-width: 576px){
+  .card-img-top{
+  width: 100%;
+  height: 500px;
+}
+}
+
+p{
+  text-align: justify;
+}
 .miBoton{
   background-color: var(--amarillo); 
   color: var(--azul-profundo);              
   border: none;
+  width: 120px;
+  height: 40px;
+  font-size: 1.5rem;
 }
 
 .miBoton:hover {
   background-color: var(--rosa); 
   color: #ffffff;
+  width: 120px;
+  height: 40px;
+  font-size: 1.5rem;
 }
 /* Cambios para la version movil */
 @media (max-width: 768px) {
   body {
     font-size: 1.5rem;
+    padding-inline:10px;
   }
   h2 {
     font-weight: 700;
@@ -134,6 +176,23 @@ p.card-text{
   p.card-text{
     font-size: 1.3rem;
   }
+  .miBoton{
+  background-color: var(--amarillo); 
+  color: var(--azul-profundo);              
+  border: none;
+  width: 250px;
+  height: 40px;
+  font-size: 1.5rem;
+}
+
+.miBoton:hover {
+  background-color: var(--rosa); 
+  color: #ffffff;
+  width: 250px;
+  height: 40px;
+  font-size: 1.5rem;
+}
+
 }
 /* Loader (creo ni se ve, quizá cuando la página sea más pesada) */
 
