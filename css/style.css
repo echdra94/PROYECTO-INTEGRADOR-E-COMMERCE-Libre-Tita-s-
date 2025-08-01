@@ -89,7 +89,7 @@ p.card-text{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 550px;
+  height: 150px;
   overflow-y:auto;
   
 }
@@ -108,6 +108,31 @@ p.card-text{
   height: auto;
   display: block;
   object-fit: cover;
+}
+
+.card-equipo {
+  display: inline-block;
+  position: relative;
+}
+
+.card-equipo .card-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  padding: 10px;
+  margin: 0;
+}
+
+
+
+.card-img-top:hover {
+  opacity: 0.07;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  transition: opacity 500ms;
 }
 
 /*opción cambio color fondo cards 2*/
@@ -193,18 +218,4 @@ p{
   font-size: 1.5rem;
 }
 
-}
-/* Loader (creo ni se ve, quizá cuando la página sea más pesada) */
-
-/*#loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--azul-profundo);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
 }
