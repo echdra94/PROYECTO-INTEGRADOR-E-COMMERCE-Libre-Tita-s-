@@ -81,7 +81,7 @@ ul {
 }
 
 p.card-text{
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   padding-inline: 10px;
 }
 .card-body{
@@ -148,6 +148,7 @@ p.card-text{
 
     .card-equipo {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 90%;
 }
 
 .card-equipo:hover {
