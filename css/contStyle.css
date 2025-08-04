@@ -72,13 +72,13 @@ select {
   transition: background-color 0.3s ease, border 0.3s ease;
 }
 
-/* Color al enfocar campo */
+/* Color al enfocar campo */ /*quizá es con js*/
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border: 2px solid var(--azul-pastel); /* Usa tu variable si ya la tienes */
-  box-shadow: 0 0 5px var(--azul-pastel); /* Opcional para darle un efecto visual más moderno */
+  border: 2px solid var(--azul-pastel);
+  box-shadow: 0 0 5px var(--azul-pastel);
 }
 
 
