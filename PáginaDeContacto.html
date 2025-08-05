@@ -36,11 +36,14 @@
         <input type="text" class="form-control" id="txtTelefono1" placeholder="10 dígitos sin espacios ni guiones">
       </div>
 
-      <div class="mb-3">
+      <div class="mb-3 position-relative"> <!-- newGRM //todo el bloque-->
         <label for="Textarea1" class="form-label">Especificaciones del proyecto</label>
-        <textarea placeholder="Introduce la cantidad de libretas,tamaño, cantidad de hojas, color o B/N, tipo de encuadernado, etc…" class="form-control" id="Textarea1" rows="3"></textarea>
+        <textarea class="form-control" id="Textarea1" rows="3" maxlength="500" placeholder="Introduce la cantidad de libretas,tamaño, cantidad de hojas, color o B/N, tipo de encuadernado, etc…"></textarea>
+        <span id="contadorCaracteres" 
+        class="position-absolute end-0 bottom-0 me-2 mb-1 small text-info-emphasis">   <!-- newGRM /para cotador de caracteres-->
+          0/500
+          </span>
       </div>
-    </div>
      
     <div class="text-center">
     <button id="btnEnviar" class="btn btn-primary" type="button">Enviar</button>

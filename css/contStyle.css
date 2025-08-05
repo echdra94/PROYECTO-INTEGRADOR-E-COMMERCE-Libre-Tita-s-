@@ -64,7 +64,7 @@ textarea,
 select {
   width: 100%;
   padding: 1rem;
-  font-size: 1.6rem;
+  font-size: 1.5rem !important;
   margin-bottom: 1.5rem;
   border: 1px solid #2e2b5b;
   border-radius: 0.5rem;
@@ -176,6 +176,28 @@ p {
   color: white;
 }
 
+#Textarea1 {
+  padding-bottom: 2rem; /* contador m */
+}
+
+#contadorCaracteres {
+  font-size: 1.25rem;
+  color:#6C6787 !important;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@media (max-width: 576px) {
+  #contadorCaracteres {
+    font-size: 0.65rem;       /*pantallas chicas??? */
+    margin-right: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  #Textarea1 {
+    padding-bottom: 2.5rem;   /*móvil */
+  }
+}
 
 /* Responsividad móvil */
 @media (max-width: 768px) {
@@ -197,7 +219,7 @@ p {
   }
 
   button.btn {
-    
+    width: 100%;
     font-size: 1.6rem;
   }
 

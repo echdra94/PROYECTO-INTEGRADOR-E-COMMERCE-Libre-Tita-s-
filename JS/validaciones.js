@@ -2,7 +2,8 @@ const btnEnviar = document.getElementById("btnEnviar");
 const alertValidaciones = document.getElementById("alertValidaciones");
 const alertValidacionesTexto = document.getElementById("alertValidacionesTexto");
 const txtEmpresa = document.getElementById("txtEmpresa");
-
+const txtEspecificaciones = document.getElementById("Textarea1"); // Textarea de especificaciones del proyecto
+const contadorCaracteres = document.getElementById("contadorCaracteres"); // Texto que muestra el conteo de caracteres
 
 btnEnviar.addEventListener("click", function (event){
     event.preventDefault();
@@ -11,7 +12,10 @@ btnEnviar.addEventListener("click", function (event){
     alertValidaciones.style.display="none"; // Limpia el fondo de la alerta
     txtEmpresa.style.boxShadow= "none";
     txtEmpresa.style.border="";// limpia el borde rojo del campo name cuando hay alerta
-    
+    txtEspecificaciones.style.border = ""; // Limpia el borde del campo especificaciones
+    txtEspecificaciones.style.boxShadow = ""; // Limpia sombraMargen rojo del campo especificaciones
+
+
     if (txtEmpresa.value.length<3){
         txtEmpresa.style.border="thin solid #DD0069";
         txtEmpresa.style.boxShadow= "0 0 6px 3px rgba(221, 0, 107, 0.6)";
@@ -20,9 +24,34 @@ btnEnviar.addEventListener("click", function (event){
         isValid = false;
     }
 
+    // para validar campo Especificaciones
+    const especificacionesTexto = txtEspecificaciones.value.trim(); // Quitamos espacios sobrantes
+
+    if (especificacionesTexto.length < 10 || especificacionesTexto.toLowerCase() === "idea") {
+        // Si tiene menos de 10 caracteres reales o menos de 10 palabras
+        txtEspecificaciones.style.border = "thin solid #DD0069";
+        txtEspecificaciones.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+        alertValidacionesTexto.innerHTML += "<strong>Por favor describe con más detalle las especificaciones del proyecto.</strong><br>";
+        alertValidaciones.style.display = "block";
+        isValid = false;
+    } else if (especificacionesTexto.length > 500) {
+        // Si el texto excede los 500 caracteres
+        txtEspecificaciones.style.border = "thin solid #DD0069";
+        txtEspecificaciones.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+        alertValidacionesTexto.innerHTML += "<strong>El texto no debe exceder los 500 caracteres.</strong><br>";
+        alertValidaciones.style.display = "block";
+        isValid = false;
+    }
+
      if(isValid){
         txtEmpresa.value="";// Limpia el valor de txtName
         txtEmpresa.focus(); // Coloca el cursor en la casilla txtName;
+        txtEspecificaciones.value = "";
      }
 }
 );
+
+txtEspecificaciones.addEventListener("input", function () {
+    let caracteresActuales = txtEspecificaciones.value.length; // Contar cuántos lleva
+    contadorCaracteres.innerText = `${caracteresActuales}/500`; // Actualizar el texto
+});
