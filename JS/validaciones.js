@@ -6,27 +6,28 @@ const iptCorreo1 = document.getElementById("iptCorreo1"); // iptCorreo1 Correo e
 const txtEspecificaciones = document.getElementById("Textarea1"); // Textarea de especificaciones del proyecto
 const contadorCaracteres = document.getElementById("contadorCaracteres"); // Texto que muestra el conteo de caracteres
 
-btnEnviar.addEventListener("click", function (event){
+btnEnviar.addEventListener("click", function (event) {
     event.preventDefault();
     let isValid = true;
-    alertValidacionesTexto.innerHTML="";// Limpia la alerta
-    alertValidaciones.style.display="none"; // Limpia el fondo de la alerta
-    txtEmpresa.style.boxShadow= "none";
-    txtEmpresa.style.border="";// limpia el borde rojo del campo name cuando hay alerta
-    iptCorreo1.style.boxShadow= "none";
-    iptCorreo1.style.border="";// Limpia el borde rojo del campo correo 
+    alertValidacionesTexto.innerHTML = "";// Limpia la alerta
+    alertValidaciones.style.display = "none"; // Limpia el fondo de la alerta
+    txtEmpresa.style.boxShadow = "none";
+    txtEmpresa.style.border = "";// limpia el borde rojo del campo name cuando hay alerta
+    iptCorreo1.style.boxShadow = "none";
+    iptCorreo1.style.border = "";// Limpia el borde rojo del campo correo 
     txtEspecificaciones.style.border = ""; // Limpia el borde del campo especificaciones
     txtEspecificaciones.style.boxShadow = ""; // Limpia sombraMargen rojo del campo especificaciones
 
 
-    if (txtEmpresa.value.length<3){
-        txtEmpresa.style.border="thin solid #DD0069";
-        txtEmpresa.style.boxShadow= "0 0 6px 3px rgba(221, 0, 107, 0.6)";
-        alertValidacionesTexto.innerHTML="<strong>Ingresa un nombre válido</strong><br>"; // Alerta
-        alertValidaciones.style.display="block"; // Fondo de alerta del div
+    // Validación del campo Empresa
+    if (txtEmpresa.value.trim().length < 3) {
+        txtEmpresa.style.border = "thin solid #DD0069";
+        txtEmpresa.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+        alertValidacionesTexto.innerHTML = "<strong>Ingresa un nombre válido</strong><br>";
+        alertValidaciones.style.display = "block";
         isValid = false;
     }
-
+    
     // Validación del campo Correo electrónico
     const regexCorreo = /^[^\s@]+@[^\s@]+\.[a-zA-Z.]*[a-zA-Z]{2,3}$/;
     if (!regexCorreo.test(iptCorreo1.value)) {
@@ -57,16 +58,16 @@ btnEnviar.addEventListener("click", function (event){
         isValid = false;
     }
 
-     if(isValid){
-        txtEmpresa.value="";// Limpia el valor de txtName
+    if (isValid) {
+        txtEmpresa.value = "";// Limpia el valor de txtName
         txtEmpresa.focus(); // Coloca el cursor en la casilla txtName;
-        iptCorreo1.value=""; //Limpia el valor de iptCorreo1
+        iptCorreo1.value = ""; //Limpia el valor de iptCorreo1
         txtEspecificaciones.value = "";
-     }
+    }
 }
 );
 
-    txtEspecificaciones.addEventListener("input", function () {
+txtEspecificaciones.addEventListener("input", function () {
     let caracteresActuales = txtEspecificaciones.value.length; // Contar cuántos lleva
     contadorCaracteres.innerText = `${caracteresActuales}/500`; // Actualizar el texto
 });
