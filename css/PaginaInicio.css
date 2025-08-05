@@ -1,0 +1,71 @@
+#container1{
+    background-color: rgb(150, 49, 170);
+    height: 50px;
+}
+
+#carouselExampleSlidesOnly{
+    border: 2px solid rgb(199, 61, 253);
+    background: rgb(165, 164, 164);
+}
+
+img{
+    max-width: 650px;
+    height: 550px;
+    display: flex;
+    margin: 0 auto 0 auto;
+}
+
+
+#subtitulo{
+    text-align: center;
+    margin-top: 100px;
+}
+
+
+
+.container{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  margin: 15px;
+}
+
+.image-container img {
+  width: 400px; 
+  height: 500px;
+  object-fit: cover;
+
+}
+
+.image-container button {
+  position: absolute;
+  background-color: #FDC50A;
+  border-radius: 30px;
+  height: 40px;
+  width: 150px;
+  border: 1px none black;
+  margin-top: 430px;
+  box-shadow: 2px 2px 3px;
+
+}
+
+.image-container button:hover {
+  transform: translateY(-5px);
+  box-shadow: 15px 12px 25px rgb(46, 43, 91);
+}
+
+@media (max-width: 576px){
+  .image-container img{
+  width: 100%;
+  height: 500px;
+}
+}
