@@ -19,11 +19,12 @@ btnEnviar.addEventListener("click", function (event){
     iptCorreo1.style.boxShadow= "none";
     iptCorreo1.style.border="";// Limpia el borde rojo del campo correo 
     txtEspecificaciones.style.border = ""; // Limpia el borde del campo especificaciones
-    txtEspecificaciones.style.boxShadow = ""; // Limpia sombraMargen rojo del campo especificaciones
+    txtEspecificaciones.style.boxShadow = "none"; // Limpia sombraMargen rojo del campo especificaciones
 
 
     if (txtEmpresa.value.length<3){
         txtEmpresa.style.setProperty("border", "1px solid #DD0069", "important");
+        txtEmpresa.style.setProperty("background-color", "#ffffff", "important");
         txtEmpresa.style.boxShadow= "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         alertValidacionesTexto.innerHTML="<strong>Ingresa un nombre válido</strong><br>"; // Alerta
         alertValidaciones.style.display="block"; // Fondo de alerta del div
@@ -34,14 +35,14 @@ btnEnviar.addEventListener("click", function (event){
     if(txtTelefono1.value.trim() ==="") {
         txtTelefono1.style.border="thin solid #DD0069";
         txtTelefono1.style.boxShadow= "0 0 6px 3px rgba(221, 0, 107, 0.6)";
-        alertValidacionesTexto.innerHTML="<strong>Ingresa un número de Teléfono</strong><br>"; // Alerta
+        alertValidacionesTexto.innerHTML+="<strong>Ingresa un número de Teléfono</strong><br>"; // Alerta
         alertValidaciones.style.display="block"; // Fondo de alerta del div
         isValid = false;
     }
     if(!/^\d{10}$/.test(txtTelefono1.value)){
-    txtTelefono1.style.border="thin solid #DD0069";
+    txtTelefono1.style.setProperty("border", "1px solid #DD0069", "important");
         txtTelefono1.style.boxShadow= "0 0 6px 3px rgba(221, 0, 107, 0.6)";
-        alertValidacionesTexto.innerHTML="<strong>El número no contiene 10 dígitos</strong><br><strong>Este espacio sólo acepta números</strong><br/>"; // Alerta
+        alertValidacionesTexto.innerHTML+="<strong>El número no contiene 10 dígitos</strong><strong> Este espacio sólo acepta números</strong><br/>"; // Alerta
         alertValidaciones.style.display="block"; // Fondo de alerta del div
         isValid = false;
     }
@@ -55,9 +56,6 @@ btnEnviar.addEventListener("click", function (event){
         alertValidaciones.style.display = "block";
         isValid = false;
     }
-
-    
-
 
     // para validar campo Especificaciones
     const especificacionesTexto = txtEspecificaciones.value.trim(); // Quitamos espacios sobrantes
