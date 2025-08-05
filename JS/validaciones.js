@@ -20,7 +20,7 @@ btnEnviar.addEventListener("click", function (event){
 
 
     if (txtEmpresa.value.length<3){
-        txtEmpresa.style.border="thin solid #DD0069";
+        txtEmpresa.style.setProperty("border", "1px solid #DD0069", "important");
         txtEmpresa.style.boxShadow= "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         alertValidacionesTexto.innerHTML="<strong>Ingresa un nombre válido</strong><br>"; // Alerta
         alertValidaciones.style.display="block"; // Fondo de alerta del div
@@ -30,7 +30,7 @@ btnEnviar.addEventListener("click", function (event){
     // Validación del campo Correo electrónico
     const regexCorreo = /^[^\s@]+@[^\s@]+\.[a-zA-Z.]*[a-zA-Z]{2,3}$/;
     if (!regexCorreo.test(iptCorreo1.value)) {
-        iptCorreo1.style.border = "thin solid #DD0069";
+        iptCorreo1.style.setProperty("border", "1px solid #DD0069", "important");
         iptCorreo1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         alertValidacionesTexto.innerHTML += "<strong>Ingresa un correo electrónico válido</strong><br>";
         alertValidaciones.style.display = "block";
@@ -43,14 +43,14 @@ btnEnviar.addEventListener("click", function (event){
 
     if (especificacionesTexto.length < 10 || especificacionesTexto.toLowerCase() === "idea") {
         // Si tiene menos de 10 caracteres reales o menos de 10 palabras
-        txtEspecificaciones.style.border = "thin solid #DD0069";
+        txtEspecificaciones.style.setProperty("border", "1px solid #DD0069", "important");
         txtEspecificaciones.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         alertValidacionesTexto.innerHTML += "<strong>Por favor describe con más detalle las especificaciones del proyecto.</strong><br>";
         alertValidaciones.style.display = "block";
         isValid = false;
     } else if (especificacionesTexto.length > 500) {
         // Si el texto excede los 500 caracteres
-        txtEspecificaciones.style.border = "thin solid #DD0069";
+        txtEspecificaciones.style.setProperty("border", "1px solid #DD0069", "important");
         txtEspecificaciones.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         alertValidacionesTexto.innerHTML += "<strong>El texto no debe exceder los 500 caracteres.</strong><br>";
         alertValidaciones.style.display = "block";

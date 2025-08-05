@@ -175,6 +175,21 @@ p {
   background-color: var(--azul-profundo);
   color: white;
 }
+input, textarea{
+    border: 1px solid #32B9C8 !important;
+    color: #2e2b5b !important;
+
+  }
+input:focus {
+    border: 2px solid #32B9C8 !important;
+    box-shadow: 0 0 6px 3px #4ce2f38e !important;
+    color: #2e2b5b !important;
+  }
+  textarea:focus {
+    border: 2px solid #32B9C8 !important;
+    box-shadow: 0 0 6px 3px #4ce2f38e !important;
+    color: #2e2b5b !important;
+  }
 
 #Textarea1 {
   padding-bottom: 2rem; /* contador m */
