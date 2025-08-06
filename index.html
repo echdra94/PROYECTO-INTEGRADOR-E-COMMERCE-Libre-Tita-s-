@@ -4,45 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LibreTita´s Shop</title>
-  <link rel="stylesheet" href="./css/styleIndex.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/PaginaInicio.css">  <!-- Estos son los estilos de Pame -->
+  <!---- Estos son los estilos de el marquee --->
   <style>
-    html{
+    html {
       font-size: 12px;
     }
-    img{
+
+    img.marquee {
       width: 350px;
-      margin:  0 10px;
+      margin: 0 10px;
     }
-    div.container-marquee{
+
+    div.container-marquee {
       margin: 50px 10vw;
-      
+
     }
-    h4{
+
+    h4 {
       text-align: center;
       font-size: 2.5 rem;
     }
-    a.contactanos{
+
+    a.contactanos {
       text-align: center;
       display: block;
     }
-  </style>
+  </style> <!---- Estos son los estilos de el marquee --->
 </head>
+
 <body>
+  <!-- Imagenes -->
+  <h2 id="subtitulo">Conoce lo mejor de nuestro catálogo</h2>
+  <div class="container">
+    <div class="image-container">
+      <img class="best-seller" src="./assets/libreta1.webp" alt="Imagen 1">
+      <button>Comprar</button>
+    </div>
+    <div class="image-container">
+      <img class="best-seller" src="./assets/libreta2.jpg" alt="Imagen 2">
+      <button>Comprar</button>
+    </div>
+    <div class="image-container">
+      <img class="best-seller" src="./assets/libreta3.webp" alt="Imagen 3">
+      <button>Comprar</button>
+    </div>
+  </div>
+
   <h4>Traemos a la realidad tus ideas</h4>
-<div class="container-marquee">
-  <marquee behaviour="alternate" direction="left" onmouseout="start()" onmouseover="stop()" scrollamount="10">
-    <img src="./assets/tita.jpg" alt="libreta 1">
-    <img src="./assets/tita.jpg" alt="libreta 2">
-    <img src="./assets/tita.jpg" alt="libreta 3">
-    <img src="./assets/tita.jpg" alt="libreta 4">
-    <img src="./assets/tita.jpg" alt="libreta 5">
-    <img src="./assets/tita.jpg" alt="libreta 6">
-    <img src="./assets/tita.jpg" alt="libreta 7">
-    <img src="./assets/tita.jpg" alt="libreta 8">
-    <img src="./assets/tita.jpg" alt="libreta 9">
-    <img src="./assets/tita.jpg" alt="libreta 10">
-  </marquee>
-</div>
-<a class="contactanos" href="./PáginaDeContacto.html" target="_self">Cuéntanos tu proyecto</a>
+  <div class="container-marquee">
+    <marquee behaviour="alternate" direction="left" onmouseout="start()" onmouseover="stop()" scrollamount="10">
+      <img class="marquee" src="./assets/tita.jpg" alt="libreta 1">
+      <img class="marquee" src="./assets/tita.jpg" alt="libreta 2">
+      <img class="marquee" src="./assets/tita.jpg" alt="libreta 3">
+      <img class="marquee" src="./assets/tita.jpg" alt="libreta 4">
+      <img class="marquee" src="./assets/tita.jpg" alt="libreta 5">
+      <img class="marquee" src="./assets/tita.jpg" alt="libreta 6">
+      <img class="marquee" src="./assets/tita.jpg" alt="libreta 7">
+      <img class="marquee" src="./assets/tita.jpg" alt="libreta 8">
+      <img class="marquee" src="./assets/tita.jpg" alt="libreta 9">
+      <img class="marquee" src="./assets/tita.jpg" alt="libreta 10">
+    </marquee>
+  </div>
+  <a class="contactanos" href="./PáginaDeContacto.html" target="_self">Cuéntanos tu proyecto</a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
 </body>
 </html>
