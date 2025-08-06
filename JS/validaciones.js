@@ -6,6 +6,7 @@ const iptCorreo1 = document.getElementById("iptCorreo1"); // iptCorreo1 Correo e
 const txtEspecificaciones = document.getElementById("Textarea1"); // Textarea de especificaciones del proyecto
 const contadorCaracteres = document.getElementById("contadorCaracteres"); // Texto que muestra el conteo de caracteres
 const txtTelefono1 = document.getElementById("txtTelefono1");
+const formContactanos = document.getElementById("formContactanos");
 
 btnEnviar.addEventListener("click", function (event){
     event.preventDefault();
@@ -77,11 +78,27 @@ btnEnviar.addEventListener("click", function (event){
     }
 
      if(isValid){
+
+        btnEnviar.innerText = "Enviando...";
+
+        const serviceID = 'default_service';
+        const templateID = 'template_s6w5oib';
+
+        emailjs.sendForm(serviceID, templateID, formContactanos)
+        .then(() => {
+            alert("¡Correo enviado con éxito!");
+            btnEnviar.innerText = "Enviar";
+        }, (err) => {
+            alert("Error al enviar: " + JSON.stringify(err));
+            btnEnviar.innerText = "Enviar";
+        });
         txtEmpresa.value="";// Limpia el valor de txtName
         txtEmpresa.focus(); // Coloca el cursor en la casilla txtName;
         txtTelefono1.value="";
         iptCorreo1.value=""; //Limpia el valor de iptCorreo1
         txtEspecificaciones.value = "";
+            
+  
      }
 }
 );
@@ -90,3 +107,4 @@ btnEnviar.addEventListener("click", function (event){
     let caracteresActuales = txtEspecificaciones.value.length; // Contar cuántos lleva
     contadorCaracteres.innerText = `${caracteresActuales}/500`; // Actualizar el texto
 });
+

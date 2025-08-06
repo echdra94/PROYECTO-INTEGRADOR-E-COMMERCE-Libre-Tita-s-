@@ -8,7 +8,11 @@
          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="./css/contStyle.css">
-         
+        <script type="text/javascript"
+       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+      <script type="text/javascript">
+        emailjs.init('XBMr-7Ga1CtGXChNq')
+      </script>
 </head>
 <body>
     <div class="container text-center">
@@ -23,22 +27,22 @@
       </div>
       <div class="mb-3">
         <label for="txtEmpresa" class="form-label">Nombre:</label>
-        <input type="text" class="form-control" id="txtEmpresa" placeholder="Escribe tu nombre completo">
+        <input type="text" class="form-control" name="txtEmpresa" id="txtEmpresa" placeholder="Escribe tu nombre completo">
       </div>
 
       <div class="mb-3">
         <label for="iptCorreo1" class="form-label">Correo electrónico:</label>
-        <input type="email" class="form-control" id="iptCorreo1" placeholder="ejemplo@correo.com">
+        <input type="email" class="form-control" name= "iptCorreo1" id="iptCorreo1" placeholder="ejemplo@correo.com">
       </div>
 
       <div class="mb-3">
         <label for="txtTelefono1" class="form-label">Teléfono:</label>
-        <input type="text" class="form-control" id="txtTelefono1" placeholder="10 dígitos sin espacios ni guiones">
+        <input type="text" class="form-control" name="txtTelefono1" id="txtTelefono1" placeholder="10 dígitos sin espacios ni guiones">
       </div>
 
       <div class="mb-3 position-relative"> <!-- newGRM //todo el bloque-->
         <label for="Textarea1" class="form-label">Especificaciones del proyecto</label>
-        <textarea class="form-control" id="Textarea1" rows="3" maxlength="500" placeholder="Introduce la cantidad de libretas, tamaño, cantidad de hojas, color o B/N, tipo de encuadernado, etc…"></textarea>
+        <textarea class="form-control" name="Textarea1" id="Textarea1" rows="3" maxlength="500" placeholder="Introduce la cantidad de libretas, tamaño, cantidad de hojas, color o B/N, tipo de encuadernado, etc…"></textarea>
         <span id="contadorCaracteres" 
         class="position-absolute end-0 bottom-0 me-2 mb-1 small text-info-emphasis">   <!-- newGRM /para cotador de caracteres-->
           0/500
