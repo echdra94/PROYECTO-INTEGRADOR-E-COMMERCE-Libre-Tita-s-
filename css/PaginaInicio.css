@@ -69,3 +69,16 @@ img.best-seller{
   height: 500px;
 }
 }
+
+#carouselExampleAutoplaying{
+    border: 2px solid rgb(199, 61, 253);
+    background: rgb(165, 164, 164);
+    
+}
+
+#img1{
+   max-width: 650px;
+    height: 550px;
+    display: flex;
+    margin: 0 auto 0 auto;
+}
