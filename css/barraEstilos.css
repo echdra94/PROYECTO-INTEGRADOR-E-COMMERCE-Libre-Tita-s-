@@ -1,0 +1,72 @@
+:root {
+  /* Colores principales */
+  --azul-profundo: #2e2b5b;
+  --amarillo: #FDC50A;
+  --rosa: #DD0069;
+  --turquesa: #32B9C8;
+
+  /* Colores pastel */
+  --azul-pastel: #6C6787;
+  --amarillo-pastel: #FFE080;
+  --rosa-pastel: #ED6B72;
+  --turquesa-pastel: #7DC5AE;
+}
+body{
+}
+
+.navbar{
+    background-color: var(--azul-profundo);
+    height: 100px;
+}
+
+.offcanvas{
+    background-color: #2e2b5b;
+}
+.offcanvas-body{
+    margin-inline: auto;
+    text-align: center;
+}
+
+img{
+    height: 60px;
+    padding: 0;
+    margin: 0;
+}
+.bi-bag-heart{
+    color: #ffffff;
+    font-size: 2rem;
+    padding: 15px 25px;
+    transition: 0.4s transform;
+   
+}
+
+.bi-bag-heart:hover{
+    transform: scale(1.2);
+}
+
+.navbar-toggler{
+   border: none;
+   font-size: 1.25rem;
+   background-color: var(--azul-pastel);
+   color:var(--azul-pastel);
+}
+
+.navbar-toggler:focus, .btn-close:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link{
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    transition: 0.4 color;
+}
+
+.nav-link:hover, .nav-link.active{
+    color: var(--rosa);
+    transform: scale(1.3);
+}
+
+

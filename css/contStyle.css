@@ -17,14 +17,16 @@ html {
   font-size: 12px;
 }
 
+
 body {
   background-color: white;
   color: var(--azul-profundo);
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
   font-size: 2rem;
-  margin: 0;
   padding: 0;
+  padding-top: 100px;
+  
 }
 
 h1 {
