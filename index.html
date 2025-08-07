@@ -7,201 +7,181 @@
   <title>LibreTita´s Shop</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/PaginaInicio.css"> <!-- Estos son los estilos de Pame -->
-  <!---- Estos son los estilos de el marquee --->
-  <style>
-    html {
-      font-size: 12px;
-    }
-
-    img.marquee {
-      width: 350px;
-      margin: 0 10px;
-    }
-
-    div.container-marquee {
-      margin: 50px 10vw;
-
-    }
-
-    h4 {
-      text-align: center;
-      font-size: 2.5 rem;
-    }
-
-    a.contactanos {
-      text-align: center;
-      display: block;
-    }
-  </style> <!---- Estos son los estilos de el marquee --->
+  <link rel="stylesheet" href="./css/PaginaInicio.css"> 
 </head>
 
 <body>
 
-  <div id="container1">menú</div>
-  <br>
-  <hr>
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/libreta1-removebg-preview.png" class="d-block w-100" alt="img1" id="img1">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/libreta1-removebg-preview.png" class="d-block w-100 imagenes-carrusel" alt="img1">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/lbt1.jpg" class="d-block w-100 imagenes-carrusel" alt="img1">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/lbt2_.jpg" class="d-block w-100 imagenes-carrusel" alt="img1">
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="assets/lbt1.jpg" class="d-block w-100" alt="img1" id="img1">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/lbt2_.jpg" class="d-block w-100" alt="img1" id="img1">
-    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-  <!-- Imagenes -->
+
+  <!-- Seccción lo mejor de nuestro catálogo-->
   <h2 id="subtitulo">Conoce lo mejor de nuestro catálogo</h2>
   <div class="container">
-    <div class="image-container">
-      <img class="best-seller" src="./assets/libreta1.webp" alt="Imagen 1">
-      <button>Comprar</button>
-    </div>
+    <a href="https://www.google.com">
+      <div class="image-container">
+        <img class="best-seller" src="./assets/libreta1.webp" alt="Imagen 1">
+        <button>Comprar</button>
+      </div>
+    </a>
+    <a href="https://www.google.com"></a>
     <div class="image-container">
       <img class="best-seller" src="./assets/libreta2.jpg" alt="Imagen 2">
       <button>Comprar</button>
     </div>
+    </a>
+    <a href="https://www.google.com"></a>
     <div class="image-container">
       <img class="best-seller" src="./assets/libreta3.webp" alt="Imagen 3">
       <button>Comprar</button>
     </div>
+    </a>
   </div>
 
+  <!-- Seccción Best-Sellers-->
+  <div class="container my-5">
+    <h3 class="text-center mb-4">Nuestros Best Sellers</h3>
 
-<div class="container my-5">
-  <h3 class="text-center mb-4">Nuestros Best Sellers</h3>
+    <div id="carouselProductos" class="carousel slide" data-bs-ride="false">
 
-  <div id="carouselProductos" class="carousel slide" data-bs-ride="false">
-    
-    <div class="carousel-inner">
-      <!-- productos 1-3 -->
-      <div class="carousel-item active">
-        <div class="row justify-content-center">
-          <!-- Producto 1 -->
-          <div class="col-md-4 mb-4">
-            <div class="card text-center h-100">
-              <a href="Tienda.html">
-                <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 1">
-              </a>
-              <div class="card-body">
-                <h5 class="card-title">Modelo Costura antigua No. 12</h5>
-                <p class="card-text">$255</p>
+      <div class="carousel-inner">
+        <!-- productos 1-3 -->
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <!-- Producto 1 -->
+            <div class="col-md-4 mb-4">
+              <div class="card text-center h-100">
+                <a href="Tienda.html">
+                  <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 1">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Modelo Costura antigua No. 12</h5>
+                  <p class="card-text">$255</p>
+                </div>
+              </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="col-md-4 mb-4">
+              <div class="card text-center h-100">
+                <a href="Tienda.html">
+                  <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 2">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Modelo Costura antigua No. 13</h5>
+                  <p class="card-text">$260</p>
+                </div>
+              </div>
+            </div>
+            <!-- Producto 3 -->
+            <div class="col-md-4 mb-4">
+              <div class="card text-center h-100">
+                <a href="Tienda.html">
+                  <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 3">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Modelo Costura antigua No. 14</h5>
+                  <p class="card-text">$270</p>
+                </div>
               </div>
             </div>
           </div>
-          <!-- Producto 2 -->
-          <div class="col-md-4 mb-4">
-            <div class="card text-center h-100">
-              <a href="Tienda.html">
-                <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 2">
-              </a>
-              <div class="card-body">
-                <h5 class="card-title">Modelo Costura antigua No. 13</h5>
-                <p class="card-text">$260</p>
+        </div>
+
+        <!-- productos 4-6 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <!-- Producto 4 -->
+            <div class="col-md-4 mb-4">
+              <div class="card text-center h-100">
+                <a href="Tienda.html">
+                  <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 4">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Modelo Costura antigua No. 15</h5>
+                  <p class="card-text">$280</p>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- Producto 3 -->
-          <div class="col-md-4 mb-4">
-            <div class="card text-center h-100">
-              <a href="Tienda.html">
-                <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 3">
-              </a>
-              <div class="card-body">
-                <h5 class="card-title">Modelo Costura antigua No. 14</h5>
-                <p class="card-text">$270</p>
+            <!-- Producto 5 -->
+            <div class="col-md-4 mb-4">
+              <div class="card text-center h-100">
+                <a href="Tienda.html">
+                  <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 5">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Modelo Costura antigua No. 16</h5>
+                  <p class="card-text">$265</p>
+                </div>
+              </div>
+            </div>
+            <!-- Producto 6 -->
+            <div class="col-md-4 mb-4">
+              <div class="card text-center h-100">
+                <a href="Tienda.html">
+                  <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 6">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Modelo Costura antigua No. 17</h5>
+                  <p class="card-text">$250</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- productos 4-6 -->
-      <div class="carousel-item">
-        <div class="row justify-content-center">
-          <!-- Producto 4 -->
-          <div class="col-md-4 mb-4">
-            <div class="card text-center h-100">
-              <a href="Tienda.html">
-                <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 4">
-              </a>
-              <div class="card-body">
-                <h5 class="card-title">Modelo Costura antigua No. 15</h5>
-                <p class="card-text">$280</p>
-              </div>
-            </div>
-          </div>
-          <!-- Producto 5 -->
-          <div class="col-md-4 mb-4">
-            <div class="card text-center h-100">
-              <a href="Tienda.html">
-                <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 5">
-              </a>
-              <div class="card-body">
-                <h5 class="card-title">Modelo Costura antigua No. 16</h5>
-                <p class="card-text">$265</p>
-              </div>
-            </div>
-          </div>
-          <!-- Producto 6 -->
-          <div class="col-md-4 mb-4">
-            <div class="card text-center h-100">
-              <a href="Tienda.html">
-                <img src="assets/libreta.jpg" class="card-img-top img-fluid" alt="Libreta 6">
-              </a>
-              <div class="card-body">
-                <h5 class="card-title">Modelo Costura antigua No. 17</h5>
-                <p class="card-text">$250</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Controles de navegación -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
     </div>
 
-    <!-- Controles de navegación -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Siguiente</span>
-    </button>
-  </div>
 
-
-  <h4>Traemos a la realidad tus ideas</h4>
-  <div class="container-marquee">
-    <marquee behaviour="alternate" direction="left" onmouseout="start()" onmouseover="stop()" scrollamount="10">
-      <img class="marquee" src="./assets/tita.jpg" alt="libreta 1">
-      <img class="marquee" src="./assets/tita.jpg" alt="libreta 2">
-      <img class="marquee" src="./assets/tita.jpg" alt="libreta 3">
-      <img class="marquee" src="./assets/tita.jpg" alt="libreta 4">
-      <img class="marquee" src="./assets/tita.jpg" alt="libreta 5">
-      <img class="marquee" src="./assets/tita.jpg" alt="libreta 6">
-      <img class="marquee" src="./assets/tita.jpg" alt="libreta 7">
-      <img class="marquee" src="./assets/tita.jpg" alt="libreta 8">
-      <img class="marquee" src="./assets/tita.jpg" alt="libreta 9">
-      <img class="marquee" src="./assets/tita.jpg" alt="libreta 10">
-    </marquee>
-  </div>
-  <a class="contactanos" href="./PáginaDeContacto.html" target="_self">Cuéntanos tu proyecto</a>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-    crossorigin="anonymous"></script>
+    <h4>Traemos a la realidad tus ideas</h4>
+    <div class="container-marquee">
+      <marquee behaviour="alternate" direction="left" onmouseout="start()" onmouseover="stop()" scrollamount="10">
+        <img class="marquee" src="./assets/tita.jpg" alt="libreta 1">
+        <img class="marquee" src="./assets/tita.jpg" alt="libreta 2">
+        <img class="marquee" src="./assets/tita.jpg" alt="libreta 3">
+        <img class="marquee" src="./assets/tita.jpg" alt="libreta 4">
+        <img class="marquee" src="./assets/tita.jpg" alt="libreta 5">
+        <img class="marquee" src="./assets/tita.jpg" alt="libreta 6">
+        <img class="marquee" src="./assets/tita.jpg" alt="libreta 7">
+        <img class="marquee" src="./assets/tita.jpg" alt="libreta 8">
+        <img class="marquee" src="./assets/tita.jpg" alt="libreta 9">
+        <img class="marquee" src="./assets/tita.jpg" alt="libreta 10">
+      </marquee>
+    </div>
+    <a class="contactanos" href="./PáginaDeContacto.html" target="_self">Cuéntanos tu proyecto</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>
