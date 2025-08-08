@@ -95,7 +95,7 @@ btnEnviar.addEventListener("click", function (event) {
 
                 btnEnviar.innerText = "Enviar";
             }, (err) => {
-                alert("Error al enviar: " + JSON.stringify(err)); 
+                alert("Error al enviar: " + JSON.stringify(err));
                 btnEnviar.innerText = "Enviar";
             });
         txtEmpresa.value = "";// Limpia el valor de txtName
