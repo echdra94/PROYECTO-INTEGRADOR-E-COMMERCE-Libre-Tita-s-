@@ -29,16 +29,33 @@ btnEnviar.addEventListener("click", function (event) {
         alertValidaciones.style.display = "block";
         isValid = false;
     }
-    
+
     // Validación del campo Correo electrónico
-    const regexCorreo = /^[^\s@]+@[^\s@]+\.[a-zA-Z.]*[a-zA-Z]{2,3}$/;
+    // dejo esto para que comparen el cambio con const regexCorreo = /^[^\s@]+@[^\s@]+\.[a-zA-Z.]*[a-zA-Z]{2,3}$/; atte. Mar Z.
+
+    // Antes de validar, aseguramos que esté en minúsculas
+    iptCorreo1.value = iptCorreo1.value.toLowerCase();
+
+    // Validación correo (modifica el regex para prohibir espacios y mayúsculas)
+    const regexCorreo = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
     if (!regexCorreo.test(iptCorreo1.value)) {
         iptCorreo1.style.setProperty("border", "1px solid #DD0069", "important");
         iptCorreo1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
-        alertValidacionesTexto.innerHTML += "<strong>Ingresa un correo electrónico válido</strong><br>";
+        alertValidacionesTexto.innerHTML += "<strong>Ingresa un correo electrónico válido (sin espacios ni mayúsculas).</strong><br>";
         alertValidaciones.style.display = "block";
         isValid = false;
     }
+
+    // Validación del campo Teléfono
+    const regexTelefono = /^[0-9]{10}$/;
+    if (!regexTelefono.test(txtTelefono1.value)) {
+        txtTelefono1.style.setProperty("border", "1px solid #DD0069", "important");
+        txtTelefono1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+        alertValidacionesTexto.innerHTML += "<strong>Ingresa un teléfono válido de 10 dígitos.</strong><br>";
+        alertValidaciones.style.display = "block";
+        isValid = false;
+    }
+
 
     // para validar campo Especificaciones
     const especificacionesTexto = txtEspecificaciones.value.trim(); // Quitamos espacios sobrantes
@@ -59,7 +76,7 @@ btnEnviar.addEventListener("click", function (event) {
         isValid = false;
     }
 
-     if(isValid){
+    if (isValid) {
 
         btnEnviar.innerText = "Enviando...";
 
@@ -67,20 +84,26 @@ btnEnviar.addEventListener("click", function (event) {
         const templateID = 'template_s6w5oib';
 
         emailjs.sendForm(serviceID, templateID, formContactanos)
-        .then(() => {
-            alert("¡Correo enviado con éxito!");
-            btnEnviar.innerText = "Enviar";
-        }, (err) => {
-            alert("Error al enviar: " + JSON.stringify(err));
-            btnEnviar.innerText = "Enviar";
-        });
-        txtEmpresa.value="";// Limpia el valor de txtName
+            .then(() => {
+                // Aquí reemplazamos el alert por el mensaje en la alerta Bootstrap
+                alertValidacionesTexto.innerHTML = "<strong class='text-success'>¡Correo enviado con éxito!</strong>";
+                alertValidaciones.classList.remove("alert-danger");
+                alertValidaciones.classList.add("alert-success");
+                alertValidaciones.style.display = "block";
+
+                btnEnviar.innerText = "Enviar";
+            }, (err) => {
+                alert("Error al enviar: " + JSON.stringify(err)); 
+                btnEnviar.innerText = "Enviar";
+            });
+        txtEmpresa.value = "";// Limpia el valor de txtName
         txtEmpresa.focus(); // Coloca el cursor en la casilla txtName;
         iptCorreo1.value = ""; //Limpia el valor de iptCorreo1
+        txtTelefono1.value = ""; // Limpia el valor de teléfono
         txtEspecificaciones.value = "";
-            
-  
-     }
+
+
+    }
 }
 );
 
