@@ -1,0 +1,76 @@
+.piePag{
+    display: flex;
+    justify-content: space-between;
+    background-color: #2E2B5B;
+    object-fit: cover;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.info{
+    flex: 1 1 200px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+@media(max-width:600px){
+    .piePag{
+        align-items: center;
+        text-align: left;
+    }
+}
+
+img {
+    max-width: 80%;
+    width: 250px;
+    height: 150px;
+    display: block;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+    text-align: left;
+}
+
+a{
+    color: white;
+    font-family: "Rubik", sans-serif;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 2.5;
+}
+
+p{
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+}
+
+.redesSociales{
+    margin: 120px 300px 0 100px;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.contact{
+    margin-top: 120px;
+    text-align: center;
+}
+
+.der{
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: 12px;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.der1{
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 100px;
+}
