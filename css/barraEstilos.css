@@ -57,9 +57,10 @@ img{
     outline: none;
 }
 
-.nav-link{
+a.nav-link{
     color: #ffffff;
-    font-size: 1.25rem;
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
     font-weight: 500;
     transition: transform 0.3s ease;
     transition: 0.4 color;
