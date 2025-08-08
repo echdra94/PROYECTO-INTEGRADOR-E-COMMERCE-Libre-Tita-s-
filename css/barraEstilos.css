@@ -11,9 +11,6 @@
   --rosa-pastel: #ED6B72;
   --turquesa-pastel: #7DC5AE;
 }
-body{
-    
-}
 
 .navbar{
     background-color: var(--azul-profundo);
@@ -28,7 +25,7 @@ body{
     text-align: center;
 }
 
-img{
+nav img{
     height: 60px;
     padding: 0;
     margin: 0;
