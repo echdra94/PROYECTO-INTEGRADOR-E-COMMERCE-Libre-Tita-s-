@@ -17,6 +17,8 @@ btnEnviar.addEventListener("click", function (event) {
     txtEmpresa.style.border = "";// limpia el borde rojo del campo name cuando hay alerta
     iptCorreo1.style.boxShadow = "none";
     iptCorreo1.style.border = "";// Limpia el borde rojo del campo correo 
+    txtTelefono1.style.boxShadow = "none";
+    txtTelefono1.style.border = "";// Limpia el borde rojo del campo telefono
     txtEspecificaciones.style.border = ""; // Limpia el borde del campo especificaciones
     txtEspecificaciones.style.boxShadow = "none"; // Limpia sombraMargen rojo del campo especificaciones
 
