@@ -1,25 +1,50 @@
-.piePag{
+/* Reseteo general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Para que body ocupe toda la altura */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal que envuelve contenido + footer */
+.page-wrapper {
+    min-height: 100vh;
+    /* mínimo alto igual a la ventana? */
     display: flex;
-    justify-content: space-between;
-    background-color: #2E2B5B;
-    object-fit: cover;
-    flex-wrap: wrap;
-    padding: 20px;
+    flex-direction: column;
 }
 
-.info{
-    flex: 1 1 200px;
-    margin: 10px;
-    margin-bottom: 20px;
+/* Contenidopágina para empujar el footer */
+.content {
+    flex: 1;
 }
 
-@media(max-width:600px){
-    .piePag{
-        align-items: center;
-        text-align: left;
-    }
+/* Footer  */
+footer {
+    width: 100%;
+    /* ocupa todo el ancho */
+    min-height: 80px;
+    /* altura mínima */
+    background-color: #2e2b5b;
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Rubik', sans-serif;
+    /* ya no position: fixed ni bottom */
+    z-index: 1000;
 }
 
+<<<<<<< HEAD
 img.logo-footer {
     max-width: 80%;
     width: 250px;
@@ -45,32 +70,196 @@ footer p{
     color: white;
     font-family: "Rubik", sans-serif;
     font-size: 16px;
+=======
+/* Secciones internas del footer */
+footer .seccion-1,
+footer .seccion-2,
+footer .seccion-3 {
+    padding: 2px 0;
+    margin: 0;
+    text-align: center;
 }
 
-.redesSociales{
-    margin: 120px 300px 0 100px;
+/* Sección 1: icono + textos */
+footer .seccion-1 {
+    display: flex;
     align-items: center;
-    text-align: center;
-    line-height: 1.5;
+    padding-left: 20px;
+    gap: 15px;
+    text-align: left;
 }
 
-.contact{
-    margin-top: 120px;
+footer .seccion-1 .logo {
+    margin: 0;
+    width: 150px;
+    height: auto;
+}
+
+footer .seccion-1 .textos p {
+    margin: 0;
+    line-height: 1.3;
+>>>>>>> FooterCambios
+}
+
+/* Sección 2: contenedor flex para que los 3 div estén en fila? */
+footer .seccion-2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    /* para pantallas pequeñas */
+    gap: 20px;
+}
+
+/*  */
+footer .seccion-2>div {
+    flex: 1;
+    min-width: 200px;
     text-align: center;
 }
 
-.der{
+/* Navegación- enlaces en columna alineados a la izquierda */
+footer .seccion-2>div:nth-child(1) a {
+    display: block;
     color: white;
+    text-decoration: none;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 1rem;
+    transition: color 0.3s ease;
     font-family: "Rubik", sans-serif;
-    font-size: 12px;
-    margin-top: 80px;
-    text-align: center;
 }
 
-.der1{
+footer .seccion-2>div:nth-child(1) a:hover {
+    color: #a3c9f9;
+}
+
+/* Redes sociales: centrado y enlaces en línea con icono y texto juntos */
+footer .seccion-2 .redes h3 {
+    margin-bottom: 10px;
+}
+
+footer .seccion-2 .redes a {
+    display: inline-flex;
+    align-items: center;
     color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
     font-family: "Rubik", sans-serif;
-    font-size: 12px;
-    text-align: center;
-    margin-top: 100px;
+}
+
+footer .seccion-2 .redes a i {
+    font-size: 1.5rem;
+    margin-right: 6px;
+    color: white;
+}
+
+footer .seccion-2 .redes a:hover {
+    color: #a3c9f9;
+}
+
+/* Información de contacto */
+footer .seccion-2>div:nth-child(3) {
+    text-align: right;
+    margin: 3px 0;
+}
+
+footer .seccion-2>div:nth-child(3) p {
+    text-align: right;
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+}
+
+/* Sección 3: textos centrados */
+footer .seccion-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* para que estén alineados verticalmente */
+}
+
+footer .seccion-3 p {
+    font-size: 0.6rem;
+    margin: 3px 0;
+    font-family: "Rubik", sans-serif;
+}
+
+footer .seccion-3 p:first-child {
+    text-align: left;
+}
+
+footer .seccion-3 p:last-child {
+    text-align: right;
+}
+
+/* Responsive*/
+@media (max-width: 600px) {
+    footer {
+        padding: 10px 15px;
+    }
+
+
+    footer .seccion-2 {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        /* <---  hijo 2 a la izquierda */
+        text-align: left;
+        /* */
+    }
+
+    footer .seccion-2>div {
+        min-width: auto;
+        text-align: left;
+
+        /* 
+  }
+
+  /*  enlaces Navegación aizquierda */
+        footer .seccion-2>div:nth-child(1) a {
+            text-align: left;
+            font-size: 0.6rem;
+            margin-bottom: 8px;
+            font-family: "Rubik", sans-serif;
+        }
+
+        /* Redes sociales y contacto  izquierda */
+        footer .seccion-2>div:nth-child(2),
+        footer .seccion-2>div:nth-child(3) {
+            text-align: left;
+        }
+
+        footer .seccion-2>div:nth-child(3) p {
+            text-align: left;
+            margin: 0;
+        }
+
+        /* Sección 1 */
+        footer .seccion-1 {
+            justify-content: flex-start;
+            /* alinea icono y textos a la izquierda */
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        footer .seccion-1 .textos p {
+            text-align: left;
+            /* textos se alineen a la izquierda */
+        }
+
+        /* Sección 3: textos centrados  en móvil */
+        footer .seccion-3 {
+            flex-direction: column;
+            gap: 8px;
+            text-align: center;
+        }
+
+        footer .seccion-3 p:first-child,
+        footer .seccion-3 p:last-child {
+            text-align: center;
+        }
+    }
+
 }
