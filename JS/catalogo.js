@@ -1,7 +1,7 @@
 const itemsContainer = document.getElementById("list-items");
 // Esperar a que el DOM cargue
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("products.json")
+    fetch("./JS/productos.json")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Error al cargar el archivo JSON");
