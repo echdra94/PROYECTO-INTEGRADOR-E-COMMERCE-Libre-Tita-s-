@@ -23,30 +23,37 @@ btnEnviar.addEventListener("click", function (event) {
     txtEspecificaciones.style.boxShadow = "none"; // Limpia sombraMargen rojo del campo especificaciones
 
 
-    // Validación del campo Empresa
-    if (txtEmpresa.value.trim().length < 3) {
+    // Validación del campo Empresa/Nombre
+    const regexEmpresa = /^(?!.*([a-zA-ZÁÉÍÓÚáéíóúÑñ])\1{2})([A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})(?:\s+[A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})+$/;
+    if (!regexEmpresa.test(txtEmpresa.value.trim())) {
         txtEmpresa.style.border = "thin solid #DD0069";
         txtEmpresa.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
-        alertValidacionesTexto.innerHTML = "<strong>Ingresa un nombre válido</strong><br>";
+        alertValidacionesTexto.innerHTML = "<strong>Ingresa un nombre y apellido válidos</strong><br>";
         alertValidaciones.style.display = "block";
         isValid = false;
     }
+
 
     // Validación del campo Correo electrónico
     // dejo esto para que comparen el cambio con const regexCorreo = /^[^\s@]+@[^\s@]+\.[a-zA-Z.]*[a-zA-Z]{2,3}$/; atte. Mar Z.
 
     // Antes de validar, aseguramos que esté en minúsculas
-    iptCorreo1.value = iptCorreo1.value.toLowerCase();
+    iptCorreo1.value = iptCorreo1.value.toLowerCase().trim();
 
-    // Validación correo (modifica el regex para prohibir espacios y mayúsculas)
-    const regexCorreo = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
-    if (!regexCorreo.test(iptCorreo1.value)) {
+    // Solo define regexCorreo una vez, con todos los requisitos:
+    const regexCorreo = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.(com|com\.mx|org|org\.mx|edu|edu\.mx|mx)$/;
+
+    // Obtén el valor y aplica trim() para eliminar espacios al inicio y final
+    const correo = iptCorreo1.value.trim();
+
+    if (!regexCorreo.test(correo)) {
         iptCorreo1.style.setProperty("border", "1px solid #DD0069", "important");
         iptCorreo1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
-        alertValidacionesTexto.innerHTML += "<strong>Ingresa un correo electrónico válido (sin espacios ni mayúsculas).</strong><br>";
+        alertValidacionesTexto.innerHTML += "<strong>Ingresa un correo electrónico válido (sin espacios ni mayúsculas y con dominio correcto).</strong><br>";
         alertValidaciones.style.display = "block";
         isValid = false;
     }
+
 
     // Validación del campo Teléfono
     const regexTelefono = /^[0-9]{10}$/;
@@ -56,6 +63,27 @@ btnEnviar.addEventListener("click", function (event) {
         alertValidacionesTexto.innerHTML += "<strong>Ingresa un teléfono válido de 10 dígitos.</strong><br>";
         alertValidaciones.style.display = "block";
         isValid = false;
+    } else {
+        // Función para detectar secuencia ascendente o descendente
+        function esSecuenciaAscDesc(numero) {
+            let asc = true, desc = true;
+            for (let i = 1; i < numero.length; i++) {
+                if (parseInt(numero[i]) !== (parseInt(numero[i - 1]) + 1) % 10) asc = false;
+                if (parseInt(numero[i]) !== (parseInt(numero[i - 1]) - 1 + 10) % 10) desc = false;
+            }
+            return asc || desc;
+        }
+
+        // Validar si todos los dígitos son iguales
+        const todosIguales = /^(\d)\1{9}$/.test(telefonoValor);
+
+        if (todosIguales || esSecuenciaAscDesc(telefonoValor)) {
+            txtTelefono1.style.setProperty("border", "1px solid #DD0069", "important");
+            txtTelefono1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+            alertValidacionesTexto.innerHTML += "<strong>Ingresa un teléfono válido, no repetido ni secuencial.</strong><br>";
+            alertValidaciones.style.display = "block";
+            isValid = false;
+        }
     }
 
 
@@ -112,5 +140,8 @@ btnEnviar.addEventListener("click", function (event) {
 txtEspecificaciones.addEventListener("input", function () {
     let caracteresActuales = txtEspecificaciones.value.length; // Contar cuántos lleva
     contadorCaracteres.innerText = `${caracteresActuales}/500`; // Actualizar el texto
+});
+iptCorreo1.addEventListener('input', () => {
+    iptCorreo1.value = iptCorreo1.value.toLowerCase().replace(/\s/g, '');
 });
 
