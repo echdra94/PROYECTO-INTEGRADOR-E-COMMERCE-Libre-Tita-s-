@@ -27,13 +27,16 @@
       </div>
       <div class="mb-3">
         <label for="txtEmpresa" class="form-label">Nombre:</label>
-        <input type="text" class="form-control" name="txtEmpresa" id="txtEmpresa" placeholder="Escribe tu nombre completo" maxlength="30">
+        <input type="text" class="form-control" name="txtEmpresa" id="txtEmpresa" placeholder="Escribe tu nombre completo" maxlength="60">
       </div>
 
-      <div class="mb-3">
-        <label for="iptCorreo1" class="form-label">Correo electrónico:</label>
-        <input type="email" class="form-control" name="iptCorreo1" id="iptCorreo1" placeholder="ejemplo@correo.com" maxlength="30">
-      </div>
+<div class="mb-3">
+    <label for="iptCorreo1" class="form-label">Correo electrónico:</label>
+    <input type="email" class="form-control" name="iptCorreo1" id="iptCorreo1" placeholder="correo@dominio.com" maxlength="60" 
+        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.(com|com\.mx|org|org\.mx|edu|edu\.mx|mx)$"
+        title="Solo letras minúsculas, sin espacios, y dominio válido">
+</div>
+
 
       <div class="mb-3">
         <label for="txtTelefono1" class="form-label">Teléfono:</label>
