@@ -1,26 +1,53 @@
 
 
 [
-  {
-    "name": "juice",
-    "img": "https://www.gs1india.org/media/Juice_pack.jpg",
-    "description": "Orange and Apple juice fresh and delicious"
-  },
-  {
-    "name": "Tayto",
-    "img": "https://www.irishtimes.com/polopoly_fs/1.4078148!/image/image.jpg",
-    "description": "Cheese & Onion Chips"
-  },
+  {"name":"Modelo: Taquilla", 
+    "descr":"Libreta tamaño media carta, cubierta tapa dura, encuadernado tipo wire-o, papel rayado, 90 hojas", 
+    "precio":"250", 
+    "img":""},
 
-  {
-    "name": "juice",
-    "img": "https://www.gs1india.org/media/Juice_pack.jpg",
-    "description": "Orange and Apple juice fresh and delicious"
-  },
+    {"name":"Modelo: piel", 
+    "descr":"Libreta tamaño media carta, cubierta tapa dura de vinipiel suave al tacto, encuadernado tipo costura francesa, papel rayado, 90 hojas", 
+    "precio":"500", 
+    "img":""},
 
-  {
-    "name": "Tayto",
-    "img": "https://www.irishtimes.com/polopoly_fs/1.4078148!/image/image.jpg",
-    "description": "Cheese & Onion Chips"
-  }
+    {"name":"Modelo: Huelum", 
+    "descr":"Libreta tamaño media carta, cubierta dura, encuadernado tipo wire-o, papel rayado, 90 hojas", 
+    "precio":"250", 
+    "img":""},
+
+    {"name":"Modelo: IPN anatómico", 
+    "descr":"Libreta tamaño media carta, cubierta tapa dura, encuadernado tipo wire-o, papel rayado, 90 hojas", 
+    "precio":"250", 
+    "img":""},
+
+  {"name":"Modelo: Burrito de Mar", 
+    "descr":"Libreta tamaño media carta, cubierta tapa dura de vinipiel suave al tacto, encuadernado tipo costura francesa, papel rayado, 90 hojas", 
+    "precio":"500", 
+    "img":""},
+
+    {"name":"Modelo: Lazarillo", 
+    "descr":"Libreta pocket,pasta blanda,con 60 hojas,comoda para llevar a todas partes.", 
+    "precio":"200", 
+    "img":""},
+
+    {"name":"Modelo: Esimio", 
+    "descr":"Libreta pocket con 60 hojas, ofrece un espacio para tomar notas, escribir tus aventuras o escribir ideas. Su tamaño hace que sean portables y ocupen poco espacio en tu bolsa o mochila", 
+    "precio":"200", 
+    "img":""},
+
+    {"name":"Modelo: Tradicional", 
+    "descr":"Libreta media carta, cubierta dura , con 90 hojas,encuadernado tipo wire-o,lista para ti.", 
+    "precio":"250", 
+    "img":""},
+
+    {"name":"Modelo: México", 
+    "descr":"libreta profesional con 90 hojas, con encuadernación anillada wire-o, cuadro grande. Ideal para tus apuntes escolares o grandes ideas que requieran un amplio espacio para ser plasmadas.", 
+    "precio":"250", 
+    "img":""},
+    {"name":"Carpeta: Insignia", 
+    "descr":"carpeta profesional, con encuadernación en tapa dura y capacidad para 250 hojas, las cuales se venden por separado pudiendo elegir el modelo de tu elección.", 
+    "precio":"300", 
+    "img":""}
+
 ]
