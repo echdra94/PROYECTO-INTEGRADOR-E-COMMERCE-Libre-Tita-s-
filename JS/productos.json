@@ -4,12 +4,12 @@
   {"name":"Modelo: Taquilla", 
     "descr":"Libreta tamaño media carta, cubierta tapa dura, encuadernado tipo wire-o, papel rayado, 90 hojas", 
     "precio":"250", 
-    "img":""},
+    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038924/IMG_20210731_015909_rocibk.jpg"},
 
     {"name":"Modelo: Piel", 
     "descr":"Libreta tamaño media carta, cubierta tapa dura de vinipiel suave al tacto, encuadernado tipo costura francesa, papel rayado, 90 hojas", 
     "precio":"500", 
-    "img":""},
+    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038924/4_f5vumn.png"},
 
     {"name":"Modelo: Huelum", 
     "descr":"Libreta tamaño media carta, cubierta dura, encuadernado tipo wire-o, papel rayado, 90 hojas", 
