@@ -34,12 +34,12 @@
     {"name":"Modelo: Esimio", 
     "descr":"Libreta pocket con 60 hojas, ofrece un espacio para tomar notas, escribir tus aventuras o escribir ideas. Su tamaño hace que sean portables y ocupen poco espacio en tu bolsa o mochila", 
     "precio":"200", 
-    "img":""},
+    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038923/IMG_20220731_224040_pbkirv.jpg"},
 
     {"name":"Modelo: Tradicional", 
     "descr":"Libreta media carta, cubierta dura , con 90 hojas,encuadernado tipo wire-o,lista para ti.", 
     "precio":"250", 
-    "img":""},
+    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038923/agenda_guinda_simulacion_2_riicmb.png"},
 
     {"name":"Modelo: México", 
     "descr":"libreta profesional con 90 hojas, con encuadernación anillada wire-o, cuadro grande. Ideal para tus apuntes escolares o grandes ideas que requieran un amplio espacio para ser plasmadas.", 
@@ -49,5 +49,6 @@
     "descr":"carpeta profesional, con encuadernación en tapa dura y capacidad para 250 hojas, las cuales se venden por separado pudiendo elegir el modelo de tu elección.", 
     "precio":"300", 
     "img":""}
+
 
 ]
