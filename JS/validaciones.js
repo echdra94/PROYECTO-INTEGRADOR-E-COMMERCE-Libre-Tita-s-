@@ -81,9 +81,9 @@ btnEnviar.addEventListener("click", function (event) {
         }
 
         // Validar si todos los dígitos son iguales
-        const todosIguales = /^(\d)\1{9}$/.test(telefonoValor);
+        const todosIguales = /^(\d)\1{9}$/.test(txtTelefono1.value);
 
-        if (todosIguales || esSecuenciaAscDesc(telefonoValor)) {
+        if (todosIguales || esSecuenciaAscDesc(txtTelefono1.value)) {
             txtTelefono1.style.setProperty("border", "1px solid #DD0069", "important");
             txtTelefono1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
             alertValidacionesTexto.innerHTML += "<strong>Ingresa un teléfono válido, no repetido ni secuencial.</strong><br>";
@@ -91,7 +91,6 @@ btnEnviar.addEventListener("click", function (event) {
             isValid = false;
         }
     }
-
 
     // para validar campo Especificaciones
     const especificacionesTexto = txtEspecificaciones.value.trim(); // Quitamos espacios sobrantes
