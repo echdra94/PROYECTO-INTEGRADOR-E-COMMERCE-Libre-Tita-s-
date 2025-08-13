@@ -18,13 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function addItem(item){
-    const itemHTML = '<div class="card" style="width: 18rem;">\n' +
+    const itemHTML = '<div class="card">\n' +
         '    <img src="'+item.img +'" class="card-img-top" alt="image">\n' +
         '    <div class="card-body">\n' +
-        '        <h5 class="card-title">'+item.name+'</h5>\n' +
+        '        <h5 class="card-title"><strong><i>'+item.name+'</i></strong></h5>\n' +
         '        <p class="card-text">'+item.descr+'</p>\n' +
-        '        <p class="card-text">$'+item.precio+'</p>\n' +            
+        '        <p class="card-text"><strong>$'+item.precio+'</strong></p>\n' +            
         '        <a href="#" class="btn btn-primary">Agregar</a>\n' +
+        '        <a href="#" class="btn btn-primary">Comprar</a>\n' +
         '    </div>\n' +
         '</div>\n' +
         '<br/>';
