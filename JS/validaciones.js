@@ -153,7 +153,7 @@ btnEnviar.addEventListener("click", function (event) {
         const serviceID = 'default_service';
         const templateID = 'template_s6w5oib';
         // Antes de llamar a emailjs.sendForm
-        // Actualizamos el value del input para que contenga todo el correo
+        // Para que envie correctamente el correo y DOMINIO- el value del input para que contenga todo el correo MI
         iptCorreo1.value = correoCompleto;
 
 
