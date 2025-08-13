@@ -40,20 +40,26 @@ btnEnviar.addEventListener("click", function (event) {
     // Antes de validar, aseguramos que esté en minúsculas
     iptCorreo1.value = iptCorreo1.value.toLowerCase().trim();
 
+    // Obtener el valor seleccionado del dominio si existe 
+    let dominioSeleccionado = document.getElementById("selectDominio").value;
+    if (dominioSeleccionado) {
+        // Formamos el correo completo solo una vez
+        correoCompleto = iptCorreo1.value.split("@")[0] + "@" + dominioSeleccionado;
+    } else {
+        correoCompleto = iptCorreo1.value; // si no selecciona, dejamos lo que escribió
+    }
+
     // Solo define regexCorreo una vez, con todos los requisitos:
     const regexCorreo = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.(com|com\.mx|org|org\.mx|edu|edu\.mx|mx)$/;
 
-    // Obtén el valor y aplica trim() para eliminar espacios al inicio y final
-    const correo = iptCorreo1.value.trim();
-
-    if (!regexCorreo.test(correo)) {
+    // Validamos usando correoCompleto
+    if (!regexCorreo.test(correoCompleto)) {
         iptCorreo1.style.setProperty("border", "1px solid #DD0069", "important");
         iptCorreo1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         alertValidacionesTexto.innerHTML += "<strong>Ingresa un correo electrónico válido (sin espacios ni mayúsculas y con dominio correcto).</strong><br>";
         alertValidaciones.style.display = "block";
         isValid = false;
     }
-
 
     // Validación del campo Teléfono
     const regexTelefono = /^[0-9]{10}$/;
