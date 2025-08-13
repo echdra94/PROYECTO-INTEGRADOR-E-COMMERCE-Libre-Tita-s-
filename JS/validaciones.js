@@ -147,11 +147,15 @@ btnEnviar.addEventListener("click", function (event) {
         alertValidaciones.style.display = "block";
         isValid = false;
     }
-//Si todo esta bien, enviar
+    //Si todo esta bien, enviar
     if (isValid) {
         btnEnviar.innerText = "Enviando...";
         const serviceID = 'default_service';
         const templateID = 'template_s6w5oib';
+        // Antes de llamar a emailjs.sendForm
+        // Actualizamos el value del input para que contenga todo el correo
+        iptCorreo1.value = correoCompleto;
+
 
         emailjs.sendForm(serviceID, templateID, formContactanos)
             .then(() => {
@@ -165,7 +169,7 @@ btnEnviar.addEventListener("click", function (event) {
                 alert("Error al enviar: " + JSON.stringify(err));
                 btnEnviar.innerText = "Enviar";
             });
-//------------------LIMPIAR CAMPOS----------------------------------------------------------
+        //-------------------------------LIMPIAR CAMPOS----------------------------------------------------------
         txtEmpresa.value = "";// Limpia el valor de txtName
         txtEmpresa.focus(); // Coloca el cursor en la casilla txtName;
         iptCorreo1.value = ""; //Limpia el valor de iptCorreo1
@@ -178,7 +182,7 @@ btnEnviar.addEventListener("click", function (event) {
 //-----------------------CONTADOR DE CARACTERES EN TEXTAREA---------------------------------
 txtEspecificaciones.addEventListener("input", function () {
     //let caracteresActuales = txtEspecificaciones.value.length; Contar cuántos lleva EN MI lo quite
-    contadorCaracteres.innerText = `${txtEspecificaciones.value.length}/500`; 
+    contadorCaracteres.innerText = `${txtEspecificaciones.value.length}/500`;
 });
 //-----------------------FORZAR MINÚSCULAS Y QUITAR ESPACIOS EN BLANCO DEL CORREO-------------------
 iptCorreo1.addEventListener('input', () => {
