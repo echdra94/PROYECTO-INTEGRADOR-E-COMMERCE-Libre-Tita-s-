@@ -3,8 +3,8 @@ const alertValidaciones = document.getElementById("alertValidaciones");
 const alertValidacionesTexto = document.getElementById("alertValidacionesTexto");
 const txtEmpresa = document.getElementById("txtEmpresa");
 const iptCorreo1 = document.getElementById("iptCorreo1"); // iptCorreo1 Correo electrónico
-const iptCorreoDominio = document.getElementById("iptCorreoDominio"); // Input para la parte del dominio MI
 const selectDominio = document.getElementById("selectDominio"); // Select para elegir el dominio MI
+const iptCorreoDominio = document.getElementById("iptCorreoDominio"); // Input para la parte del dominio MI
 const txtEspecificaciones = document.getElementById("Textarea1"); // Textarea de especificaciones del proyecto
 const contadorCaracteres = document.getElementById("contadorCaracteres"); // Texto que muestra el conteo de caracteres
 const txtTelefono1 = document.getElementById("txtTelefono1");
@@ -21,11 +21,11 @@ btnEnviar.addEventListener("click", function (event) {
     iptCorreo1.style.border = "";// Limpia el borde rojo del campo correo 
     txtTelefono1.style.boxShadow = "none";
     txtTelefono1.style.border = "";// Limpia el borde rojo del campo teléfono 
-    txtEspecificaciones.style.border = ""; // Limpia el borde del campo especificaciones
     txtEspecificaciones.style.boxShadow = "none"; // Limpia sombraMargen rojo del campo especificaciones
+    txtEspecificaciones.style.border = ""; // Limpia el borde del campo especificaciones
 
 
-    /**--------------------------------------------------------------------------------------------------------------------------------
+    /**----------------------------------------NOMBRE------------------------------------------------------------------------------------------
      * Validación del campo Empresa/Nombre
      */
     const regexEmpresa = /^(?!.*([a-zA-ZÁÉÍÓÚáéíóúÑñ])\1{2})([A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})(?:\s+[A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})+$/;
@@ -46,15 +46,15 @@ btnEnviar.addEventListener("click", function (event) {
 
     // Obtener el valor seleccionado del dominio si existe 
     //let dominioSeleccionado = document.getElementById("selectDominio").value; quite esto MI
-    let correoDominio = iptCorreoDominio.value.toLowerCase().trim();
-    let dominioSeleccionado = selectDominio.value;
+    //let correoDominio = iptCorreoDominio.value.toLowerCase().trim(); se puso abajo, quite esto en MI
+    //let dominioSeleccionado = selectDominio.value; //MI*
 
     //Decidimos que dominio usar MI
-    let correoCompleto = iptCorreo1.value; //por defecto MI
-    if (correoDominio) {
-        correoCompleto += "@" + correoDominio;
-    } else if (dominioSeleccionado) {
-        correoCompleto += "@" + dominioSeleccionado;
+    let correoCompleto = iptCorreo1.value; //por defecto- MI
+    if (iptCorreoDominio.value.trim()) {
+        correoCompleto += "@" + iptCorreoDominio.value.toLowerCase().trim();
+    } else if (selectDominio.value) {
+        correoCompleto += "@" + selectDominio.value;
     }
 
     // if (dominioSeleccionado) {
@@ -115,9 +115,10 @@ btnEnviar.addEventListener("click", function (event) {
 
         // Validar si todos los dígitos son iguales
         //let telefonoValor = txtTelefono1.value; no seria necesario esta línea porque ya tenemos txtTelefono1 y no declararemos otro nombre de variable MI
-        const todosIguales = /^(\d)\1{9}$/.test(txtTelefono1.value);
+        //const todosIguales = /^(\d)\1{9}$/.test(txtTelefono1.value); lo quite en MI
 
-        if (todosIguales || esSecuenciaAscDesc(txtTelefono1.value) || esPatronRepetitivo(txtTelefono1.value)) {
+        //if (todosIguales || esSecuenciaAscDesc(txtTelefono1.value) || esPatronRepetitivo(txtTelefono1.value)) {
+        if (/^(\d)\1{9}$/.test(txtTelefono1.value) || esSecuenciaAscDesc(txtTelefono1.value) || esPatronRepetitivo(txtTelefono1.value)) {
             txtTelefono1.style.setProperty("border", "1px solid #DD0069", "important");
             txtTelefono1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
             alertValidacionesTexto.innerHTML += "<strong>Ingresa un teléfono válido, no repetido ni secuencial.</strong><br>";
@@ -146,11 +147,9 @@ btnEnviar.addEventListener("click", function (event) {
         alertValidaciones.style.display = "block";
         isValid = false;
     }
-
+//Si todo esta bien, enviar
     if (isValid) {
-
         btnEnviar.innerText = "Enviando...";
-
         const serviceID = 'default_service';
         const templateID = 'template_s6w5oib';
 
@@ -161,28 +160,30 @@ btnEnviar.addEventListener("click", function (event) {
                 alertValidaciones.classList.remove("alert-danger");
                 alertValidaciones.classList.add("alert-success");
                 alertValidaciones.style.display = "block";
-
                 btnEnviar.innerText = "Enviar";
             }, (err) => {
                 alert("Error al enviar: " + JSON.stringify(err));
                 btnEnviar.innerText = "Enviar";
             });
+//------------------LIMPIAR CAMPOS----------------------------------------------------------
         txtEmpresa.value = "";// Limpia el valor de txtName
         txtEmpresa.focus(); // Coloca el cursor en la casilla txtName;
         iptCorreo1.value = ""; //Limpia el valor de iptCorreo1
+        iptCorreoDominio.value = ""; //Limpia el valor de iptCorreoDominio
         txtTelefono1.value = ""; // Limpia el valor de teléfono
         txtEspecificaciones.value = "";
-
-
+        contadorCaracteres.innerText = "0/500";
     }
-}
-);
-
-txtEspecificaciones.addEventListener("input", function () {
-    let caracteresActuales = txtEspecificaciones.value.length; // Contar cuántos lleva
-    contadorCaracteres.innerText = `${caracteresActuales}/500`; // Actualizar el texto
 });
+//-----------------------CONTADOR DE CARACTERES EN TEXTAREA---------------------------------
+txtEspecificaciones.addEventListener("input", function () {
+    //let caracteresActuales = txtEspecificaciones.value.length; Contar cuántos lleva EN MI lo quite
+    contadorCaracteres.innerText = `${txtEspecificaciones.value.length}/500`; 
+});
+//-----------------------FORZAR MINÚSCULAS Y QUITAR ESPACIOS EN BLANCO DEL CORREO-------------------
 iptCorreo1.addEventListener('input', () => {
     iptCorreo1.value = iptCorreo1.value.toLowerCase().replace(/\s/g, '');
 });
-
+iptCorreoDominio.addEventListener('input', () => {
+    iptCorreoDominio.value = iptCorreoDominio.value.toLowerCase().replace(/\s/g, '');
+});
