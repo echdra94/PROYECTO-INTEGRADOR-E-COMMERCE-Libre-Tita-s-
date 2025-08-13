@@ -44,11 +44,12 @@
     {"name":"Modelo: México", 
     "descr":"libreta profesional con 90 hojas, con encuadernación anillada wire-o, cuadro grande. Ideal para tus apuntes escolares o grandes ideas que requieran un amplio espacio para ser plasmadas.", 
     "precio":"250", 
-    "img":""},
+    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038923/Modelo_M%C3%A9xico_1_pxjtwr.png"},
+
     {"name":"Carpeta: Insignia", 
     "descr":"carpeta profesional, con encuadernación en tapa dura y capacidad para 250 hojas, las cuales se venden por separado pudiendo elegir el modelo de tu elección.", 
     "precio":"300", 
-    "img":""}
+    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038922/insignia_c1_g0tlm7.jpg"}
 
 
 ]
