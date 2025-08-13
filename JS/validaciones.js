@@ -3,6 +3,8 @@ const alertValidaciones = document.getElementById("alertValidaciones");
 const alertValidacionesTexto = document.getElementById("alertValidacionesTexto");
 const txtEmpresa = document.getElementById("txtEmpresa");
 const iptCorreo1 = document.getElementById("iptCorreo1"); // iptCorreo1 Correo electrónico
+const iptCorreoDominio = document.getElementById("iptCorreoDominio"); // Input para la parte del dominio MI
+const selectDominio = document.getElementById("selectDominio"); // Select para elegir el dominio MI
 const txtEspecificaciones = document.getElementById("Textarea1"); // Textarea de especificaciones del proyecto
 const contadorCaracteres = document.getElementById("contadorCaracteres"); // Texto que muestra el conteo de caracteres
 const txtTelefono1 = document.getElementById("txtTelefono1");
@@ -23,7 +25,9 @@ btnEnviar.addEventListener("click", function (event) {
     txtEspecificaciones.style.boxShadow = "none"; // Limpia sombraMargen rojo del campo especificaciones
 
 
-    // Validación del campo Empresa/Nombre
+    /**--------------------------------------------------------------------------------------------------------------------------------
+     * Validación del campo Empresa/Nombre
+     */
     const regexEmpresa = /^(?!.*([a-zA-ZÁÉÍÓÚáéíóúÑñ])\1{2})([A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})(?:\s+[A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})+$/;
     if (!regexEmpresa.test(txtEmpresa.value.trim())) {
         txtEmpresa.style.border = "thin solid #DD0069";
@@ -33,24 +37,36 @@ btnEnviar.addEventListener("click", function (event) {
         isValid = false;
     }
 
-
-    // Validación del campo Correo electrónico
-    // dejo esto para que comparen el cambio con const regexCorreo = /^[^\s@]+@[^\s@]+\.[a-zA-Z.]*[a-zA-Z]{2,3}$/; atte. Mar Z.
-
-    // Antes de validar, aseguramos que esté en minúsculas
+    /** -----------------------------------------------------------------------------------------------------------------------------
+     * Validación del campo Correo electrónico
+     * antiguo const regexCorreo = /^[^\s@]+@[^\s@]+\.[a-zA-Z.]*[a-zA-Z]{2,3}$/; 
+     * Antes de validar, aseguramos que esté en minúsculas
+     */
     iptCorreo1.value = iptCorreo1.value.toLowerCase().trim();
 
     // Obtener el valor seleccionado del dominio si existe 
-    let dominioSeleccionado = document.getElementById("selectDominio").value;
-    if (dominioSeleccionado) {
-        // Formamos el correo completo solo una vez
-        correoCompleto = iptCorreo1.value.split("@")[0] + "@" + dominioSeleccionado;
-    } else {
-        correoCompleto = iptCorreo1.value; // si no selecciona, dejamos lo que escribió
+    //let dominioSeleccionado = document.getElementById("selectDominio").value; quite esto MI
+    let correoDominio = iptCorreoDominio.value.toLowerCase().trim();
+    let dominioSeleccionado = selectDominio.value;
+
+    //Decidimos que dominio usar MI
+    let correoCompleto = iptCorreo1.value; //por defecto MI
+    if (correoDominio) {
+        correoCompleto += "@" + correoDominio;
+    } else if (dominioSeleccionado) {
+        correoCompleto += "@" + dominioSeleccionado;
     }
 
-    // Solo define regexCorreo una vez, con todos los requisitos:
-    const regexCorreo = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.(com|com\.mx|org|org\.mx|edu|edu\.mx|mx)$/;
+    // if (dominioSeleccionado) {
+    //     // Formamos el correo completo solo una vez
+    //     correoCompleto = iptCorreo1.value.split("@")[0] + "@" + dominioSeleccionado;
+    // } else {
+    //     correoCompleto = iptCorreo1.value; // si no selecciona, dejamos lo que escribió
+    // } quite esto MI
+
+    // Solo se define regexCorreo una vez:
+    //const regexCorreo = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.(com|com\.mx|org|org\.mx|edu|edu\.mx|mx)$/; quite esto MI
+    const regexCorreo = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
     // Validamos usando correoCompleto
     if (!regexCorreo.test(correoCompleto)) {
@@ -61,7 +77,9 @@ btnEnviar.addEventListener("click", function (event) {
         isValid = false;
     }
 
-    // Validación del campo Teléfono
+    /** -----------------------------------------------------------------------------------------------------------------------------
+     * Validación del campo Teléfono
+     */
     const regexTelefono = /^[0-9]{10}$/;
     if (!regexTelefono.test(txtTelefono1.value)) {
         txtTelefono1.style.setProperty("border", "1px solid #DD0069", "important");
@@ -79,11 +97,27 @@ btnEnviar.addEventListener("click", function (event) {
             }
             return asc || desc;
         }
+        // Función para detectar patrones repetitivos (bloques de 1, 2 o 3 dígitos) MI
+        function esPatronRepetitivo(numero) {
+            for (let len = 1; len <= 3; len++) {
+                let bloque = numero.slice(0, len);
+                let repetido = true;
+                for (let i = 0; i < numero.length; i += len) {
+                    if (numero.slice(i, i + len) !== bloque) {
+                        repetido = false;
+                        break;
+                    }
+                }
+                if (repetido) return true;
+            }
+            return false;
+        }
 
         // Validar si todos los dígitos son iguales
+        //let telefonoValor = txtTelefono1.value; no seria necesario esta línea porque ya tenemos txtTelefono1 y no declararemos otro nombre de variable MI
         const todosIguales = /^(\d)\1{9}$/.test(txtTelefono1.value);
 
-        if (todosIguales || esSecuenciaAscDesc(txtTelefono1.value)) {
+        if (todosIguales || esSecuenciaAscDesc(txtTelefono1.value) || esPatronRepetitivo(txtTelefono1.value)) {
             txtTelefono1.style.setProperty("border", "1px solid #DD0069", "important");
             txtTelefono1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
             alertValidacionesTexto.innerHTML += "<strong>Ingresa un teléfono válido, no repetido ni secuencial.</strong><br>";
@@ -92,7 +126,9 @@ btnEnviar.addEventListener("click", function (event) {
         }
     }
 
-    // para validar campo Especificaciones
+    /**-----------------------------------------------------------------------------------------------------------------------------
+     * para validar campo Especificaciones
+     */
     const especificacionesTexto = txtEspecificaciones.value.trim(); // Quitamos espacios sobrantes
 
     if (especificacionesTexto.length < 10) {
