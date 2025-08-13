@@ -24,7 +24,7 @@ function addItem(item){
         '        <h5 class="card-title">'+item.name+'</h5>\n' +
         '        <p class="card-text">'+item.descr+'</p>\n' +
         '        <p class="card-text">$'+item.precio+'</p>\n' +            
-        '        <a href="#" class="btn btn-primary">Add</a>\n' +
+        '        <a href="#" class="btn btn-primary">Agregar</a>\n' +
         '    </div>\n' +
         '</div>\n' +
         '<br/>';
