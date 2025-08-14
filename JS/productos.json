@@ -4,52 +4,52 @@
   {"name":"Modelo: Taquilla", 
     "descr":"Libreta tamaño media carta, cubierta tapa dura, encuadernado tipo wire-o, papel rayado, 90 hojas", 
     "precio":"250", 
-    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755039753/mockup_de_libreta_media_carta_kathkath_iffsyo.png"},
+    "img":"https://res.cloudinary.com/libretitaspi/image/upload/v1755039753/mockup_de_libreta_media_carta_kathkath_iffsyo.png"},
 
     {"name":"Modelo: Piel", 
     "descr":"Libreta tamaño media carta, cubierta tapa dura de vinipiel suave al tacto, encuadernado tipo costura francesa, papel rayado, 90 hojas", 
     "precio":"500", 
-    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038924/IMG_20210731_015909_rocibk.jpg"},
+    "img":"https://res.cloudinary.com/libretitaspi/image/upload/v1755038924/IMG_20210731_015909_rocibk.jpg"},
 
     {"name":"Modelo: Huelum", 
     "descr":"Libreta tamaño media carta, cubierta dura, encuadernado tipo wire-o, papel rayado, 90 hojas", 
     "precio":"250", 
-    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038924/4_f5vumn.png"},
+    "img":"https://res.cloudinary.com/libretitaspi/image/upload/v1755038924/4_f5vumn.png"},
 
     {"name":"Modelo: IPN anatómico", 
     "descr":"Libreta tamaño media carta, cubierta tapa dura, encuadernado tipo wire-o, papel rayado, 90 hojas", 
     "precio":"250", 
-    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038923/IMG_20220809_205901_vi3581.jpg"},
+    "img":"https://res.cloudinary.com/libretitaspi/image/upload/v1755038923/IMG_20220809_205901_vi3581.jpg"},
 
   {"name":"Modelo: Burrito de Mar", 
     "descr":"Libreta tamaño media carta, cubierta tapa dura de vinipiel suave al tacto, encuadernado tipo costura francesa, papel rayado, 90 hojas", 
     "precio":"500", 
-    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038922/IMG_20220731_224841_t9kffe.jpg"},
+    "img":"https://res.cloudinary.com/libretitaspi/image/upload/v1755038922/IMG_20220731_224841_t9kffe.jpg"},
 
     {"name":"Modelo: Lazarillo", 
     "descr":"Libreta pocket,pasta blanda,con 60 hojas,comoda para llevar a todas partes.", 
     "precio":"200", 
-    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038923/IMG_20220731_224530_l6j4lu.jpg"},
+    "img":"https://res.cloudinary.com/libretitaspi/image/upload/v1755038923/IMG_20220731_224530_l6j4lu.jpg"},
 
     {"name":"Modelo: Esimio", 
     "descr":"Libreta pocket con 60 hojas, ofrece un espacio para tomar notas, escribir tus aventuras o escribir ideas. Su tamaño hace que sean portables y ocupen poco espacio en tu bolsa o mochila", 
     "precio":"200", 
-    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038923/IMG_20220731_224040_pbkirv.jpg"},
+    "img":"https://res.cloudinary.com/libretitaspi/image/upload/v1755038923/IMG_20220731_224040_pbkirv.jpg"},
 
     {"name":"Modelo: Tradicional", 
     "descr":"Libreta media carta, cubierta dura , con 90 hojas,encuadernado tipo wire-o,lista para ti.", 
     "precio":"250", 
-    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038923/agenda_guinda_simulacion_2_riicmb.png"},
+    "img":"https://res.cloudinary.com/libretitaspi/image/upload/v1755038923/agenda_guinda_simulacion_2_riicmb.png"},
 
     {"name":"Modelo: México", 
     "descr":"libreta profesional con 90 hojas, con encuadernación anillada wire-o, cuadro grande. Ideal para tus apuntes escolares o grandes ideas que requieran un amplio espacio para ser plasmadas.", 
     "precio":"250", 
-    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038923/Modelo_M%C3%A9xico_1_pxjtwr.png"},
+    "img":"https://res.cloudinary.com/libretitaspi/image/upload/v1755038923/Modelo_M%C3%A9xico_1_pxjtwr.png"},
 
     {"name":"Carpeta: Insignia", 
     "descr":"carpeta profesional, con encuadernación en tapa dura y capacidad para 250 hojas, las cuales se venden por separado pudiendo elegir el modelo de tu elección.", 
     "precio":"300", 
-    "img":"https://res.cloudinary.com/dwipzcn0e/image/upload/v1755038922/insignia_c1_g0tlm7.jpg"}
+    "img":"https://res.cloudinary.com/libretitaspi/image/upload/v1755038922/insignia_c1_g0tlm7.jpg"}
 
 
 ]
