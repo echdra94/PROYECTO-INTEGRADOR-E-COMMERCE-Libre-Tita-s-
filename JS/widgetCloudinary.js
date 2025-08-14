@@ -1,6 +1,6 @@
 const cloudName = "libretitaspi";
 const uploadPreset = "solo-mi-sitio";
-
+let imagenURL = "";
 const myWidget = cloudinary.createUploadWidget({
     cloudName: cloudName,
     uploadPreset: uploadPreset,
