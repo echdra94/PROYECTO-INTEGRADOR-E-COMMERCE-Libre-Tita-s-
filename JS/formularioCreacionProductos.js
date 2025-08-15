@@ -107,17 +107,6 @@ btnEnviar.addEventListener("click", function (event) {
         alertValidaciones.style.display = "block";
        
 
-         // --- Guardar producto en localStorage ---
-        const producto = {
-            nombre: txtProducto.value,
-            descripcion: txtDescr.value,
-            precio: txtPrecio.value,
-            imagen: imagenURL // viene de widgetCloudinary.js
-        };
-        let productos = JSON.parse(localStorage.getItem("productos")) || [];
-        productos.push(producto);
-        localStorage.setItem("productos", JSON.stringify(productos));        
-
         // Limpieza de campos al enviar
         formProductos.reset();
         previsualizacion.src = PLACEHOLDER_IMG;
