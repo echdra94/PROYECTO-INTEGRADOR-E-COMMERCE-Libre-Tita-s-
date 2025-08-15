@@ -24,18 +24,23 @@
         <br>
         <h2>Tu carrito se encuentra vacío</h2>
     </div>
-
+    <br>
+  
     <div class="container1">
     <img src="assets/carritoVacio.jpeg" alt="Carrito Vacío" class="burro">
     </div>
+
     <br>
     <br>
+  <div class="d-flex justify-content-center"><!--tuve que poner este porque por los estilos de bootstrap no me deja hacerlo a mano en css-->
      <div id="carrito-container" class="row row-cols-1 row-cols-md-2 g-3"></div>
+   </div> 
         <h3 class="mt-3">Total: $<span id="total-amount">0</span></h3>
     <div class="container2">
-        <button>Seguir Comprando</button>
-        <p>¿Quieres algo 100% a tu medida?</p> <a href="paginaDeContacto.html">Contáctanos</a>
+        <button id="comprar">Seguir Comprando</button>
+        <p>¿Quieres algo 100% a tu medida? <a href="paginaDeContacto.html">Contáctanos</a></p>
     </div>
+ 
     <div id="footer-container"></div>
 
     <script src="JS/carrito.js"></script>

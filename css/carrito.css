@@ -1,4 +1,92 @@
-.container{
-    margin-top: 80px;
-    text-align: center;
+:root {
+  /* Colores principales */
+  --azul-profundo: #2e2b5b;
+  --amarillo: #FDC50A;
+  --rosa: #DD0069;
+  --turquesa: #32B9C8;
+
+  /* Colores pastel */
+  --azul-pastel: #6C6787;
+  --amarillo-pastel: #FFE080;
+  --rosa-pastel: #ED6B72;
+  --turquesa-pastel: #7DC5AE;
 }
+
+
+.container{
+  display: flex;
+  flex-direction: column; /* asegura h1 arriba y h2 abajo */
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  text-align: center;
+  font-size:  6rem;
+  padding-top: 100px;
+  --azul-profundo: #2e2b5b;
+}
+
+
+h2{
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
+--azul-profundo: #2e2b5b;
+}
+
+
+h3{
+font-family: "Rubik", sans-serif;
+font-size: 21px;
+--azul-profundo: #2e2b5b;
+}
+
+.container1{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+ }
+.container1 img.burro {
+  display: block; /* evita que se comporte como flex */
+  margin: 0 auto; /* centrado horizontal */
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+.container2{
+  text-align: center;
+  justify-content: center;
+ margin-top: 20px;
+ }
+
+ .mt-3{
+text-align: center;
+justify-content: center;
+ margin-top: 20px; 
+ }
+
+#comprar{
+    background-color: #FDC50A;
+    font-family:"Rubik", sans-serif;
+    color: #2e2b5b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.carritocontainer{
+display: flex ;
+justify-content: center;
+flex-wrap: wrap;            
+gap: 20px;  
+margin-top: 20 px;
+}
+
