@@ -71,7 +71,6 @@ btnEnviar.addEventListener("click", function (event) {
 
     // --- Producto validado ---
     if (isValid) {
-  
 
          // --- Guardar producto en localStorage ---
         const producto = {
@@ -82,9 +81,22 @@ btnEnviar.addEventListener("click", function (event) {
         };
         let productos = JSON.parse(localStorage.getItem("productos")) || [];
         productos.push(producto);
-        localStorage.setItem("productos", JSON.stringify(productos));        
+        localStorage.setItem("productos", JSON.stringify(productos));   
 
-        // Limpiar campos
+
+
+        //  // --- Guardar producto en localStorage ---
+        // const producto = {
+        //     nombre: txtProducto.value,
+        //     descripcion: txtDescr.value,
+        //     precio: txtPrecio.value,
+        //     imagen: imagenURL // viene de widgetCloudinary.js
+        // };
+        // let productos = JSON.parse(localStorage.getItem("productos")) || [];
+        // productos.push(producto);
+        // localStorage.setItem("productos", JSON.stringify(productos));        
+
+        // // Limpiar campos
 
         // --- Limpieza de imagen al enviar ---
 
@@ -93,10 +105,12 @@ btnEnviar.addEventListener("click", function (event) {
         alertValidaciones.classList.remove("alert-danger");
         alertValidaciones.classList.add("alert-success");
         alertValidaciones.style.display = "block";
+       
 
         // Limpieza de campos al enviar
         formProductos.reset();
         previsualizacion.src = PLACEHOLDER_IMG;
+        previsualizacion.style.border="";
         contadorCaracteres.innerText = "0/100";
         txtProducto.focus();
     } else {
