@@ -63,6 +63,17 @@ btnEnviar.addEventListener("click", function (event) {
         alertValidaciones.classList.add("alert-success");
         alertValidaciones.style.display = "block";
 
+         // --- Guardar producto en localStorage ---
+        const producto = {
+            nombre: txtProducto.value,
+            descripcion: txtDescr.value,
+            precio: txtPrecio.value,
+            imagen: imagenURL // viene de widgetCloudinary.js
+        };
+        let productos = JSON.parse(localStorage.getItem("productos")) || [];
+        productos.push(producto);
+        localStorage.setItem("productos", JSON.stringify(productos));        
+
         // Limpiar campos
         formProductos.reset();
         contadorCaracteres.innerText = "0/100";

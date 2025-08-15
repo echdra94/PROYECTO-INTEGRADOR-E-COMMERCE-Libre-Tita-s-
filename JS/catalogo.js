@@ -11,10 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(products => {
             products.forEach(product => addItem(product));
         })
+
+        const nuevosProductos = JSON.parse(localStorage.getItem("productos")) || [];
+            nuevosProductos.forEach(product => {
+                const item = {
+                    name: product.nombre,
+                    descr: product.descripcion,
+                    precio: product.precio,
+                    img: product.imagen
+                };
+                addItem(item);
+            });
+        })
+
         .catch(error => {
             console.error("Error:", error);
         });
-});
 
 
 function addItem(item){
