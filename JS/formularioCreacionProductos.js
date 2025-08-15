@@ -2,7 +2,7 @@ const btnEnviar = document.getElementById("btnEnviar");
 const alertValidaciones = document.getElementById("alertValidaciones");
 const alertValidacionesTexto = document.getElementById("alertValidacionesTexto");
 const previsualizacion = document.getElementById("previsualizacion");
-const PLACEHOLDER_IMG = previsualizacion.getAttribute("src"); // Se guarda el src inicial
+const PLACEHOLDER_IMG = previsualizacion.getAttribute("src"); // guarda el src inicial
 const txtProducto = document.getElementById("txtProducto");  // nombreProducto
 const txtDescr    = document.getElementById("Textarea1");    // descripciónProducto
 const txtPrecio   = document.getElementById("txtPrecio");    // precioProducto
@@ -22,6 +22,11 @@ btnEnviar.addEventListener("click", function (event) {
     alertValidaciones.style.display = "none";
     alertValidaciones.classList.remove("alert-success");
     alertValidaciones.classList.add("alert-danger");
+
+
+    // txtProducto.style.border = "";
+    // txtDescr.style.border = "";
+    // txtPrecio.style.border = "";
 
     let isValid = true;
 
@@ -56,7 +61,7 @@ btnEnviar.addEventListener("click", function (event) {
         isValid = false;
     }
 
-        // --- Validación imagen --- 
+    // --- Valifación imagen --- 
     if (!previsualizacion.src || previsualizacion.src === PLACEHOLDER_IMG) {
     previsualizacion.style.border = "thin red solid";
     alertValidacionesTexto.innerHTML += "<strong>Por favor, selecciona o sube una imagen del producto.</strong><br>";
@@ -64,10 +69,9 @@ btnEnviar.addEventListener("click", function (event) {
     isValid = false;
     } 
 
-
-     // --- Producto validado ---
+    // --- Producto validado ---
     if (isValid) {
-    
+  
 
          // --- Guardar producto en localStorage ---
         const producto = {
@@ -80,6 +84,9 @@ btnEnviar.addEventListener("click", function (event) {
         productos.push(producto);
         localStorage.setItem("productos", JSON.stringify(productos));        
 
+        // Limpiar campos
+
+        // --- Limpieza de imagen al enviar ---
 
   // Si sí es válido, alerta exitosa
         alertValidacionesTexto.innerHTML = "<strong class='text-success'>¡Producto validado y guardado con éxito !</strong>";
