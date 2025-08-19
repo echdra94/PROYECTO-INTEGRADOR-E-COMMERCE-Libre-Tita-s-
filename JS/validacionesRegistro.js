@@ -9,7 +9,7 @@ const selectDominio = document.getElementById("selectDominio"); // Select para e
 const iptCorreoDominio = document.getElementById("iptCorreoDominio"); // Input para la parte del dominio MI
 const txtEspecificaciones = document.getElementById("Textarea1"); // Textarea de especificaciones del proyecto
 const contadorCaracteres = document.getElementById("contadorCaracteres"); // Texto que muestra el conteo de caracteres
-const txtTelefono1 = document.getElementById("txtTelefono1");
+const txtTelefonoUsuario = document.getElementById("txtTelefonoUsuario");
 const formContactanos = document.getElementById("formContactanos");
 
 btnEnviar.addEventListener("click", function (event) {
@@ -23,8 +23,8 @@ btnEnviar.addEventListener("click", function (event) {
     txtApellido.style.border = "";// limpia el borde rojo del campo name cuando hay alerta
     iptCorreo1.style.boxShadow = "none";
     iptCorreo1.style.border = "";// Limpia el borde rojo del campo correo 
-    txtTelefono1.style.boxShadow = "none";
-    txtTelefono1.style.border = "";// Limpia el borde rojo del campo teléfono 
+    txtTelefonoUsuario.style.boxShadow = "none";
+    txtTelefonoUsuario.style.border = "";// Limpia el borde rojo del campo teléfono 
     txtEspecificaciones.style.boxShadow = "none"; // Limpia sombraMargen rojo del campo especificaciones
     txtEspecificaciones.style.border = ""; // Limpia el borde del campo especificaciones
 
@@ -92,9 +92,9 @@ btnEnviar.addEventListener("click", function (event) {
      * Validación del campo Teléfono
      */
     const regexTelefono = /^[0-9]{10}$/;
-    if (!regexTelefono.test(txtTelefono1.value)) {
-        txtTelefono1.style.setProperty("border", "1px solid #DD0069", "important");
-        txtTelefono1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+    if (!regexTelefono.test(txtTelefonoUsuario.value)) {
+        txtTelefonoUsuario.style.setProperty("border", "1px solid #DD0069", "important");
+        txtTelefonoUsuario.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         alertValidacionesTexto.innerHTML += "<strong>Ingresa un teléfono válido de 10 dígitos.</strong><br>";
         alertValidaciones.style.display = "block";
         isValid = false;
@@ -129,9 +129,9 @@ btnEnviar.addEventListener("click", function (event) {
         //const todosIguales = /^(\d)\1{9}$/.test(txtTelefono1.value); lo quite en MI
 
         //if (todosIguales || esSecuenciaAscDesc(txtTelefono1.value) || esPatronRepetitivo(txtTelefono1.value)) {
-        if (/^(\d)\1{9}$/.test(txtTelefono1.value) || esSecuenciaAscDesc(txtTelefono1.value) || esPatronRepetitivo(txtTelefono1.value)) {
-            txtTelefono1.style.setProperty("border", "1px solid #DD0069", "important");
-            txtTelefono1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+        if (/^(\d)\1{9}$/.test(txtTelefonoUsuario.value) || esSecuenciaAscDesc(txtTelefonoUsuario.value) || esPatronRepetitivo(txtTelefonoUsuario.value)) {
+            txtTelefonoUsuario.style.setProperty("border", "1px solid #DD0069", "important");
+            txtTelefonoUsuario.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
             alertValidacionesTexto.innerHTML += "<strong>Ingresa un teléfono válido, no repetido ni secuencial.</strong><br>";
             alertValidaciones.style.display = "block";
             isValid = false;
@@ -187,7 +187,7 @@ btnEnviar.addEventListener("click", function (event) {
         txtApellido.focus(); // Coloca el cursor en la casilla txtApellido;
         iptCorreo1.value = ""; //Limpia el valor de iptCorreo1
         iptCorreoDominio.value = ""; //Limpia el valor de iptCorreoDominio
-        txtTelefono1.value = ""; // Limpia el valor de teléfono
+        txtTelefonoUsuario.value = ""; // Limpia el valor de teléfono
         txtEspecificaciones.value = "";
         contadorCaracteres.innerText = "0/500";
     }
