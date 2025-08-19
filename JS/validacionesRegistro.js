@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded",()=>{
 const btnEnviar = document.getElementById("btnEnviar");
 const alertValidaciones = document.getElementById("alertValidaciones");
 const alertValidacionesTexto = document.getElementById("alertValidacionesTexto");
@@ -52,17 +53,9 @@ btnEnviar.addEventListener("click", function (event) {
         isValid = false;
     }
 
-    /** -----------------------------------------------------------------------------------------------------------------------------
-     * Validación del campo Correo electrónico
-     * antiguo const regexCorreo = /^[^\s@]+@[^\s@]+\.[a-zA-Z.]*[a-zA-Z]{2,3}$/; 
-     * Antes de validar, aseguramos que esté en minúsculas
-     */
-    iptCorreo1.value = iptCorreo1.value.toLowerCase().trim();
+    /** -----------------------------------------CORREO ELECTRÓNICO------------------------------------------------------------------------------------*/
 
-    // Obtener el valor seleccionado del dominio si existe 
-    //let dominioSeleccionado = document.getElementById("selectDominio").value; quite esto MI
-    //let correoDominio = iptCorreoDominio.value.toLowerCase().trim(); se puso abajo, quite esto en MI
-    //let dominioSeleccionado = selectDominio.value; //MI*
+    iptCorreo1.value = iptCorreo1.value.toLowerCase().trim();
 
     //Decidimos que dominio usar MI
     let correoCompleto = iptCorreo1.value; //por defecto- MI
@@ -72,15 +65,6 @@ btnEnviar.addEventListener("click", function (event) {
         correoCompleto += "@" + selectDominio.value;
     }
 
-    // if (dominioSeleccionado) {
-    //     // Formamos el correo completo solo una vez
-    //     correoCompleto = iptCorreo1.value.split("@")[0] + "@" + dominioSeleccionado;
-    // } else {
-    //     correoCompleto = iptCorreo1.value; // si no selecciona, dejamos lo que escribió
-    // } quite esto MI
-
-    // Solo se define regexCorreo una vez:
-    //const regexCorreo = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.(com|com\.mx|org|org\.mx|edu|edu\.mx|mx)$/; quite esto MI
     const regexCorreo = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
     // Validamos usando correoCompleto
@@ -90,6 +74,18 @@ btnEnviar.addEventListener("click", function (event) {
         alertValidacionesTexto.innerHTML += "<strong>Ingresa un correo electrónico válido (sin espacios ni mayúsculas y con dominio correcto).</strong><br>";
         alertValidaciones.style.display = "block";
         isValid = false;
+    }
+
+    let partes = correoCompleto.split("@");
+        if (partes[0].includes("..") || partes[1].includes("..")) {
+            alertValidacionesTexto.innerHTML += "<strong>El correo no puede tener dos puntos consecutivos.</strong><br>";
+            alertValidaciones.style.display = "block";
+            isValid = false;
+    if (!/^[a-z0-9._%+-]+$/.test(partes[0])) {
+            alertValidacionesTexto.innerHTML += "<strong>El nombre de usuario del correo contiene caracteres inválidos.</strong><br>";
+            alertValidaciones.style.display = "block";
+            isValid = false;
+        }
     }
 
     /** -----------------------------------------------------------------------------------------------------------------------------
@@ -208,3 +204,4 @@ iptCorreo1.addEventListener('input', () => {
 iptCorreoDominio.addEventListener('input', () => {
     iptCorreoDominio.value = iptCorreoDominio.value.toLowerCase().replace(/\s/g, '');
 });
+})
