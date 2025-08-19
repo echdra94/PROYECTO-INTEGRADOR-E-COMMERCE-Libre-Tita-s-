@@ -9,10 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const iptCorreoDominio = document.getElementById("iptCorreoDominio"); // Input para la parte del dominio
     const txtPassword = document.getElementById("txtPassword"); // Input contraseña
     const txtConfirmPassword = document.getElementById("txtConfirmPassword"); // Input confirmar contraseña
-    // a ELIMINAR const txtEspecificaciones = document.getElementById("Textarea1"); // Textarea de especificaciones del proyecto
     const contadorCaracteres = document.getElementById("contadorCaracteres"); // Texto que muestra el conteo de caracteres
     const txtTelefonoUsuario = document.getElementById("txtTelefonoUsuario");
-    // a ELIMINAR const formContactanos = document.getElementById("formContactanos");
+    
     //---------------------------LIMPIA DE ALERTAS-------------------------------------------------------------------
     btnEnviar.addEventListener("click", function (event) {
         event.preventDefault();
@@ -27,8 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         iptCorreo1.style.border = "";// Limpia el borde rojo del campo correo 
         txtTelefonoUsuario.style.boxShadow = "none";
         txtTelefonoUsuario.style.border = "";// Limpia el borde rojo del campo teléfono 
-        txtEspecificaciones.style.boxShadow = "none"; // Limpia sombraMargen rojo del campo especificaciones
-        txtEspecificaciones.style.border = ""; // Limpia el borde del campo especificaciones
 
 
         /**----------------------------------------NOMBRE------------------------------------------------------------------------------------------
@@ -158,48 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        /**-----------------------------------------------------------------------------------------------------------------------------
-         * para validar campo Especificaciones
-         */
-        // const especificacionesTexto = txtEspecificaciones.value.trim(); // Quitamos espacios sobrantes
-
-        // if (especificacionesTexto.length < 10) {
-        //     // Si tiene menos de 10 caracteres reales o menos de 10 palabras
-        //     txtEspecificaciones.style.setProperty("border", "1px solid #DD0069", "important");
-        //     txtEspecificaciones.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
-        //     alertValidacionesTexto.innerHTML += "<strong>Por favor describe con más detalle las especificaciones del proyecto.</strong><br>";
-        //     alertValidaciones.style.display = "block";
-        //     isValid = false;
-        // } else if (especificacionesTexto.length > 500) {
-        //     // Si el texto excede los 500 caracteres
-        //     txtEspecificaciones.style.setProperty("border", "1px solid #DD0069", "important");
-        //     txtEspecificaciones.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
-        //     alertValidacionesTexto.innerHTML += "<strong>El texto no debe exceder los 500 caracteres.</strong><br>";
-        //     alertValidaciones.style.display = "block";
-        //     isValid = false;
-        // }
-        // //Si todo esta bien, enviar
-        // if (isValid) {
-        //     btnEnviar.innerText = "Enviando...";
-        //     const serviceID = 'default_service';
-        //     const templateID = 'template_s6w5oib';
-        //     // Antes de llamar a emailjs.sendForm
-        //     // Para que envie correctamente el correo y DOMINIO- el value del input para que contenga todo el correo MI
-        //     iptCorreo1.value = correoCompleto;
-
-
-        //     emailjs.sendForm(serviceID, templateID, formContactanos)
-        //         .then(() => {
-        //             // Aquí reemplazamos el alert por el mensaje en la alerta Bootstrap
-        //             alertValidacionesTexto.innerHTML = "<strong class='text-success'>¡Correo enviado con éxito!</strong>";
-        //             alertValidaciones.classList.remove("alert-danger");
-        //             alertValidaciones.classList.add("alert-success");
-        //             alertValidaciones.style.display = "block";
-        //             btnEnviar.innerText = "Enviar";
-        //         }, (err) => {
-        //             alert("Error al enviar: " + JSON.stringify(err));
-        //             btnEnviar.innerText = "Enviar";
-        //         });
         //-------------------------------LIMPIAR CAMPOS----------------------------------------------------------
         txtNombre.value = "";// Limpia el valor de txtName
         txtNombre.focus(); // Coloca el cursor en la casilla txtName;
@@ -217,10 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
             alertValidaciones.style.display = "block";
         }
     });
-//-----------------------CONTADOR DE CARACTERES EN TEXTAREA---------------------------------
-txtEspecificaciones.addEventListener("input", function () {
-    //let caracteresActuales = txtEspecificaciones.value.length; Contar cuántos lleva EN MI lo quite
-    contadorCaracteres.innerText = `${txtEspecificaciones.value.length}/500`;
 });
 //-----------------------FORZAR MINÚSCULAS Y QUITAR ESPACIOS EN BLANCO DEL CORREO-------------------
 iptCorreo1.addEventListener('input', () => {
@@ -228,5 +179,4 @@ iptCorreo1.addEventListener('input', () => {
 });
 iptCorreoDominio.addEventListener('input', () => {
     iptCorreoDominio.value = iptCorreoDominio.value.toLowerCase().replace(/\s/g, '');
-});
 });
