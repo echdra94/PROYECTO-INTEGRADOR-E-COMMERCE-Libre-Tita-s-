@@ -212,8 +212,11 @@ document.addEventListener("DOMContentLoaded", () => {
         txtTelefonoUsuario.value = ""; // Limpia el valor de teléfono
         txtEspecificaciones.value = "";
         contadorCaracteres.innerText = "0/500";
-    }
-});
+        // Si hay errores, mostrar la alerta
+        if (!isValid) {
+            alertValidaciones.style.display = "block";
+        }
+    });
 //-----------------------CONTADOR DE CARACTERES EN TEXTAREA---------------------------------
 txtEspecificaciones.addEventListener("input", function () {
     //let caracteresActuales = txtEspecificaciones.value.length; Contar cuántos lleva EN MI lo quite
@@ -226,4 +229,4 @@ iptCorreo1.addEventListener('input', () => {
 iptCorreoDominio.addEventListener('input', () => {
     iptCorreoDominio.value = iptCorreoDominio.value.toLowerCase().replace(/\s/g, '');
 });
-})
+});
