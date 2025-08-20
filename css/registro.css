@@ -74,6 +74,11 @@ select {
   font-family: 'Rubik', sans-serif;
   transition: background-color 0.3s ease, border 0.3s ease;
 }
+.input-group-text {
+  font-size: 1.5rem !important;
+  margin-bottom: 1.5rem;
+}
+
 .fila {
   display: flex;
   justify-content: space-between; /* espacio entre los campos */
