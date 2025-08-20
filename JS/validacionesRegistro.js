@@ -220,3 +220,28 @@ iptCorreo1.addEventListener('input', () => {
 iptCorreoDominio.addEventListener('input', () => {
     iptCorreoDominio.value = iptCorreoDominio.value.toLowerCase().replace(/\s/g, '');
 });
+
+
+//local Store//___________________________________________________________________________________________
+
+const txtNombre = document.getElementById("txtNombre");
+const txtApellido = document.getElementById("txtApellido");
+const txtTelefonoUsuario = document.getElementById("txtTelefonoUsuario");
+const txtCorreo = document.getElementById("txtCorreo"); 
+if (isValid) {
+    // Obtener los valores de los inputs
+    const datosFormulario = {
+        nombre: txtNombre?.value.trim() || "",
+        apellido: txtApellido?.value.trim() || "",
+        correo: txtCorreo?.value.trim() || "",
+        telefono: txtTelefonoUsuario?.value.trim() || ""
+    };
+
+    // Guardar en localStorage
+    localStorage.setItem("formularioUsuario", JSON.stringify(datosFormulario));
+
+    // Confirmación
+    alert("Datos guardados correctamente en localStorage.");
+} else {
+    alert("Formulario no válido. Revisa los campos.");
+}
