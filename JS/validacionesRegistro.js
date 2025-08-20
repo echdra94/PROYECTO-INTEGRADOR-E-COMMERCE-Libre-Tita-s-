@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+//document.addEventListener("DOMContentLoaded", () => {
     const btnEnviar = document.getElementById("btnEnviar");
     const alertValidaciones = document.getElementById("alertValidaciones");
     const alertValidacionesTexto = document.getElementById("alertValidacionesTexto");
@@ -27,28 +27,32 @@ document.addEventListener("DOMContentLoaded", () => {
         iptCorreo1.style.border = "";// Limpia el borde rojo del campo correo 
         txtTelefonoUsuario.style.boxShadow = "none";
         txtTelefonoUsuario.style.border = "";// Limpia el borde rojo del campo teléfono 
+        txtPassword.style.boxShadow = "none";
+        txtPassword.style.border = "";// Limpia el borde rojo del campo contraseña
+        txtConfirmPassword.style.boxShadow = "none";
+        txtConfirmPassword.style.border = "";// Limpia el borde rojo del campo contraseña
 
 
         /**----------------------------------------NOMBRE------------------------------------------------------------------------------------------
          * Validación del campo /Nombre
          */
-        const regexNombre = /^(?!.*([a-zA-ZÁÉÍÓÚáéíóúÑñ])\1{2})([A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})(?:\s+[A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})+$/;
-        if (!regexNombre.test(txtNombre.value.trim())) {
-            txtNombre.style.border = "thin solid #DD0069";
-            txtNombre.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
-            alertValidacionesTexto.innerHTML = "<strong>Ingresa un nombre válido</strong><br>";
-            alertValidaciones.style.display = "block";
-            isValid = false;
-        }
+    const regexNombre = /^(?!.*([a-zA-ZÁÉÍÓÚáéíóúÑñ])\1{2})([A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})+$/;
+    if (!regexNombre.test(txtNombre.value.trim())) {
+        txtNombre.style.border = "thin solid #DD0069";
+        txtNombre.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+        alertValidacionesTexto.innerHTML = "<strong>Ingresa un nombre</strong><br>";
+        alertValidaciones.style.display = "block";
+        isValid = false;
+    }
 
         /**----------------------------------------APELLIDO------------------------------------------------------------------------------------------
      * Validación del campo Apellido
      */
-        const regexApellido = /^(?!.*([a-zA-ZÁÉÍÓÚáéíóúÑñ])\1{2})([A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})(?:\s+[A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})+$/;
+        const regexApellido = /^(?!.*([a-zA-ZÁÉÍÓÚáéíóúÑñ])\1{2})([A-Za-zÁÉÍÓÚáéíóúÑñ]{3,})+$/;
         if (!regexApellido.test(txtApellido.value.trim())) {
             txtApellido.style.border = "thin solid #DD0069";
             txtApellido.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
-            alertValidacionesTexto.innerHTML = "<strong>Ingresa un apellido válido</strong><br>";
+            alertValidacionesTexto.innerHTML += "<strong>Ingresa un apellido válido</strong><br>";
             alertValidaciones.style.display = "block";
             isValid = false;
         }
@@ -110,27 +114,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = txtPassword.value.trim();
         const seguridadErrores = [];
         if (password.length < 8) {
-            seguridadErrores.push("Debe tener al menos 8 caracteres.");
+            seguridadErrores.push("La contraseña debe tener al menos 8 caracteres.");
             txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
             txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         }
         if (!/[A-Z]/.test(password)) {
-            seguridadErrores.push("Debe contener al menos una letra mayúscula.");
+            seguridadErrores.push("La contraseña debe contener al menos una letra mayúscula.");
             txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
             txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         }
         if (!/[a-z]/.test(password)) {
-            seguridadErrores.push("Debe contener al menos una letra minúscula.");
+            seguridadErrores.push("La contraseña debe contener al menos una letra minúscula.");
             txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
             txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         }
         if (!/[0-9]/.test(password)) {
-            seguridadErrores.push("Debe contener al menos un número.");
+            seguridadErrores.push("La contraseña debe contener al menos un número.");
             txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
             txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         }
         if (!/[!@#$%^&*(),.?\":{}|<>]/.test(password)) {
-            seguridadErrores.push("Debe contener al menos un símbolo.");
+            seguridadErrores.push("La contraseña debe contener al menos un símbolo.");
             txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
             txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
         }
@@ -194,8 +198,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 isValid = false;
             }
         }
+        if (isValid) {
 
+    // Obtener los valores de los inputs
+    const datosFormulario = {
+        nombre: txtNombre?.value.trim() || "",
+        apellido: txtApellido?.value.trim() || "",
+        correo: iptCorreo1?.value.trim() || "",
+        dominio: iptCorreoDominio.value.trim() || selectDominio.value.trim() || "",
+        contraseña: txtPassword?.value.trim() || "",
+        telefono: txtTelefonoUsuario?.value.trim() || ""
+    };
+
+    // Recupera lo que ya existe en localStorage (array de registros)
+    let registros = JSON.parse(localStorage.getItem("datosFormulario")) || [];
+
+    // Agrega el nuevo
+    registros.push(datosFormulario);
+
+    // Guardar en localStorage
+    localStorage.setItem("datosFormulario", JSON.stringify(registros));
+
+    // Confirmación
+    alert("Resgistro satisfactorio");
         //-------------------------------LIMPIAR CAMPOS----------------------------------------------------------
+
         txtNombre.value = "";// Limpia el valor de txtName
         txtNombre.focus(); // Coloca el cursor en la casilla txtName;
         txtApellido.value = "";// Limpia el valor de txtApellido
@@ -205,14 +232,17 @@ document.addEventListener("DOMContentLoaded", () => {
         txtPassword.value = "";
         txtConfirmPassword.value = "";
         txtTelefonoUsuario.value = ""; // Limpia el valor de teléfono
-        txtEspecificaciones.value = "";
-        contadorCaracteres.innerText = "0/500";
         // Si hay errores, mostrar la alerta
         if (!isValid) {
             alertValidaciones.style.display = "block";
         }
+
+} 
+
+        
+        
     });
-});
+//});
 //-----------------------FORZAR MINÚSCULAS Y QUITAR ESPACIOS EN BLANCO DEL CORREO-------------------
 iptCorreo1.addEventListener('input', () => {
     iptCorreo1.value = iptCorreo1.value.toLowerCase().replace(/\s/g, '');
@@ -224,24 +254,9 @@ iptCorreoDominio.addEventListener('input', () => {
 
 //local Store//___________________________________________________________________________________________
 
-const txtNombre = document.getElementById("txtNombre");
-const txtApellido = document.getElementById("txtApellido");
-const txtTelefonoUsuario = document.getElementById("txtTelefonoUsuario");
-const txtCorreo = document.getElementById("txtCorreo"); 
-if (isValid) {
-    // Obtener los valores de los inputs
-    const datosFormulario = {
-        nombre: txtNombre?.value.trim() || "",
-        apellido: txtApellido?.value.trim() || "",
-        correo: txtCorreo?.value.trim() || "",
-        telefono: txtTelefonoUsuario?.value.trim() || ""
-    };
+//const txtNombre = document.getElementById("txtNombre");
+//const txtApellido = document.getElementById("txtApellido");
+//const txtTelefonoUsuario = document.getElementById("txtTelefonoUsuario");
+//const txtCorreo = document.getElementById("txtCorreo"); 
 
-    // Guardar en localStorage
-    localStorage.setItem("formularioUsuario", JSON.stringify(datosFormulario));
 
-    // Confirmación
-    alert("Datos guardados correctamente en localStorage.");
-} else {
-    alert("Formulario no válido. Revisa los campos.");
-}
