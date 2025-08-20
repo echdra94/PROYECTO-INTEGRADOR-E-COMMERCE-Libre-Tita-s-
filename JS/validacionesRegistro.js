@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const txtConfirmPassword = document.getElementById("txtConfirmPassword"); // Input confirmar contraseña
     const contadorCaracteres = document.getElementById("contadorCaracteres"); // Texto que muestra el conteo de caracteres
     const txtTelefonoUsuario = document.getElementById("txtTelefonoUsuario");
-    
+
+
     //---------------------------LIMPIA DE ALERTAS-------------------------------------------------------------------
     btnEnviar.addEventListener("click", function (event) {
         event.preventDefault();
@@ -91,19 +92,58 @@ document.addEventListener("DOMContentLoaded", () => {
         /** -----------------------------------------CONTRASEÑAS------------------------------------------------------------------------------------
          * Validación de contraseñas
         */
+
         if (txtPassword.value === "" || txtConfirmPassword.value === "") {
-            alertValidacionesTexto.innerHTML += "❌ Por favor ingresa la contraseña y confirmación.<br>";
+            alertValidacionesTexto.innerHTML += "<strong>Por favor Ingresa la contraseña y confirmación.</strong><br>";
             alertValidaciones.style.display = "block";
-            txtPassword.style.border = "2px solid red";
-            txtConfirmPassword.style.border = "2px solid red";
+            txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+            txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
             isValid = false;
         } else if (txtPassword.value !== txtConfirmPassword.value) {
-            alertValidacionesTexto.innerHTML += "❌ Las contraseñas no coinciden.<br>";
+            alertValidacionesTexto.innerHTML += "<strong>Las constraseñas no coinciden.</strong>.<br>";
             alertValidaciones.style.display = "block";
-            txtPassword.style.border = "2px solid red";
-            txtConfirmPassword.style.border = "2px solid red";
+            txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+            txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
             isValid = false;
         }
+
+        const password = txtPassword.value.trim();
+        const seguridadErrores = [];
+        if (password.length < 8) {
+            seguridadErrores.push("Debe tener al menos 8 caracteres.");
+            txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+            txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+        }
+        if (!/[A-Z]/.test(password)) {
+            seguridadErrores.push("Debe contener al menos una letra mayúscula.");
+            txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+            txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+        }
+        if (!/[a-z]/.test(password)) {
+            seguridadErrores.push("Debe contener al menos una letra minúscula.");
+            txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+            txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+        }
+        if (!/[0-9]/.test(password)) {
+            seguridadErrores.push("Debe contener al menos un número.");
+            txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+            txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+        }
+        if (!/[!@#$%^&*(),.?\":{}|<>]/.test(password)) {
+            seguridadErrores.push("Debe contener al menos un símbolo.");
+            txtPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+            txtConfirmPassword.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
+        }
+
+        if (seguridadErrores.length > 0) {
+            seguridadErrores.forEach(error => {
+                alertValidacionesTexto.innerHTML += `<strong> ${error}</strong><br>`;
+            });
+            alertValidaciones.style.display = "block";
+            txtPassword.style.border = "2px solid #DD0069";
+            isValid = false;
+        }
+
 
         /** -----------------------------------------------------------------------------------------------------------------------------
          * Validación del campo Teléfono

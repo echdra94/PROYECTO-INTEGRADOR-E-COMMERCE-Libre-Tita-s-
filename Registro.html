@@ -21,7 +21,7 @@
         <div class="container text-center">
             <h1>Crear una cuenta</h1>
         </div>
-        <form id="formRegistro"> 
+        <form id="formRegistro">
 
             <div class="container contactanos">
                 <div class="alert alert-danger fade show " style="display: none;" role="alert" id="alertValidaciones">
@@ -29,18 +29,18 @@
                 </div>
                 <!-- -------------------Nombre usuario ----------------------------------------- -->
                 <div class="fila">
-                <div class="mb-3 campo" id="nombre">
-                    <label for="txtNombre" class="form-label">Nombres:</label>
-                    <input type="text" class="form-control" name="txtNombre" id="txtNombre"
-                        placeholder="Escribe tu nombre" maxlength="30">
-                </div>
+                    <div class="mb-3 campo" id="nombre">
+                        <label for="txtNombre" class="form-label">Nombres:</label>
+                        <input type="text" class="form-control" name="txtNombre" id="txtNombre"
+                            placeholder="Escribe tu nombre" maxlength="30">
+                    </div>
 
-                <!-- --------------------Apellido usuario--------------------------------------- -->
-                <div class="mb-3 campo" id="nombre"> 
-                    <label for="txtApellido" class="form-label">Apellido(s):</label>
-                    <input type="text" class="form-control" name="txtApellido" id="txtApellido"
-                        placeholder="Escribe tu apellido" maxlength="20">
-                </div>
+                    <!-- --------------------Apellido usuario--------------------------------------- -->
+                    <div class="mb-3 campo" id="nombre">
+                        <label for="txtApellido" class="form-label">Apellido(s):</label>
+                        <input type="text" class="form-control" name="txtApellido" id="txtApellido"
+                            placeholder="Escribe tu apellido" maxlength="20">
+                    </div>
                 </div>
 
                 <!-------------------------------Correo usuario --------------------------------------------->
@@ -50,42 +50,43 @@
                         placeholder="Escribe correo electrónico" maxlength="30">
                 </div> -->
                 <div class="mb-3">
-                <label for="iptCorreo1" class="form-label">Correo electrónico:</label>
-                <div class="input-group">
-                    <!-- Input para la parte antes del @ y MI cambie a iptCorreoDominio, tenia antes en input:required pattern="[a-z0-9._%+-]+"-->
-                    <input type="text" class="form-control" name="iptCorreo1" id="iptCorreo1" placeholder="Correo"
-                    maxlength="65" title="Solo minúsculas, números, puntos y guiones">
-                    <span class="input-group-text">@</span>
-                    <!-- Select para elegir el dominio y MI después de "form-select" tenia required pero lo quite-->
-                    <select id="selectDominio" class="form-select">
-                    <option value="">Otro dominio</option>
-                    <option value="gmail.com">gmail.com</option>
-                    <option value="outlook.com">outlook.com</option>
-                    <option value="hotmail.com">hotmail.com</option>
-                    </select>
+                    <label for="iptCorreo1" class="form-label">Correo electrónico:</label>
+                    <div class="input-group">
+                        <!-- Input para la parte antes del @ y MI cambie a iptCorreoDominio, tenia antes en input:required pattern="[a-z0-9._%+-]+"-->
+                        <input type="text" class="form-control" name="iptCorreo1" id="iptCorreo1" placeholder="Correo"
+                            maxlength="65" title="Solo minúsculas, números, puntos y guiones">
+                        <span class="input-group-text">@</span>
+                        <!-- Select para elegir el dominio y MI después de "form-select" tenia required pero lo quite-->
+                        <select id="selectDominio" class="form-select">
+                            <option value="">Otro dominio</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="outlook.com">outlook.com</option>
+                            <option value="hotmail.com">hotmail.com</option>
+                        </select>
 
-                    <!-- Input para dominio propio (visible solo si quiere otro dominio) MI-->
-                    <input type="text" class="form-control mt-2" name="iptCorreoDominio" id="iptCorreoDominio" placeholder="Escribe tu otro dominio" maxlength="50">
-                </div>
+                        <!-- Input para dominio propio (visible solo si quiere otro dominio) MI-->
+                        <input type="text" class="form-control mt-2" name="iptCorreoDominio" id="iptCorreoDominio"
+                            placeholder="Escribe tu otro dominio" maxlength="50">
+                    </div>
                 </div>
 
 
                 <!---------------------------------Contraseña usuario ------------------------------------------->
                 <div class="fila">
-                <div class="mb-3 campo">
-                    <label for="txtPassword" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" name="txtContraseña" id="txtPassword"
-                        placeholder="Crea una contraseña" maxlength="30">
-                </div>
+                    <div class="mb-3 campo">
+                        <label for="txtPassword" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" name="txtContraseña" id="txtPassword"
+                            placeholder="Crea una contraseña" maxlength="30"required>
+                    </div>
 
-                <!---------------------------------Confirmar contraseña usuario ------------------------------------------->
+                    <!---------------------------------Confirmar contraseña usuario ------------------------------------------->
 
-                <div class="mb-3 campo">
-                    <label for="txtConfirmPassword" class="form-label">Confirmar contraseña:</label>
-                    <input type="password" class="form-control" name="txtConfirmacion" id="txtConfirmPassword"
-                        placeholder="Escribe nuevamente tu contraseña" maxlength="30">
+                    <div class="mb-3 campo">
+                        <label for="txtConfirmPassword" class="form-label">Confirmar contraseña:</label>
+                        <input type="password" class="form-control" name="txtConfirmacion" id="txtConfirmPassword"
+                            placeholder="Escribe nuevamente tu contraseña" maxlength="30" required>
+                    </div>
                 </div>
-              </div>
 
                 <!---------------------------------Teléfono usuario ------------------------------------------->
 
@@ -93,25 +94,27 @@
                     <label for="txtTelefonoUsuario" class="form-label">Teléfono:</label>
                     <input type="text" class="form-control" name="txtTelefonoUsuario" id="txtTelefonoUsuario"
                         placeholder="Escribe tu teléfono" maxlength="30">
-                </div>                
-                <!---------------------------------Checkbox ------------------------------------------->
-                <div class="mb-3 promociones">  
-                    <input type="checkbox" name="notificaciones" id="notificaciones">
-                    <label for="notificaciones"><h4>Quiero recibir promociones y anuncios ocasionales sobre productos</h4></label>
-                    
-                    
-                </div>  
-            </div>
-                <!---------------------------------Botón Crear ------------------------------------------->
-                <div class="text-end">
-                    <button type="submit" id="btnEnviar" class="btn btn-primary">Crear</button>
                 </div>
-            
-            </form>
+                <!---------------------------------Checkbox ------------------------------------------->
+                <div class="mb-3 promociones">
+                    <input type="checkbox" name="notificaciones" id="notificaciones">
+                    <label for="notificaciones">
+                        <h4>Quiero recibir promociones y anuncios ocasionales sobre productos</h4>
+                    </label>
 
-           
 
-        
+                </div>
+            </div>
+            <!---------------------------------Botón Crear ------------------------------------------->
+            <div class="text-end">
+                <button type="submit" id="btnEnviar" class="btn btn-primary">Crear</button>
+            </div>
+
+        </form>
+
+
+
+
         <div id="footer-container"></div>
 
 
@@ -122,9 +125,9 @@
         <script src="./JS/validacionesRegistro.js"></script>
         <script src="./JS/navbar.js"></script>
         <script src="./JS/footer.js"></script>
-        
-   
-        
+
+
+
 </body>
 
 </html>
