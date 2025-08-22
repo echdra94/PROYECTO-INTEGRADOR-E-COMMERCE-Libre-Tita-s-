@@ -1,39 +1,42 @@
-
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <a href="./index.html">
-                <img src="./assets/Recurso 18-8.png" alt="LOGO"class="navbar-brand me-auto">
-            </a>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <a href="./index.html">
-                        <img class="offcanvas-title" id="offcanvasNavbarLabel" src="./assets/Recurso 18-8.png"alt="LOGO" href="./index.html">
-                    </a>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="./Tienda.html">Productos </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="./paginaDeContacto.html">Contacto </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="./aboutus.html">About us </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="./Registro.html">Registro/Login </a>
-                        </li>
-                    </ul>
-
-                </div>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <a href="./index.html">
+            <img src="./assets/libretitas-logo.png" alt="LOGO" class="navbar-brand me-auto logo">
+        </a>
+        <div class="offcanvas offcanvas-end desplegable-movil px-3 container-fluid" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close">-</button>
+                <a href="./index.html"><img class="offcanvas-title m-3 logo" id="offcanvasNavbarLabel"
+                        src="./assets/libretitas-logo.png" alt="LOGO"></a>
             </div>
-            <a href="./carrito.html"><i class="bi bi-bag-heart"></i></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav mx-auto flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 my-1" href="./Tienda.html">Productos </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 my-1" href="./paginaDeContacto.html">Contacto </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 my-1" href="./aboutus.html">Nosotros </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link mx-lg-2 my-1" href="./Registro.html">Cuenta</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link mx-lg-2 my-1" href="./carrito.html">Carrito</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </nav>
+        <div class="nav__iconos d-none d-lg-flex">
+            <a href="./Registro.html"><img src="./assets/cuenta.png" alt="registro"></a>
+            <a href="./carrito.html"><img src="./assets/carrito.png" alt="carrito"></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
