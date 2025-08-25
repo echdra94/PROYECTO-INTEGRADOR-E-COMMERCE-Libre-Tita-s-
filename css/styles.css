@@ -26,25 +26,29 @@
     --turquesa-pastel: #7DC5AE;
 
     /*+---------------- Tamaños de tipografia */
-    --fuente-xs: 0.875rem; /* 14px */
-    --fuente-s: 1rem;      /* 16px */
-    --fuente-base: 1.25rem;    /* 20px */
-    --fuente-l: 1.5rem;  /* 24px */
-    --fuente-xl: 2rem;       /* 32px */
-    --fuente-xxl: 2.25rem;   /* 36px */
-    --fuente-xxxl: 2.5rem;   /* 40px */
-    --fuente-h1: 4rem;      /* 40px */
+    /* fs(font-size) */
+    --fs-xs-14:  0.875rem;   /* 14px */
+    --fs-s-16:   1.125rem;   /* 18px */
+    --fs-base-20: 1.25rem;   /* 20px */
+    --fs-l-24:     1.5rem;   /* 24px */
+    --fs-xl-32:      2rem;   /* 32px */
+    --fs-xxl-36:  2.25rem;   /* 36px */
+    --fs-xxxl-40:  2.5rem;   /* 40px */
+    --fs-h1-64:      4rem;   /* 64px */
 
     /*+----------------------------- Fuentes */
     --tipografia-principal: "Crimson Pro", serif; /* Títulos */
-    --tipografia-secundaria: "Rubik", sans-serif; /* Textos */
-
-
+    --tipografia-secundaria: "Rubik", sans-serif; /* Cuerpo de texto */
 }
 
 /** =========================| Reset del documento |======== */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+p{
+    margin: 0;
 }
 /* Reglas base de cada página */
 body {
@@ -52,33 +56,28 @@ body {
     color: var(--azul-pastel);
     font-family:var(--tipografia-secundaria);
     font-weight: 400;
-    font-size: var(--fuente-base);
-    margin: 0;
-    padding-top: 125px;/*75 px de nav y 50 de margin*/
+    font-size: var(--fs-base-20);
+    padding-top: 135px;/*75 px de nav y 50 de margin*/
 }
 
 /** ==========================| Definicion de titulos*/
 h1, h2, h3, h4, h5, h6 {color: var(--azul-profundo);}
-h1 {font-family: var(--tipografia-principal); font-weight: 700; font-size: var(--fuente-h1);text-align: center;}
+h1 {font-family: var(--tipografia-principal); font-weight: 700; font-size: var(--fs-h1);text-align: center;}
 h2, h3, h4, h5, h6 {font-family: var(--tipografia-secundaria); font-weight: 600;}
-h2 {font-size: var(--fuente-xxl);}
-h3 {font-size: var(--fuente-xl);}
-h4 {font-size: var(--fuente-l);}
-h5 {font-size: var(--fuente-base);}
+h2 {font-size: var(--fs-xxl-36);}
+h3 {font-size: var(--fs-xl-32);}
+h4 {font-size: var(--fs-l-24);}
+h5 {font-size: var(--fs-base-20);}
+h6 {font-size: var(--fs-s-16);}
 
 @media (max-width: 456px){
-h1 {font-size: var(--fuente-xxxl);}
-h2 {font-size: var(--fuente-xl);}
-h3 {font-size: var(--fuente-l);}
-h4 {font-size: var(--fuente-base);}
-h5 {font-size: var(--fuente-s);}
-ul, p.texto {font-size: var(--fuente-s);}
+ul, p.texto {font-size: var(--fs-s-16);}
 }
 
 /**=====================================| Botones */
 /* Estilos basicos, no incluyen el tamaño solo el color y la reaccion */
 .boton{
-    font-size: var(--fuente-l);
+    font-size: var(--fs-l-24);
     font-family: var(--tipografia-secundaria);
     font-weight: 500;
     border-radius: 1000px;
@@ -105,24 +104,26 @@ ul, p.texto {font-size: var(--fuente-s);}
 }
 /**=====================================| Navbar */
 /* Esto es la altura del nav */
-nav { height: 75px; margin: 50px 5vw 0;}
+nav { height: 75px;}
+nav .container-fluid{
+    background-color: var(--gris-pastel);
+    padding: 50px 5vw 10px;
+}
 nav .btn-close-white{
     border: 0 none;
     background-clip: content-box;
     padding: 10px;
-    font-size: var(--fuente-xxxl);
+    font-size: var(--fs-xxxl-40);
     background-color: transparent;
     color: var(--azul-profundo);
     justify-self: end;
 }
-.nav__iconos img{
-    height: 2vw;
-    max-height: 40px;
-    min-height: 30px;
-}
-img.logo{ height: 75px; padding: 0; }
+.nav__iconos img{height: clamp(30px, 2vw, 40px)}
+
+nav img.logo{ height: 75px; padding: 0; }
 
 @media( min-width: 992px){
+/* Esto saca y alinea este mini menu al centro de pantalla y no de su contenedor */
     .navbar-nav{
         position: absolute;
         left: 50%;
@@ -143,10 +144,11 @@ div.desplegable-movil ul{
     margin-inline: auto;
     text-align: center;
 }
+/* Tanto en movil como pc el color y tamaño del menu son el mismo por que son el mismo elemento*/
 div.desplegable-movil a{
     color: var(--azul-profundo);
     font-family: var(--tipografia-principal);
-    font-size: var(--fuente-l);
+    font-size: var(--fs-l-24);
     font-weight: 700;
     }
 .desplegable-movil a:hover {color: var(--azul-pastel);}
@@ -155,6 +157,40 @@ div.desplegable-movil a{
     background-color: var(--azul-pastel);
 }
 /**===============================| Footer |==*/
+footer{
+    background-color: var(--azul-profundo);
+    border-radius: 48px 48px 0 0;
+    filter: drop-shadow(0px -1px 5px rgba(0,0,0,0.2));
+}
+footer h6, footer p, footer label{
+    font-size: var(--fs-s-16);
+    color: white;
+}
+footer img.logo{
+    height: clamp(50px, 10vw, 75px);
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+}
+/* controla la separacion dentro de un row */
+.foot__gap{ row-gap: 20px;}
+/* controla la separacion entre rows del container */
+.row{margin-bottom: 28px;}
+
+.seccion-1{
+    display: flex;
+    flex-wrap: wrap;
+    align-items:baseline;
+    gap: 5px 20px;
+    font-size: var(--fs-base-20);
+    font-family: var(--tipografia-principal);
+}
+
+div.seccion-2{gap: 28px;}
+div.seccion-2 img{width: 38px;}
+
+form.seccion-4{
+    font-weight: 600;
+}
+
 /**==============================| About us |=*/
 ul.mision, p.texto {
     text-align: justify;
