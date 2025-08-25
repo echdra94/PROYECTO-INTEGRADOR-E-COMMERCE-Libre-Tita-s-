@@ -1,0 +1,284 @@
+/**>=========================| importacion de fuentes |==========================<  */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+/* weight: Usar valores de 200 a 900 */
+/* font-family: "Crimson Pro", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/* weight: Use a value from 300 to 900 */
+/* font-family: "Rubik", sans-serif; */
+
+/**>=========================| Variables |==========================<  */
+:root {
+    /*+----------------- Colores principales */
+    --azul-profundo: #2E2B5B;
+    /* color base */
+    --amarillo: #FDC50A;
+    /* call to action */
+    --rosa: #DD0069;
+    /* enfasis */
+    --turquesa: #32B9C8;
+    /* bordes formularios */
+    /*+----------------- Colores Oscuros */
+    --azul-oscuro: #201a3e;
+    --amarillo-oscuro: #f3931a;
+    --rosa-oscuro: #841d68;
+    --turquesa-oscuro: #008fb8;
+    /*+----------------- Colores desvanecidos */
+    --gris-pastel: #dddde4;
+    /*background*/
+    --azul-pastel: #6C6787;
+    /* textos */
+    --amarillo-pastel: #FFE080;
+    /* desactivado */
+    --rosa-pastel: #ED6B72;
+    --turquesa-pastel: #7DC5AE;
+
+    /*+---------------- Tamaños de tipografia */
+    /* fs(font-size) */
+    --fs-xs-14: 0.875rem;
+    /* 14px */
+    --fs-s-16: 1.125rem;
+    /* 18px */
+    --fs-base-20: 1.25rem;
+    /* 20px */
+    --fs-l-24: 1.5rem;
+    /* 24px */
+    --fs-xl-32: 2rem;
+    /* 32px */
+    --fs-xxl-36: 2.25rem;
+    /* 36px */
+    --fs-xxxl-40: 2.5rem;
+    /* 40px */
+    --fs-h1-64: 4rem;
+    /* 64px */
+
+    /*+----------------------------- Fuentes */
+    --tipografia-principal: "Crimson Pro", serif;
+    /* Títulos */
+    --tipografia-secundaria: "Rubik", sans-serif;
+    /* Cuerpo de texto */
+}
+
+/** =========================| Reset del documento |======== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+/* Reglas base de cada página */
+body {
+    background-color: var(--gris-pastel);
+    color: var(--azul-pastel);
+    font-family: var(--tipografia-secundaria);
+    font-weight: 400;
+    font-size: var(--fs-base-20);
+    /* + Borre un dato que no coincide con este diseño */
+}
+
+/** ==========================| Definicion de titulos*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--azul-profundo);
+}
+
+h1 {
+    font-family: var(--tipografia-principal);
+    font-weight: 700;
+    font-size: var(--fs-h1);
+    text-align: center;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--tipografia-secundaria);
+    font-weight: 600;
+}
+
+h2 {
+    font-size: var(--fs-xxl-36);
+}
+
+h3 {
+    font-size: var(--fs-xl-32);
+}
+
+h4 {
+    font-size: var(--fs-l-24);
+}
+
+h5 {
+    font-size: var(--fs-base-20);
+}
+
+h6 {
+    font-size: var(--fs-s-16);
+}
+
+@media (max-width: 456px) {
+
+    ul,
+    p.texto {
+        font-size: var(--fs-s-16);
+    }
+}
+
+/**=====================================| Botones */
+/* Estilos basicos, no incluyen el tamaño solo el color y la reaccion */
+/*+ */
+.boton {
+    font-size: var(--fs-l-24);
+    font-family: var(--tipografia-secundaria);
+    font-weight: 500;
+    border-radius: 1000px;
+    border: none;
+    padding: .75rem 2rem;
+}
+
+.boton--principal {
+    cursor: pointer;
+    color: var(--azul-profundo);
+    background-color: var(--amarillo);
+    box-shadow: 0px 3px 20px rgba(240, 210, 112, 0.541)
+}
+
+.boton--principal:hover {
+    background-color: var(--amarillo-oscuro);
+}
+
+.boton--principal:active {
+    background-color: var(--rosa);
+    transform: translateY(2px);
+}
+
+.boton-desactivado {
+    color: var(--azul-pastel);
+    background-color: var(--amarillo-pastel);
+    cursor: not-allowed;
+}
+
+/* + esto no ira en el final */
+footer,
+footer h3 {
+    color: white;
+    font-size: var(--fs-s-16);
+}
+
+/**=========================================| registro  */
+h1 {
+    padding-top: 100px;
+    margin-top: 15px;
+}
+
+/* campos de formulario */
+form {
+    margin: 2rem auto;
+    max-width: 50vw;
+    padding: 4rem;
+    /* Se modifica el padding para que el footer quedé abajo */
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255,0.5);
+}
+
+label {
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--azul-profundo);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem;
+    border: 1px solid #2e2b5b;
+    border-radius: 0.5rem;
+    font-family: 'Rubik', sans-serif;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.input-group-text {
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem;
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    /* espacio entre los campos */
+    gap: 20px;
+    /* separación entre nombre y apellidos */
+}
+
+.campo {
+    flex: 1;
+    /* para que ambos se expandan igual */
+}
+
+/* Color al enfocar campo */
+input:focus,
+select:focus {
+    outline: none;
+    border: 2px solid var(--azul-pastel);
+    box-shadow: 0 0 5px var(--azul-pastel);
+}
+
+/* Textos */
+
+input {
+    border: 1px solid #32B9C8 !important;
+    color: #2e2b5b !important;
+
+
+}
+
+input:focus {
+    border: 2px solid #32B9C8 !important;
+    box-shadow: 0 0 6px 3px #4ce2f38e !important;
+    color: #2e2b5b !important;
+    background-color: #fff !important;
+}
+
+/* Responsividad móvil */
+@media (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+
+    form {
+        padding: 1rem;
+    }
+
+    button.responsivo {
+        width: 100%;
+        font-size: 1.6rem;
+        margin-top: 10px;
+        margin-right: 10px;
+        max-width: 200px;
+        padding: 1rem 2rem;
+    }
+
+    .fila {
+        display: block;
+    }
+
+    input,
+    select {
+        font-size: 1.4rem;
+    }
+
+
+}
