@@ -92,7 +92,7 @@ h6 {
 h1 {
     font-family: var(--tipografia-principal);
     font-weight: 700;
-    font-size: var(--fs-h1);
+    font-size: var(--fs-h1-64);
     text-align: center;
 }
 
