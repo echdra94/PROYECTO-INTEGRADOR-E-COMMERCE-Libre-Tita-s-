@@ -204,8 +204,7 @@
     const datosFormulario = {
         nombre: txtNombre?.value.trim() || "",
         apellido: txtApellido?.value.trim() || "",
-        correo: iptCorreo1?.value.trim() || "",
-        dominio: iptCorreoDominio.value.trim() || selectDominio.value.trim() || "",
+        correo: iptCorreo1?.value.trim()+ "@" + (iptCorreoDominio.value.trim()|| selectDominio.value.trim()) || "",
         contraseña: txtPassword?.value.trim() || "",
         telefono: txtTelefonoUsuario?.value.trim() || ""
     };
