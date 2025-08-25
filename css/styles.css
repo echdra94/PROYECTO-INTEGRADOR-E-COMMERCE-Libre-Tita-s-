@@ -103,32 +103,27 @@ ul, p.texto {font-size: var(--fs-s-16);}
     cursor: not-allowed;
 }
 /**=====================================| Navbar */
-/* Esto es la altura del nav */
-nav { height: 75px;}
-nav .container-fluid{
+nav.fixed-top{
     background-color: var(--gris-pastel);
-    padding: 50px 5vw 10px;
+    padding-top:2.5rem;
+    padding-bottom: 1.25rem;
+    padding-inline: clamp(15px, 5vw, 50px);
 }
-nav .btn-close-white{
-    border: 0 none;
-    background-clip: content-box;
-    padding: 10px;
-    font-size: var(--fs-xxxl-40);
-    background-color: transparent;
-    color: var(--azul-profundo);
-    justify-self: end;
-}
+
 .nav__iconos img{height: clamp(30px, 2vw, 40px)}
 
-nav img.logo{ height: 75px; padding: 0; }
+nav img.logo{ height: clamp(40px, 8vw, 50px);
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.3));
+}
 
 @media( min-width: 992px){
 /* Esto saca y alinea este mini menu al centro de pantalla y no de su contenedor */
     .navbar-nav{
         position: absolute;
         left: 50%;
-        top:  10px;
+        top: 2rem;
         transform: translateX(-50%);
+        padding: 0;
     }
 }
 /*------------------| Esto es del menu movil |*/
@@ -148,7 +143,7 @@ div.desplegable-movil ul{
 div.desplegable-movil a{
     color: var(--azul-profundo);
     font-family: var(--tipografia-principal);
-    font-size: var(--fs-l-24);
+    font-size: var(--fs-base-20);
     font-weight: 700;
     }
 .desplegable-movil a:hover {color: var(--azul-pastel);}
@@ -160,7 +155,7 @@ div.desplegable-movil a{
 footer{
     background-color: var(--azul-profundo);
     border-radius: 48px 48px 0 0;
-    filter: drop-shadow(0px -1px 5px rgba(0,0,0,0.2));
+    box-shadow: 0px -1px 5px rgba(0,0,0,0.2)
 }
 footer h6, footer p, footer label{
     font-size: var(--fs-s-16);
@@ -170,10 +165,10 @@ footer img.logo{
     height: clamp(50px, 10vw, 75px);
     filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
 }
-/* controla la separacion dentro de un row */
-.foot__gap{ row-gap: 20px;}
 /* controla la separacion entre rows del container */
 .row{margin-bottom: 28px;}
+/* controla la separacion de elementos en fila dentro de un row */
+.foot__gap{ row-gap: 20px;}
 
 .seccion-1{
     display: flex;
@@ -186,9 +181,16 @@ footer img.logo{
 
 div.seccion-2{gap: 28px;}
 div.seccion-2 img{width: 38px;}
-
+/*esta parte es del formulario de suscrpcion */
 form.seccion-4{
     font-weight: 600;
+    row-gap: 10px;
+}
+.seccion-4 input{font-size: var(--fs-s-16);}
+.seccion-4 button{
+    font-size: var(--fs-s-16);
+    padding-block: 5px;
+    box-shadow: none;
 }
 
 /**==============================| About us |=*/
