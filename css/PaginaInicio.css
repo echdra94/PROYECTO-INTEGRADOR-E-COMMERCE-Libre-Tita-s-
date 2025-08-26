@@ -38,7 +38,7 @@ img.best-seller {
   margin: 0 auto 0 auto;
 }
 
-.container {
+.index .container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +135,7 @@ img.marquee{
   height: 60vh;
 }
 }
-main{
+main.index{
   margin-top: 100px;
 }
 .sellers{
