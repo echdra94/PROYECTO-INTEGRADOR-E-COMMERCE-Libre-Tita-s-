@@ -9,53 +9,36 @@
 /**>=========================| Variables |==========================<  */
 :root {
     /*+----------------- Colores principales */
-    --azul-profundo: #2E2B5B;
-    /* color base */
-    --amarillo: #FDC50A;
-    /* call to action */
-    --rosa: #DD0069;
-    /* enfasis */
-    --turquesa: #32B9C8;
-    /* bordes formularios */
+    --azul-profundo: #2E2B5B; /* color base */
+    --amarillo: #FDC50A; /* call to action */
+    --rosa: #DD0069; /* enfasis */
+    --turquesa: #32B9C8; /* bordes formularios */
     /*+----------------- Colores Oscuros */
     --azul-oscuro: #201a3e;
-    --amarillo-oscuro: #f3931a;
-    --rosa-oscuro: #841d68;
-    --turquesa-oscuro: #008fb8;
+    --amarillo-oscuro: #f3931a; 
+    --rosa-oscuro: #841d68; 
+    --turquesa-oscuro: #008fb8; 
     /*+----------------- Colores desvanecidos */
-    --gris-pastel: #dddde4;
-    /*background*/
-    --azul-pastel: #6C6787;
-    /* textos */
-    --amarillo-pastel: #FFE080;
-    /* desactivado */
+    --gris-pastel: #dddde4;  /*background*/
+    --azul-pastel: #6C6787; /* textos */
+    --amarillo-pastel: #FFE080; /* desactivado */
     --rosa-pastel: #ED6B72;
     --turquesa-pastel: #7DC5AE;
 
     /*+---------------- Tamaños de tipografia */
     /* fs(font-size) */
-    --fs-xs-14: 0.875rem;
-    /* 14px */
-    --fs-s-16: 1.125rem;
-    /* 18px */
-    --fs-base-20: 1.25rem;
-    /* 20px */
-    --fs-l-24: 1.5rem;
-    /* 24px */
-    --fs-xl-32: 2rem;
-    /* 32px */
-    --fs-xxl-36: 2.25rem;
-    /* 36px */
-    --fs-xxxl-40: 2.5rem;
-    /* 40px */
-    --fs-h1-64: 4rem;
-    /* 64px */
+    --fs-xs-14:  0.875rem;   /* 14px */
+    --fs-s-16:   1.125rem;   /* 18px */
+    --fs-base-20: 1.25rem;   /* 20px */
+    --fs-l-24:     1.5rem;   /* 24px */
+    --fs-xl-32:      2rem;   /* 32px */
+    --fs-xxl-36:  2.25rem;   /* 36px */
+    --fs-xxxl-40:  2.5rem;   /* 40px */
+    --fs-h1-64:      4rem;   /* 64px */
 
     /*+----------------------------- Fuentes */
-    --tipografia-principal: "Crimson Pro", serif;
-    /* Títulos */
-    --tipografia-secundaria: "Rubik", sans-serif;
-    /* Cuerpo de texto */
+    --tipografia-principal: "Crimson Pro", serif; /* Títulos */
+    --tipografia-secundaria: "Rubik", sans-serif; /* Cuerpo de texto */
 }
 
 /** =========================| Reset del documento |======== */
@@ -64,79 +47,36 @@
     margin: 0;
     padding: 0;
 }
-
-p {
+p{
     margin: 0;
 }
-
 /* Reglas base de cada página */
 body {
     background-color: var(--gris-pastel);
     color: var(--azul-pastel);
-    font-family: var(--tipografia-secundaria);
+    font-family:var(--tipografia-secundaria);
     font-weight: 400;
     font-size: var(--fs-base-20);
-    /* + Borre un dato que no coincide con este diseño */
+    /*+ Neutralizamos hasta que se borre de todas las paginas padding-top: 135px; */
 }
 
 /** ==========================| Definicion de titulos*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--azul-profundo);
-}
+h1, h2, h3, h4, h5, h6 {color: var(--azul-profundo);}
+h1 {font-family: var(--tipografia-principal); font-weight: 700; font-size: var(--fs-h1-64);text-align: center;}
+h2, h3, h4, h5, h6 {font-family: var(--tipografia-secundaria); font-weight: 600;}
+h2 {font-size: var(--fs-xxl-36);}
+h3 {font-size: var(--fs-xl-32);}
+h4 {font-size: var(--fs-l-24);}
+h5 {font-size: var(--fs-base-20);}
+h6 {font-size: var(--fs-s-16);}
 
-h1 {
-    font-family: var(--tipografia-principal);
-    font-weight: 700;
-    font-size: var(--fs-h1-64);
-    text-align: center;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--tipografia-secundaria);
-    font-weight: 600;
-}
-
-h2 {
-    font-size: var(--fs-xxl-36);
-}
-
-h3 {
-    font-size: var(--fs-xl-32);
-}
-
-h4 {
-    font-size: var(--fs-l-24);
-}
-
-h5 {
-    font-size: var(--fs-base-20);
-}
-
-h6 {
-    font-size: var(--fs-s-16);
-}
-
-@media (max-width: 456px) {
-
-    ul,
-    p.texto {
-        font-size: var(--fs-s-16);
-    }
+@media (max-width: 456px){
+ul, p.texto {font-size: var(--fs-s-16);}
 }
 
 /**=====================================| Botones */
 /* Estilos basicos, no incluyen el tamaño solo el color y la reaccion */
-/*+ */
-.boton {
+.boton{
     font-size: var(--fs-l-24);
     font-family: var(--tipografia-secundaria);
     font-weight: 500;
@@ -144,36 +84,73 @@ h6 {
     border: none;
     padding: .75rem 2rem;
 }
-
-.boton--principal {
+.boton--principal{
     cursor: pointer;
     color: var(--azul-profundo);
     background-color: var(--amarillo);
     box-shadow: 0px 3px 20px rgba(240, 210, 112, 0.541)
 }
-
-.boton--principal:hover {
+.boton--principal:hover{
     background-color: var(--amarillo-oscuro);
 }
-
-.boton--principal:active {
+.boton--principal:active{
     background-color: var(--rosa);
     transform: translateY(2px);
 }
-
-.boton-desactivado {
+.boton-desactivado{
     color: var(--azul-pastel);
     background-color: var(--amarillo-pastel);
     cursor: not-allowed;
 }
-
-/* + esto no ira en el final */
-footer,
-footer h3 {
-    color: white;
-    font-size: var(--fs-s-16);
+/**=====================================| Navbar */
+nav.fixed-top{
+    background-color: var(--gris-pastel);
+    padding-top:2.5rem;
+    padding-bottom: 1.25rem;
+    padding-inline: clamp(15px, 5vw, 50px);
 }
 
+.nav__iconos img{height: clamp(30px, 2vw, 40px)}
+
+nav img.logo{ height: clamp(40px, 8vw, 50px);
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.3));
+}
+
+@media( min-width: 992px){
+/* Esto saca y alinea este mini menu al centro de pantalla y no de su contenedor */
+    .navbar-nav{
+        position: absolute;
+        left: 50%;
+        top: 2rem;
+        transform: translateX(-50%);
+        padding: 0;
+    }
+}
+/*------------------| Esto es del menu movil |*/
+div.offcanvas a{ align-self: center; }
+div.offcanvas-header{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items:flex-end;
+}
+div.desplegable-movil {background-color: var(--gris-pastel);}
+div.desplegable-movil ul{
+    margin-inline: auto;
+    text-align: center;
+}
+/* Tanto en movil como pc el color y tamaño del menu son el mismo por que son el mismo elemento*/
+div.desplegable-movil a{
+    color: var(--azul-profundo);
+    font-family: var(--tipografia-principal);
+    font-size: var(--fs-l-24);
+    font-weight: 700;
+    }
+.desplegable-movil a:hover {color: var(--azul-pastel);}
+.desplegable-movil a:active { color: var(--rosa);}
+.navbar-toggler:hover{
+    background-color: var(--azul-pastel);
+}
 /**=========================================| registro  */
 h1 {
     padding-top: 100px;

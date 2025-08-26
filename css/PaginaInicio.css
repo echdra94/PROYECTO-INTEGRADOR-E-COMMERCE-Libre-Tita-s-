@@ -1,19 +1,4 @@
-:root {
-  /* Colores principales */
-  --azul-profundo: rgb(46, 43, 91);
-  --amarillo: #FDC50A;
-  --rosa: #DD0069;
-  --turquesa: #32B9C8;
 
-  /* Colores pastel */
-  --azul-pastel: #6C6787;
-  --amarillo-pastel: #FFE080;
-  --rosa-pastel: #ED6B72;
-  --turquesa-pastel: #7DC5AE;
-}
-html {
-  font-size: 10px;
-}
 body{
   color: var(--azul-profundo);
   font-family: 'Rubik', sans-serif;
