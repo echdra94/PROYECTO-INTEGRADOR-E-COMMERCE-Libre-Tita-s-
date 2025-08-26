@@ -110,6 +110,10 @@ label{
 
 }
 
+.itemDominio, .selectDominio {
+    height: 37px!important;
+}
+
 input{
     font-size: var(--fs-base-20); 
     height: 37px; 
@@ -274,6 +278,7 @@ form.formulario label {
     display: block;
     color: var(--azul-profundo);
 }
+
 
 form.formulario input,
 form.formulario select {

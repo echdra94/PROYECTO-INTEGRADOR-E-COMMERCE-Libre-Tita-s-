@@ -47,7 +47,7 @@ textarea,
 select {
   width: 100%;
   padding: 1rem;
-  font-size: 1.5rem !important;
+  font-size: 1rem !important;
   margin-bottom: 1.5rem;
   border: 1px solid #2e2b5b;
   border-radius: 0.5rem;
@@ -55,7 +55,7 @@ select {
   transition: background-color 0.3s ease, border 0.3s ease;
 }
 .input-group-text{
-font-size: 1.5rem !important;
+font-size: 1rem !important;
   margin-bottom: 1.5rem;  
 }
 
