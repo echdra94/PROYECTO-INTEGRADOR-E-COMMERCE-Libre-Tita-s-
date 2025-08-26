@@ -39,6 +39,9 @@
     /*+----------------------------- Fuentes */
     --tipografia-principal: "Crimson Pro", serif; /* Títulos */
     --tipografia-secundaria: "Rubik", sans-serif; /* Cuerpo de texto */
+
+    /*+----------------------------- Estilos */
+    --sombra-boton: 0px 3px 20px #FDC50A80;
 }
 
 /** =========================| Reset del documento |======== */
@@ -57,12 +60,12 @@ body {
     font-family:var(--tipografia-secundaria);
     font-weight: 400;
     font-size: var(--fs-base-20);
-    /*+ Neutralizamos hasta que se borre de todas las paginas padding-top: 135px; */
+    /*++++++++++++++++++++++++++++++++++ padding-top: 135px; */
 }
 
 /** ==========================| Definicion de titulos*/
 h1, h2, h3, h4, h5, h6 {color: var(--azul-profundo);}
-h1 {font-family: var(--tipografia-principal); font-weight: 700; font-size: var(--fs-h1-64);text-align: center;}
+h1 {font-family: var(--tipografia-principal); font-weight: 700; font-size: var(--fs-h1);text-align: center;}
 h2, h3, h4, h5, h6 {font-family: var(--tipografia-secundaria); font-weight: 600;}
 h2 {font-size: var(--fs-xxl-36);}
 h3 {font-size: var(--fs-xl-32);}
@@ -88,7 +91,7 @@ ul, p.texto {font-size: var(--fs-s-16);}
     cursor: pointer;
     color: var(--azul-profundo);
     background-color: var(--amarillo);
-    box-shadow: 0px 3px 20px rgba(240, 210, 112, 0.541)
+    box-shadow: var(--sombra-boton)
 }
 .boton--principal:hover{
     background-color: var(--amarillo-oscuro);
@@ -102,6 +105,28 @@ ul, p.texto {font-size: var(--fs-s-16);}
     background-color: var(--amarillo-pastel);
     cursor: not-allowed;
 }
+/**=====================================| Estilos de formularios */
+label{
+
+}
+
+input{
+    font-size: var(--fs-base-20); 
+    height: 37px; 
+    text-align: start;
+    border-radius: 1000px;
+    color: var(--azul-profundo);
+    background-color: white;
+    border: 1.5px solid var(--gris-pastel);
+}
+input::placeholder{
+    color: var(--azul-pastel);
+}
+input:focus{
+    border: 1.5px solid var(--turquesa);
+    outline: none;
+}
+
 /**=====================================| Navbar */
 nav.fixed-top{
     background-color: var(--gris-pastel);
@@ -151,6 +176,81 @@ div.desplegable-movil a{
 .navbar-toggler:hover{
     background-color: var(--azul-pastel);
 }
+/**===============================| Footer |==*/
+footer{
+    background-color: var(--azul-profundo);
+    border-radius: 48px 48px 0 0;
+    box-shadow: 0px -1px 5px rgba(0,0,0,0.2)
+}
+footer h6, footer p, footer label{
+    font-size: var(--fs-s-16);
+    color: white;
+}
+footer img.logo{
+    height: clamp(50px, 10vw, 75px);
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+}
+/* controla la separacion entre rows del container */
+.row{
+    margin-bottom: 28px;
+    row-gap: 20px;} /* controla la separacion de elementos en fila dentro de un row */
+
+.seccion-1{
+    display: flex;
+    flex-wrap: wrap;
+    align-items:baseline;
+    gap: 5px 20px;
+    font-size: var(--fs-base-20);
+    font-family: var(--tipografia-principal);
+}
+/* seccion de iconos */
+div.seccion-2{gap: 28px;}
+div.seccion-2 img{width: 38px;}
+/* seccion de info de contacto*/
+.seccion-3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.seccion-3 p, .seccion-3 h6{
+    text-align: start;
+}
+/*esta parte es del formulario de suscrpcion */
+form.seccion-4{
+    border: 1px solid var(--amarillo);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-block: 15px;
+    font-weight: 600;
+    row-gap: 8px;
+}
+.seccion-4 input{
+    color: var(--amarillo-oscuro);
+    font-size: var(--fs-s-16); 
+    height: 37px; 
+    text-align: center;
+}
+.seccion-4 input:focus{
+    border: none;
+    box-shadow: var(--sombra-boton)
+
+}
+.seccion-4 button{
+    font-size: var(--fs-s-16);
+    padding-block: 5px;
+    box-shadow: none;
+}
+.seccion-5 p, .seccion-6 p{
+    font-size: var(--fs-xs-14);
+}
+.seccion-6 .discreto{
+    color: var(--azul-oscuro);
+}
+/**==============================| About us |=*/
+ul.mision, p.texto {
+    text-align: justify;
+}
 /**=========================================| registro  */
 h1 {
     padding-top: 100px;
@@ -158,7 +258,7 @@ h1 {
 }
 
 /* campos de formulario */
-form {
+form.formulario {
     margin: 2rem auto;
     max-width: 50vw;
     padding: 4rem;
@@ -168,15 +268,15 @@ form {
     background-color: rgba(255, 255, 255,0.5);
 }
 
-label {
+form.formulario label {
     font-weight: 400;
     margin-bottom: 0.5rem;
     display: block;
     color: var(--azul-profundo);
 }
 
-input,
-select {
+form.formulario input,
+form.formulario select {
     width: 100%;
     padding: 1rem;
     font-size: 1.5rem !important;
@@ -187,12 +287,12 @@ select {
     transition: background-color 0.3s ease, border 0.3s ease;
 }
 
-.input-group-text {
+form.formulario .input-group-text {
     font-size: 1.5rem !important;
     margin-bottom: 1.5rem;
 }
 
-.fila {
+form.formulario .fila {
     display: flex;
     justify-content: space-between;
     /* espacio entre los campos */
@@ -200,14 +300,14 @@ select {
     /* separación entre nombre y apellidos */
 }
 
-.campo {
+form.formulario .campo {
     flex: 1;
     /* para que ambos se expandan igual */
 }
 
 /* Color al enfocar campo */
-input:focus,
-select:focus {
+form.formulario input:focus,
+form.formulario select:focus {
     outline: none;
     border: 2px solid var(--azul-pastel);
     box-shadow: 0 0 5px var(--azul-pastel);
@@ -215,14 +315,14 @@ select:focus {
 
 /* Textos */
 
-input {
+form.formulario input {
     border: 1px solid #32B9C8 !important;
     color: #2e2b5b !important;
 
 
 }
 
-input:focus {
+form.formulario input:focus {
     border: 2px solid #32B9C8 !important;
     box-shadow: 0 0 6px 3px #4ce2f38e !important;
     color: #2e2b5b !important;
@@ -231,11 +331,7 @@ input:focus {
 
 /* Responsividad móvil */
 @media (max-width: 768px) {
-    html {
-        font-size: 10px;
-    }
-
-    form {
+    form.formulario {
         padding: 1rem;
     }
 
@@ -248,12 +344,12 @@ input:focus {
         padding: 1rem 2rem;
     }
 
-    .fila {
+    form.formulario .fila {
         display: block;
     }
 
-    input,
-    select {
+    form.formulario input,
+    form.formulario select {
         font-size: 1.4rem;
     }
 
