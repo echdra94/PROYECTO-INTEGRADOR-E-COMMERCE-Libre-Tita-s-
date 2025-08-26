@@ -63,17 +63,17 @@ ul {
 
 /*Estilo cards*/
 .card-title {
-  font-size: 2.3rem;
+  font-size: 2.4rem;
 }
 
 p.card-text{
-  font-size: 1.4rem;
+  font-size: 1.05rem;
   padding-inline: 10px;
 }
 .card-body{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 150px;
   overflow-y:auto;
@@ -83,7 +83,7 @@ p.card-text{
   background-color: white;
   border-radius: 1rem;
   transition: all 0.3s ease;
-  text-align: left;
+  text-align: justify;
   overflow: hidden;
   }
 
@@ -158,20 +158,22 @@ p{
   text-align: justify;
 }
 .miBoton{
+  display: inline-block;
   background-color: var(--amarillo); 
   color: var(--azul-profundo);              
   border: none;
   width: 120px;
   height: 40px;
   font-size: 1.5rem;
+  line-height: 40px;   /* centra verticalmente el texto */
+  padding: 0;          /* elimina el padding de .btn de Bootstrap */
+  text-align: center;  /* centra horizontalmente el texto */
 }
 
 .miBoton:hover {
   background-color: var(--rosa); 
   color: #ffffff;
-  width: 120px;
-  height: 40px;
-  font-size: 1.5rem;
+  width: 120px !important;
 }
 /* Cambios para la version movil */
 @media (max-width: 768px) {
@@ -186,7 +188,7 @@ p{
     font-size: 2rem;
   }
   p.card-text{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   .miBoton{
   background-color: var(--amarillo); 
@@ -196,14 +198,15 @@ p{
   height: 40px;
   font-size: 1.5rem;
 }
-}
+
 
 .miBoton:hover {
   background-color: var(--rosa); 
   color: #ffffff;
-  width: 250px;
+  width: 250px !important;
   height: 40px;
   font-size: 1.5rem;
+}
 }
 
 #loader {
