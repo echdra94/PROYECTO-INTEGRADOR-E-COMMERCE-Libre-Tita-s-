@@ -152,7 +152,7 @@
         /** -----------------------------------------------------------------------------------------------------------------------------
          * Validación del campo Teléfono
          */
-        const regexTelefono = /^[0-9]{10}$/;
+        const regexTelefono = /^[2-9][0-9]{9}$/;
         if (!regexTelefono.test(txtTelefonoUsuario.value)) {
             txtTelefonoUsuario.style.setProperty("border", "1px solid #DD0069", "important");
             txtTelefonoUsuario.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
@@ -183,6 +183,8 @@
                     if (repetido) return true;
                 }
                 return false;
+
+
             }
 
             // Validar si todos los dígitos son iguales
