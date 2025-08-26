@@ -16,13 +16,12 @@
   <div id="navBar"></div>
   <!-- Contenido de la página -->
   <main>
-    <div class="container text-center">
-      <h1>Login</h1>
+    <div class="text-center">
+      <h1>Inicio de sesión</h1>
     </div>
     <!-- Aqui empieza el formulario -->
-    <form class="formulario" id="formularioLogin">
-
-      <div class="container contactanos">
+    <form class="form-login" id="formularioLogin">
+        <!-- validaciones -->
         <div class="alert alert-danger fade show " style="display: none;" role="alert" id="alertValidaciones">
           <p id="alertValidacionesTexto"></p>
         </div>
@@ -30,7 +29,7 @@
         <div class="fila">
           <div class="mb-3 campo" id="email">
             <label for="txtCorreo" class="form-label">Correo:</label>
-            <input type="text" class="form-control" name="correo" id="txtCorreo" placeholder="Escribe tú correo"
+            <input type="text" name="correo" id="txtCorreo" placeholder="Escribe tú correo"
               maxlength="110">
           </div>
         </div>
@@ -39,15 +38,14 @@
         <div class="fila">
           <div class="mb-3 campo" id="password">
             <label for="txtContraseña" class="form-label">Contraseña:</label>
-            <input type="text" class="form-control" name="contraseña" id="txtContraseña"
+            <input type="password" class="form-control" name="contraseña" id="txtContraseña"
               placeholder="Ingresa tu contraseña" maxlength="30">
           </div>
         </div>
         <!-- Boton -->
-        <div class="text-end">
+        <div>
           <button type="submit" id="btnEnviar" class="boton boton--principal responsivo">Crear</button>
         </div>
-      </div>
 
     </form>
   </main>

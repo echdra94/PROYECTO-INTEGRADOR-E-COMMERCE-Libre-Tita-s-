@@ -34,14 +34,15 @@
     --fs-xl-32:      2rem;   /* 32px */
     --fs-xxl-36:  2.25rem;   /* 36px */
     --fs-xxxl-40:  2.5rem;   /* 40px */
-    --fs-h1-64:      4rem;   /* 64px */
+    --fs-h1-48:      3rem;   /* 48px */
 
     /*+----------------------------- Fuentes */
     --tipografia-principal: "Crimson Pro", serif; /* Títulos */
     --tipografia-secundaria: "Rubik", sans-serif; /* Cuerpo de texto */
 
     /*+----------------------------- Estilos */
-    --sombra-boton: 0px 3px 20px #FDC50A80;
+    --sombra-boton-amarilla: 0px 3px 20px #FDC50A80;
+    --sombra-boton-rosa: 0px 3px 20px #DD006980;
 }
 
 /** =========================| Reset del documento |======== */
@@ -60,12 +61,12 @@ body {
     font-family:var(--tipografia-secundaria);
     font-weight: 400;
     font-size: var(--fs-base-20);
-    /*++++++++++++++++++++++++++++++++++ padding-top: 135px; */
+    padding-top: 120px;
 }
 
 /** ==========================| Definicion de titulos*/
 h1, h2, h3, h4, h5, h6 {color: var(--azul-profundo);}
-h1 {font-family: var(--tipografia-principal); font-weight: 700; font-size: var(--fs-h1);text-align: center;}
+h1 {font-family: var(--tipografia-principal); font-weight: 700; font-size: var(--fs-h1-48);text-align: center;}
 h2, h3, h4, h5, h6 {font-family: var(--tipografia-secundaria); font-weight: 600;}
 h2 {font-size: var(--fs-xxl-36);}
 h3 {font-size: var(--fs-xl-32);}
@@ -91,13 +92,14 @@ ul, p.texto {font-size: var(--fs-s-16);}
     cursor: pointer;
     color: var(--azul-profundo);
     background-color: var(--amarillo);
-    box-shadow: var(--sombra-boton)
+    box-shadow: var(--sombra-boton-amarilla)
 }
 .boton--principal:hover{
     background-color: var(--amarillo-oscuro);
 }
 .boton--principal:active{
     background-color: var(--rosa);
+    box-shadow: var(--sombra-boton-rosa);
     transform: translateY(2px);
 }
 .boton-desactivado{
@@ -107,9 +109,10 @@ ul, p.texto {font-size: var(--fs-s-16);}
 }
 /**=====================================| Estilos de formularios */
 label{
-
+    font-weight: 600;
+    font-size: var(--fs-base-20);
+    color: var(--azul-profundo);
 }
-
 input{
     font-size: var(--fs-base-20); 
     height: 37px; 
@@ -191,7 +194,7 @@ footer img.logo{
     filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
 }
 /* controla la separacion entre rows del container */
-.row{
+footer .row{
     margin-bottom: 28px;
     row-gap: 20px;} /* controla la separacion de elementos en fila dentro de un row */
 
@@ -233,7 +236,7 @@ form.seccion-4{
 }
 .seccion-4 input:focus{
     border: none;
-    box-shadow: var(--sombra-boton)
+    box-shadow: var(--sombra-boton-amarilla)
 
 }
 .seccion-4 button{
@@ -252,47 +255,17 @@ ul.mision, p.texto {
     text-align: justify;
 }
 /**=========================================| registro  */
-h1 {
-    padding-top: 100px;
-    margin-top: 15px;
-}
-
 /* campos de formulario */
-form.formulario {
+form.form-login {
     margin: 2rem auto;
     max-width: 50vw;
     padding: 4rem;
-    /* Se modifica el padding para que el footer quedé abajo */
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255,0.5);
 }
 
-form.formulario label {
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-    display: block;
-    color: var(--azul-profundo);
-}
-
-form.formulario input,
-form.formulario select {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.5rem !important;
-    margin-bottom: 1.5rem;
-    border: 1px solid #2e2b5b;
-    border-radius: 0.5rem;
-    font-family: 'Rubik', sans-serif;
-    transition: background-color 0.3s ease, border 0.3s ease;
-}
-
-form.formulario .input-group-text {
-    font-size: 1.5rem !important;
-    margin-bottom: 1.5rem;
-}
-
-form.formulario .fila {
+form.form-login .fila {
     display: flex;
     justify-content: space-between;
     /* espacio entre los campos */
@@ -300,38 +273,14 @@ form.formulario .fila {
     /* separación entre nombre y apellidos */
 }
 
-form.formulario .campo {
+form.form-login .campo {
     flex: 1;
     /* para que ambos se expandan igual */
 }
 
-/* Color al enfocar campo */
-form.formulario input:focus,
-form.formulario select:focus {
-    outline: none;
-    border: 2px solid var(--azul-pastel);
-    box-shadow: 0 0 5px var(--azul-pastel);
-}
-
-/* Textos */
-
-form.formulario input {
-    border: 1px solid #32B9C8 !important;
-    color: #2e2b5b !important;
-
-
-}
-
-form.formulario input:focus {
-    border: 2px solid #32B9C8 !important;
-    box-shadow: 0 0 6px 3px #4ce2f38e !important;
-    color: #2e2b5b !important;
-    background-color: #fff !important;
-}
-
 /* Responsividad móvil */
 @media (max-width: 768px) {
-    form.formulario {
+    form.form-login {
         padding: 1rem;
     }
 
@@ -344,14 +293,7 @@ form.formulario input:focus {
         padding: 1rem 2rem;
     }
 
-    form.formulario .fila {
+    form.form-login .fila {
         display: block;
     }
-
-    form.formulario input,
-    form.formulario select {
-        font-size: 1.4rem;
-    }
-
-
 }
