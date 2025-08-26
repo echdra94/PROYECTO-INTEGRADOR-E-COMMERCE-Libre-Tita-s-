@@ -15,9 +15,9 @@
     --turquesa: #32B9C8; /* bordes formularios */
     /*+----------------- Colores Oscuros */
     --azul-oscuro: #201a3e;
-    --amarillo-oscuro: #f3931a; 
-    --rosa-oscuro: #841d68; 
-    --turquesa-oscuro: #008fb8; 
+    --amarillo-oscuro: #f3931a;
+    --rosa-oscuro: #841d68;
+    --turquesa-oscuro: #008fb8;
     /*+----------------- Colores desvanecidos */
     --gris-pastel: #dddde4;  /*background*/
     --azul-pastel: #6C6787; /* textos */
@@ -62,8 +62,26 @@ body {
     font-weight: 400;
     font-size: var(--fs-base-20);
     padding-top: 120px;
+    background-image:url(https://res.cloudinary.com/libretitaspi/image/upload/v1756221440/xwcpyrkobfnlaargw3e6.png);
+    background-repeat: no-repeat;
+    background-position: 0 200px; 
+    background-size: auto;
 }
-
+.gatito {
+    filter: drop-shadow(0px 2px 2px #2e2b5ba6);
+    position: fixed;   /* se mantiene aunque hagas scroll */
+    right: calc(50% - 50px);          /* pegado al borde derecho */
+    bottom: -18vh;         /* pegado al borde inferior */
+    z-index: -1;       /* detrás del contenido */
+}
+@media(min-width: 992px){
+    .gatito {
+        position: fixed;   /* se mantiene aunque hagas scroll */
+        right: 20%;          /* pegado al borde derecho */
+        bottom: -8vh;         /* pegado al borde inferior */
+        z-index: -1;       /* detrás del contenido */
+    }
+}
 /** ==========================| Definicion de titulos*/
 h1, h2, h3, h4, h5, h6 {color: var(--azul-profundo);}
 h1 {font-family: var(--tipografia-principal); font-weight: 700; font-size: var(--fs-h1-48);text-align: center;}
@@ -114,8 +132,9 @@ label{
     color: var(--azul-profundo);
 }
 input{
-    font-size: var(--fs-base-20); 
-    height: 37px; 
+    font-size: var(--fs-s-16);
+    padding-inline: 10px;
+    height: 37px;
     text-align: start;
     border-radius: 1000px;
     color: var(--azul-profundo);
@@ -123,7 +142,7 @@ input{
     border: 1.5px solid var(--gris-pastel);
 }
 input::placeholder{
-    color: var(--azul-pastel);
+    color: var(--gris-pastel);
 }
 input:focus{
     border: 1.5px solid var(--turquesa);
@@ -230,8 +249,8 @@ form.seccion-4{
 }
 .seccion-4 input{
     color: var(--amarillo-oscuro);
-    font-size: var(--fs-s-16); 
-    height: 37px; 
+    font-size: var(--fs-s-16);
+    height: 37px;
     text-align: center;
 }
 .seccion-4 input:focus{
@@ -255,31 +274,44 @@ ul.mision, p.texto {
     text-align: justify;
 }
 /**=========================================| registro  */
-/* campos de formulario */
-form.form-login {
-    margin: 2rem auto;
-    max-width: 50vw;
-    padding: 4rem;
+/* contenedor del formulario */
+main.login{
+    margin-top:calc(18vh - 120px);
+    margin-bottom:calc(23vh - 120px);
+}
+/* Aqui se describe al formulario */
+.form-login {
+    min-height:calc(80vh - 120px);
+    width: clamp(200px, 100%, 650px);
+    padding: 3rem;
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255,0.5);
+    background-color: rgba(255, 255, 255,0.4);
+    backdrop-filter: blur(5px);
+    border:1px solid white;
 }
-
+/* imagen burrito */
+.login-img{
+    height: 50%;
+}
 form.form-login .fila {
     display: flex;
-    justify-content: space-between;
-    /* espacio entre los campos */
     gap: 20px;
-    /* separación entre nombre y apellidos */
 }
-
-form.form-login .campo {
-    flex: 1;
-    /* para que ambos se expandan igual */
+.campo{
+    display: flex;
+    align-items: center; /*centra label e input verticalmente*/
+    gap: 10px;
 }
-
+.campo label {
+  white-space: nowrap;        /* evita que el label se parta en varias líneas */
+}
+.campo input {
+  flex: 1 1 auto;        /* ahora sí: ocupa todo lo que sobra */
+  min-width: 0;          /* evita que empuje el contenedor si es largo */
+}
 /* Responsividad móvil */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     form.form-login {
         padding: 1rem;
     }
@@ -296,4 +328,4 @@ form.form-login .campo {
     form.form-login .fila {
         display: block;
     }
-}
+} */
