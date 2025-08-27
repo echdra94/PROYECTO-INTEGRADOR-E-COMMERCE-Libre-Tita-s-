@@ -16,6 +16,13 @@
     //---------------------------LIMPIA DE ALERTAS-------------------------------------------------------------------
     btnEnviar.addEventListener("click", function (event) {
         event.preventDefault();
+
+    // Limpiar alertas y bordes
+    alertValidacionesTexto.innerHTML = "";
+    alertValidaciones.style.display = "none";
+    alertValidaciones.classList.remove("alert-success");
+    alertValidaciones.classList.add("alert-danger");
+ 
         let isValid = true;
         alertValidacionesTexto.innerHTML = "";// Limpia la alerta
         alertValidaciones.style.display = "none"; // Limpia el fondo de la alerta
@@ -221,7 +228,10 @@
     localStorage.setItem("datosFormulario", JSON.stringify(registros));
 
     // Confirmación
-    alert("Resgistro satisfactorio");
+       alertValidacionesTexto.innerHTML = "<strong class='text-success'>Registro satisfactorio</strong>";
+        alertValidaciones.classList.remove("alert-danger");
+        alertValidaciones.classList.add("alert-success");
+        alertValidaciones.style.display = "block";
         //-------------------------------LIMPIAR CAMPOS----------------------------------------------------------
 
         txtNombre.value = "";// Limpia el valor de txtName
@@ -233,6 +243,13 @@
         txtPassword.value = "";
         txtConfirmPassword.value = "";
         txtTelefonoUsuario.value = ""; // Limpia el valor de teléfono
+
+        formRegistro.reset();
+        checkbox.value= "No";
+
+        setTimeout(()=> {
+            window.location.reload();
+        }, 2000);
         // Si hay errores, mostrar la alerta
         if (!isValid) {
             alertValidaciones.style.display = "block";
