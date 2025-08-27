@@ -27,14 +27,22 @@
 
     /*+---------------- Tamaños de tipografia */
     /* fs(font-size) */
-    --fs-xs-14:  0.875rem;   /* 14px */
-    --fs-s-16:   1.125rem;   /* 18px */
+    --fs-xxs-14: 0.875rem;   /* 14px */
+    --fs-xs-16:      1rem;   /* 16px */
+    --fs-s-18:   1.125rem;   /* 18px */
     --fs-base-20: 1.25rem;   /* 20px */
     --fs-l-24:     1.5rem;   /* 24px */
     --fs-xl-32:      2rem;   /* 32px */
     --fs-xxl-36:  2.25rem;   /* 36px */
     --fs-xxxl-40:  2.5rem;   /* 40px */
     --fs-h1-48:      3rem;   /* 48px */
+
+        /*+---------------- Grosores */
+    /* weight (font-weight) */
+    --wg-titulo:  800;   /* solo para la tipo princiál */
+    --wg-principal: 600;   /* 18px */
+    --wg-base: 300;   /* 20px */
+
 
     /*+----------------------------- Fuentes */
     --tipografia-principal: "Crimson Pro", serif; /* Títulos */
@@ -59,7 +67,7 @@ body {
     background-color: var(--gris-pastel);
     color: var(--azul-pastel);
     font-family:var(--tipografia-secundaria);
-    font-weight: 400;
+    font-weight: var(--wg-base);
     font-size: var(--fs-base-20);
     padding-top: 120px;
     background-image:url(https://res.cloudinary.com/libretitaspi/image/upload/v1756221440/xwcpyrkobfnlaargw3e6.png);
@@ -74,6 +82,12 @@ body {
     bottom: -18vh;         /* pegado al borde inferior */
     z-index: -1;       /* detrás del contenido */
 }
+a{
+    color: var(--rosa);
+    font-family: var(--tipografia-secundaria);
+    font-weight: var(--wg-principal);
+    text-decoration: none;
+}
 @media(min-width: 992px){
     .gatito {
         position: fixed;   /* se mantiene aunque hagas scroll */
@@ -84,27 +98,39 @@ body {
 }
 /** ==========================| Definicion de titulos*/
 h1, h2, h3, h4, h5, h6 {color: var(--azul-profundo);}
-h1 {font-family: var(--tipografia-principal); font-weight: 700; font-size: var(--fs-h1-48);text-align: center;}
-h2, h3, h4, h5, h6 {font-family: var(--tipografia-secundaria); font-weight: 600;}
+h1 {font-family: var(--tipografia-principal); font-weight: var(--wg-titulo); font-size: var(--fs-h1-48);text-align: center;}
+h2, h3, h4, h5, h6 {font-family: var(--tipografia-secundaria); font-weight: var(--wg-principal);}
 h2 {font-size: var(--fs-xxl-36);}
 h3 {font-size: var(--fs-xl-32);}
 h4 {font-size: var(--fs-l-24);}
 h5 {font-size: var(--fs-base-20);}
-h6 {font-size: var(--fs-s-16);}
+h6 {font-size: var(--fs-s-18);}
 
 @media (max-width: 456px){
-ul, p.texto {font-size: var(--fs-s-16);}
+ul, p {font-size: var(--fs-xs-16);}
+h1 { font-size: var(--fs-xxl-36); }
+h2 { font-size: var(--fs-xl-32); }
+h3 { font-size: var(--fs-l-24); }
+h4 { font-size: var(--fs-base-20); }
+h5 { font-size: var(--fs-s-18); }
+h6 { font-size: var(--fs-xs-16); }
+
 }
 
 /**=====================================| Botones */
 /* Estilos basicos, no incluyen el tamaño solo el color y la reaccion */
 .boton{
-    font-size: var(--fs-l-24);
+    font-size: var(--fs-base-20);
     font-family: var(--tipografia-secundaria);
-    font-weight: 500;
+    font-weight: var(--wg-base);
     border-radius: 1000px;
     border: none;
     padding: .75rem 2rem;
+    height: 37px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .boton--principal{
     cursor: pointer;
@@ -125,16 +151,21 @@ ul, p.texto {font-size: var(--fs-s-16);}
     background-color: var(--amarillo-pastel);
     cursor: not-allowed;
 }
+@media(max-width:992px){
+    .boton{
+        font-size: var(--fs-s-18);
+    }
+}
 /**=====================================| Estilos de formularios */
 label{
-    font-weight: 600;
+    font-weight: var(--wg-principal);
     font-size: var(--fs-base-20);
     color: var(--azul-profundo);
 }
 input{
-    font-size: var(--fs-s-16);
+    font-size: var(--fs-s-18);
     padding-inline: 10px;
-    height: 37px;
+    min-height: 37px;
     text-align: start;
     border-radius: 1000px;
     color: var(--azul-profundo);
@@ -191,7 +222,7 @@ div.desplegable-movil a{
     color: var(--azul-profundo);
     font-family: var(--tipografia-principal);
     font-size: var(--fs-l-24);
-    font-weight: 700;
+    font-weight: var(--wg-principal);
     }
 .desplegable-movil a:hover {color: var(--azul-pastel);}
 .desplegable-movil a:active { color: var(--rosa);}
@@ -205,7 +236,7 @@ footer{
     box-shadow: 0px -1px 5px rgba(0,0,0,0.2)
 }
 footer h6, footer p, footer label{
-    font-size: var(--fs-s-16);
+    font-size: var(--fs-s-18);
     color: white;
 }
 footer img.logo{
@@ -244,12 +275,12 @@ form.seccion-4{
     display: flex;
     flex-direction: column;
     padding-block: 15px;
-    font-weight: 600;
+    font-weight: var(--wg-principal);
     row-gap: 8px;
 }
 .seccion-4 input{
     color: var(--amarillo-oscuro);
-    font-size: var(--fs-s-16);
+    font-size: var(--fs-s-18);
     height: 37px;
     text-align: center;
 }
@@ -259,12 +290,12 @@ form.seccion-4{
 
 }
 .seccion-4 button{
-    font-size: var(--fs-s-16);
+    font-size: var(--fs-s-18);
     padding-block: 5px;
     box-shadow: none;
 }
 .seccion-5 p, .seccion-6 p{
-    font-size: var(--fs-xs-14);
+    font-size: var(--fs-xxs-14);
 }
 .seccion-6 .discreto{
     color: var(--azul-oscuro);
@@ -283,7 +314,7 @@ main.login{
 .form-login {
     min-height:calc(80vh - 120px);
     width: clamp(200px, 100%, 650px);
-    padding: 3rem;
+    padding: clamp(1.5rem, 5%, 3rem);
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255,0.4);
@@ -291,41 +322,18 @@ main.login{
     border:1px solid white;
 }
 /* imagen burrito */
-.login-img{
-    height: 50%;
-}
-form.form-login .fila {
-    display: flex;
-    gap: 20px;
-}
+.login img{ height: 100%; }
 .campo{
     display: flex;
     align-items: center; /*centra label e input verticalmente*/
     gap: 10px;
 }
-.campo label {
-  white-space: nowrap;        /* evita que el label se parta en varias líneas */
-}
 .campo input {
-  flex: 1 1 auto;        /* ahora sí: ocupa todo lo que sobra */
-  min-width: 0;          /* evita que empuje el contenedor si es largo */
+  flex: 1;        /* hace que ocupe todo lo que sobra */  
 }
-/* Responsividad móvil */
-/* @media (max-width: 768px) {
-    form.form-login {
-        padding: 1rem;
+@media (max-width: 576px) {/*cuando el input*/
+    .campo {
+        flex-direction: column; /* ahora se apilan */
+        align-items: stretch;
     }
-
-    button.responsivo {
-        width: 100%;
-        font-size: 1.6rem;
-        margin-top: 10px;
-        margin-right: 10px;
-        max-width: 200px;
-        padding: 1rem 2rem;
-    }
-
-    form.form-login .fila {
-        display: block;
-    }
-} */
+}
