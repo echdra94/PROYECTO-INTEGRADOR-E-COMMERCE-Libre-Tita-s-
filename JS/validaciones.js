@@ -80,7 +80,7 @@ btnEnviar.addEventListener("click", function (event) {
     /** -----------------------------------------------------------------------------------------------------------------------------
      * Validación del campo Teléfono
      */
-    const regexTelefono = /^[0-9]{10}$/;
+    const regexTelefono = ;
     if (!regexTelefono.test(txtTelefono1.value)) {
         txtTelefono1.style.setProperty("border", "1px solid #DD0069", "important");
         txtTelefono1.style.boxShadow = "0 0 6px 3px rgba(221, 0, 107, 0.6)";
