@@ -1,5 +1,5 @@
 
-h2{
+h2, h1{
   font-size: 3rem;
   text-align: center;
   margin-top: 50px;
@@ -73,7 +73,7 @@ div.image-container button:hover {
 
 .imagenes-carrusel {
   height: 90vh;
-  display: flexbox;
+  display: flex;
   margin: 0 auto 0 auto;
   object-fit: cover;
   object-position: center 50%;
@@ -121,9 +121,6 @@ img.marquee{
   width: 90vw;
   height: 60vh;
 }
-}
-main.index{
-  margin-top: 100px;
 }
 .sellers{
   height: 50vh;
