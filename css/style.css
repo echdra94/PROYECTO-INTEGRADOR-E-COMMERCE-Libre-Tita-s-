@@ -99,6 +99,7 @@ p.card-text{
 .card-equipo {
   display: inline-block;
   position: relative;
+  
 }
 
 .card-equipo .card-text {
@@ -188,7 +189,7 @@ p{
     font-size: 2rem;
   }
   p.card-text{
-    font-size: 1.5rem;
+    font-size: .9rem;
   }
   .miBoton{
   background-color: var(--amarillo); 

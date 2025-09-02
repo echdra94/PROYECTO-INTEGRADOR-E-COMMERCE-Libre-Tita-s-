@@ -334,6 +334,7 @@ main.login{
 @media (max-width: 576px) {/*cuando el input*/
     .campo {
         flex-direction: column; /* ahora se apilan */
-        align-items: stretch;
+       align-items: stretch;
     }
 }
+
