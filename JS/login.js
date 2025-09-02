@@ -67,6 +67,8 @@ const contraseña = document.getElementById("txtContraseña").value.trim();
         // Limpieza de campos al enviar
         formLogin.reset();
         //correo.focus();
+                // Guarda login del suaurio en el LocalStorage
+      localStorage.setItem('loggedInUser', JSON.stringify(usuario));
 
         //Redirige a la p]agina de inicio 
 
