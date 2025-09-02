@@ -37,12 +37,11 @@
     --fs-xxxl-40:  2.5rem;   /* 40px */
     --fs-h1-48:      3rem;   /* 48px */
 
-        /*+---------------- Grosores */
+        /*+---------------- Grosores de letra */
     /* weight (font-weight) */
     --wg-titulo:  800;   /* solo para la tipo princiál */
     --wg-principal: 600;   /* 18px */
     --wg-base: 300;   /* 20px */
-
 
     /*+----------------------------- Fuentes */
     --tipografia-principal: "Crimson Pro", serif; /* Títulos */
@@ -65,17 +64,18 @@ p{
 /* Reglas base de cada página */
 body {
     background-color: var(--gris-pastel);
-    color: var(--azul-pastel);
+    color: var(--azul-profundo);
     font-family:var(--tipografia-secundaria);
     font-weight: var(--wg-base);
     font-size: var(--fs-base-20);
     padding-top: 120px;
-    background-image:url(https://res.cloudinary.com/libretitaspi/image/upload/v1756221440/xwcpyrkobfnlaargw3e6.png);
+    background-image:url(https://res.cloudinary.com/libretitaspi/image/upload/v1756820233/xwcpyrkobfnlaargw3e6.svg);
     background-repeat: no-repeat;
     background-position: 0 200px; 
-    background-size: auto;
+    background-size: 615px;
 }
 .gatito {
+    width: 100px;
     filter: drop-shadow(0px 2px 2px #2e2b5ba6);
     position: fixed;   /* se mantiene aunque hagas scroll */
     right: calc(50% - 50px);          /* pegado al borde derecho */
@@ -179,7 +179,13 @@ input:focus{
     border: 1.5px solid var(--turquesa);
     outline: none;
 }
-
+form, .cont-transparente{
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.555);
+    backdrop-filter: blur(5px);
+    border:1px solid white;
+}
 /**=====================================| Navbar */
 nav.fixed-top{
     background-color: var(--gris-pastel);
@@ -298,13 +304,31 @@ form.seccion-4{
     font-size: var(--fs-xxs-14);
 }
 .seccion-6 .discreto{
-    color: var(--azul-oscuro);
+    color: var(--gris-pastel);
 }
 /**==============================| About us |=*/
+.aboutus h3{
+    padding-top: clamp(10px,3vw, 35px);
+}    
 ul.mision, p.texto {
     text-align: justify;
 }
-/**=========================================| registro  */
+.cont-transparente{
+    padding-inline: 5vw;
+    padding-block: clamp(35px, 5vw, 70px);
+    margin-block: 3vw;
+}
+.tita{
+    width: clamp(320px,70%,70%);
+    margin-block: 3vw;
+}
+.tita img{
+    width: clamp(320px,70%,70%);
+    object-fit: cover;
+    clip-path: circle(50%);
+    box-shadow:2px 2px 2px(#2e2b5b62);
+}
+/**=========================================| login  */
 /* contenedor del formulario */
 main.login{
     margin-top:calc(18vh - 120px);
@@ -315,11 +339,6 @@ main.login{
     min-height:calc(80vh - 120px);
     width: clamp(200px, 100%, 650px);
     padding: clamp(1.5rem, 5%, 3rem);
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255,0.4);
-    backdrop-filter: blur(5px);
-    border:1px solid white;
 }
 /* imagen burrito */
 .login img{ height: 100%; }
@@ -331,10 +350,10 @@ main.login{
 .campo input {
   flex: 1;        /* hace que ocupe todo lo que sobra */  
 }
-@media (max-width: 576px) {/*cuando el input*/
+@media (max-width: 576px) {
     .campo {
         flex-direction: column; /* ahora se apilan */
-       align-items: stretch;
+        align-items: stretch;
     }
 }
 

@@ -1,17 +1,4 @@
 
-body{
-  color: var(--azul-profundo);
-  font-family: 'Rubik', sans-serif;
-}
-h1{
-  font-size: 4rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 40px;
-
-}
 h2{
   font-size: 3rem;
   text-align: center;

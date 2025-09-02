@@ -1,31 +1,4 @@
 
-/*Fondo cuerpo página*/
-body {
-  background-color: white;
-  color: var(--azul-profundo);
-  font-family: 'Rubik', sans-serif;
-  font-weight: 400;
-  font-size: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-/*Título*/
-/* Título centrado */
-h1 {
-  color: var(--azul-profundo);
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 700;
-  font-size: 6rem;
-  text-align: center;
-  padding-top: 100px;
-}
-
-h2{
-  font-weight: 700;
-  padding-top: 30px;
-  font-size: 2.5rem;
-}
 h5{
   padding-bottom: 10px;
   text-align: center;
