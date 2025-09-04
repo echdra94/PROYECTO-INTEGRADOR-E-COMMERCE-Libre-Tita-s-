@@ -157,25 +157,21 @@ h6 { font-size: var(--fs-xs-16); }
     }
 }
 /**=====================================| Estilos de formularios */
-/* contenedor del formulario */
-main.login, main.registro{
-    margin-top:calc(18vh - 120px);
-    margin-bottom:calc(23vh - 120px);
-}
-/* Aqui se describe al formulario */
-.tarjeta-form {
-    min-height:calc(82vh - 120px);
-    width: clamp(200px, 100%, 650px);
-    padding: clamp(1.5rem, 5%, 3rem);
+form, .cont-transparente{
+    border-radius: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.555);
+    backdrop-filter: blur(5px);
+    border:1px solid white;
 }
 label{
     font-weight: var(--wg-principal);
-    font-size: var(--fs-base-20);
+    font-size: var(--fs-xs-16);
     color: var(--azul-profundo);
 }
-input{
+input, select{
     font-size: var(--fs-s-18);
-    padding-inline: 10px;
+    padding-inline: 16px;
     min-height: 37px;
     text-align: start;
     border-radius: 1000px;
@@ -186,17 +182,15 @@ input{
 input::placeholder{
     color: var(--gris-pastel);
 }
-input:focus{
+input:focus, select:focus{
     border: 1.5px solid var(--turquesa);
     outline: none;
 }
-form, .cont-transparente{
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.555);
-    backdrop-filter: blur(5px);
-    border:1px solid white;
-}
+.checkbox {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}/*  tamaño del checkbox */
 /**=====================================| Navbar */
 nav.fixed-top{
     background-color: var(--gris-pastel);
@@ -341,22 +335,51 @@ ul.mision, p.texto {
     box-shadow:2px 2px 2px(#2e2b5b62);
 }
 /**=========================================| login  */
-/* imagen burrito */
+
 .contenedor-img{height: 50vh;}
-.login img{ height: 100%; }
-.campo{
+.login img{ height: 100%; }/* imagen burrito */
+
+main.login, main.registro{
+    margin-top:calc(18vh - 120px);
+    margin-bottom:calc(23vh - 120px);
+}/* contenedor del formulario */
+.tarjeta-form {
+    min-height:calc(82vh - 120px);
+    width: clamp(200px, 100%, 650px);
+    padding-inline: clamp(1.5rem, 5%, 3rem);
+    padding-block: clamp(40px,15% ,60px);
     display: flex;
-    align-items: center; /*centra label e input verticalmente*/
-    gap: 10px;
+    flex-direction: column;
+    gap: 1rem;
+}/* Aqui se describe al formulario */
+.campo label{
+ display: block;
 }
-.campo input {
-  flex: 1;        /* hace que ocupe todo lo que sobra */  
-}
-@media (max-width: 576px) {
-    .campo {
-        flex-direction: column; /* ahora se apilan */
-        align-items: stretch;
-    }
-    .contenedor-img{ height: 50vh;}
+.campo input{
+    width: 100%;
 }
 
+@media (max-width: 576px) {
+    .contenedor-img{ height: 50vh;}
+}
+/**=========================================| Registro  */
+.grupo-correo{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+.grupo-correo input,
+.grupo-correo span,
+.grupo-correo select{
+    width: auto;
+    flex: 1;
+}
+.grupo-correo span{
+    flex-grow: 0;
+}
+.promociones {
+  display: flex;  /* checkbox + texto en misma línea */
+  align-items: center; /* alinea arriba cuando el texto salta de línea */
+  gap: 1rem;                /* espacio entre checkbox y texto */
+}
+.registro img { height: 100%; }

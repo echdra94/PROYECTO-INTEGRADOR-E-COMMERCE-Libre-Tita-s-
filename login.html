@@ -18,7 +18,7 @@
   <main class="login container-fluid">
     <div class="row">
       <div class="col-12 col-lg-8 col-xl-6 d-flex justify-content-center justify-content-lg-end pe-lg-0 px-lg-4 justify-content-xl-center">
-        <form class="tarjeta-form d-flex flex-column justify-content-around" id="formularioLogin">
+        <form class="tarjeta-form d-flex flex-column justify-content-between" id="formularioLogin">
           <div class="text-center">
             <h1>Inicio de sesión</h1>
           </div>
@@ -26,21 +26,21 @@
           <div class="alert alert-danger fade show " style="display: none;" role="alert" id="alertValidaciones">
             <p id="alertValidacionesTexto"></p>
           </div>
-          <!--------------------------- campos de formulario -->
+          <!--* ---------------------- campos de formulario -->
           <div>
             <!-- ------------------- Correo ----------------------------------------- -->
             <div class="campo mb-3" id="email">
               <label for="txtCorreo">Correo:</label>
-              <input class="" type="text" name="correo" id="txtCorreo" placeholder="Escribe tu correo" maxlength="110">
+              <input type="text" name="correo" id="txtCorreo" placeholder="Escribe tu correo" maxlength="110">
             </div>
             <!-- --------------------Contraseña--------------------------------------->
-            <div class="mb-3 campo" id="password">
+            <div class="campo mb-3" id="password">
               <label for="txtContraseña">Contraseña:</label>
               <input type="password" name="contraseña" id="txtContraseña" placeholder="Ingresa tu contraseña"
                 maxlength="30">
             </div>
+            <!------------------------Vínculo a registro -->
             <p class="text-center">¿Aún no tienes una cuenta?<span><a href="./Registro.html"> Regístrate</a></span></p>
-
           </div>
           <!-- Boton -->
           <div>
