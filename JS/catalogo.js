@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Función para crear y mostrar cada producto
-function addItem(item){
+function addItem(item) {
     const card = document.createElement("div");
     card.classList.add("card", "mb-3");
 
@@ -78,8 +78,19 @@ function addItem(item){
             });
         }
 
+        // Confirmar compra
+        function mostrarAlertaBonita(mensaje) {
+            const alerta = document.getElementById("confirmacionCompra");
+            alerta.textContent = mensaje;
+            alerta.classList.add("alerta-visible");
+
+            setTimeout(() => {
+                alerta.classList.remove("alerta-visible");
+            }, 3000);
+        }
         localStorage.setItem("carrito", JSON.stringify(carrito));
-        alert(`${item.name} agregado al carrito`);
+        mostrarAlertaBonita(`${item.name} agregado con éxito`);
+
     });
     cardBody.appendChild(addButton);
 
