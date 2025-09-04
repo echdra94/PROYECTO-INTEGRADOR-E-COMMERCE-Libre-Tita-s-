@@ -1,3 +1,10 @@
+const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if (!loggedInUser) {
+    // Si no hay sesión, redirige al login
+    window.location.href = "login.html";
+}
+
 const listaCarrito = document.getElementById("lista-carrito");
 const totalElement = document.getElementById("total");
 const h2carrito = document.getElementById("h2carrito");
@@ -13,11 +20,16 @@ function mostrarCarrito() {
     if (carrito.length === 0) {
         listaCarrito.innerHTML = `<tr><td colspan="4" class="text-center">El carrito está vacío</td></tr>`;
         h2carrito.textContent = "Tu carrito está vacio";
+        h2carrito.style.textAlign = "center";
+        h2carrito.style.color = "#7DC5AE";
         totalElement.textContent = "Total: $0.00";
         burroTriste.style.display = "block";
+        burroTriste.style.margin = "auto";
         return;
     }else{
        h2carrito.textContent = "Tu carrito NO está vacio"; 
+       h2carrito.style.textAlign = "center";
+       h2carrito.style.color = "#7DC5AE";
        burroTriste.style.display = "none";
     }
 
