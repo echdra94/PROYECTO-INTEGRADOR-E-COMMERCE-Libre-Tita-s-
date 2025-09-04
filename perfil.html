@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="./css/styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./css/styles.css"><!---Nuevo estilo general-->
+</head>
+
+<body>
+    <div id="navBar"></div>
+    <h1>Mi perfil</h1>
+ <div class="student-profile py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent text-center">
+            <img class="profile_img" src="./assets/login.png" style="width: 50px;" class="rounded-circle img-fluid" alt="signoPerfil">  
+            <h3 id="nombreGrande"> </h3>
+
+          </div>
+          <div  id="CardUsuario" class="card-body">
+            <h4>Información personal</h4>
+            <p class="mb-0"><strong class="pr-1">Nombre y Apellido:</strong><br></p>
+            <p id= "nombre"></p>
+            <p class="mb-0"><strong class="pr-1">Correo:</strong><br></p>
+            <p id= "correo" ></p>
+            <p class="mb-0"><strong class="pr-1">Número de teléfono:</strong></p>
+            <p id= "telefono"></p>
+            <br>
+            <button id="btnCerrarSesion" class="btn btn-outline-danger">Cerrar sesión</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Historial de Compras</h3>
+          </div>
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <!-- <tr>
+                <th width="30%">Pedido 1</th>
+                <td width="2%">:</td> 
+                <td>NombreProducto</td>
+              </tr> -->
+              No hay compras
+            </table>
+          </div>
+        </div>
+          <div style="height: 26px"></div>
+ 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Footer seccion -->
+  <div>
+    <div id="footer-container"></div>
+  </div>
+  <script src="./JS/navbar.js"></script>
+  <script src="JS/footer.js"></script>
+  <script src="./JS/index.js"></script>
+<script src="./JS/perfil.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
