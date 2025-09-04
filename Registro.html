@@ -13,41 +13,30 @@
 </head>
 
 <body>
+    <!-- Nav bar seccion -->
     <div id="navBar"></div>
-    <main>
-        <div class="container text-center">
-            <h1>Crear una cuenta</h1>
-        </div>
-        <form id="formRegistro">
+    <!-- Contenido de la página -->
+    <main class="registro">
+        <form id="tarjeta-form formRegistro">
+            <h1 class="text-center">Crear una cuenta</h1>
 
-            <div class="container contactanos">
                 <div class="alert alert-danger fade show " style="display: none;" role="alert" id="alertValidaciones">
                     <p id="alertValidacionesTexto"></p>
                 </div>
                 <!-- -------------------Nombre usuario ----------------------------------------- -->
-                <div class="fila">
                     <div class="mb-3 campo" id="nombre">
                         <label for="txtNombre" class="form-label">Nombres:</label>
                         <input type="text" class="form-control" name="txtNombre" id="txtNombre"
                             placeholder="Escribe tu nombre" maxlength="30">
                     </div>
-
                     <!-- --------------------Apellido usuario--------------------------------------- -->
                     <div class="mb-3 campo" id="nombre">
                         <label for="txtApellido" class="form-label">Apellido(s):</label>
                         <input type="text" class="form-control" name="txtApellido" id="txtApellido"
                             placeholder="Escribe tu apellido" maxlength="20">
                     </div>
-                </div>
-
                 <!-------------------------------Correo usuario --------------------------------------------->
-                <!-- <div class="mb-3">
-                    <label for="txtCorreo" class="form-label">Correo electrónico:</label>
-                    <input type="email" class="form-control" name="txtCorreo" id="txtCorreo"
-                        placeholder="Escribe correo electrónico" maxlength="30">
-                </div> -->
                 <div class="mb-3">
-
 
                     <label for="iptCorreo1" class="form-label">Correo electrónico:</label>
                     <div class="input-group">
@@ -66,30 +55,21 @@
                         <input type="text" class="form-control " name="iptCorreoDominio" id="iptCorreoDominio"
                             placeholder="Escribe tu dominio" maxlength="50">
                     </div>
-
-
                 </div>
-
-
                 <!---------------------------------Contraseña usuario ------------------------------------------->
-                <div class="fila">
                     <div class="mb-3 campo">
                         <label for="txtPassword" class="form-label">Contraseña:</label>
                         <input type="password" class="form-control" name="txtContraseña" id="txtPassword"
                             placeholder="Contraseña de al menos 8 caracteres" maxlength="30" required>
                     </div>
-
                     <!---------------------------------Confirmar contraseña usuario ------------------------------------------->
-
                     <div class="mb-3 campo">
                         <label for="txtConfirmPassword" class="form-label">Confirmar contraseña:</label>
                         <input type="password" class="form-control" name="txtConfirmacion" id="txtConfirmPassword"
                             placeholder="Escribe nuevamente tu contraseña" maxlength="30" required>
                     </div>
                 </div>
-
                 <!---------------------------------Teléfono usuario ------------------------------------------->
-
                 <div class="mb-3">
                     <label for="txtTelefonoUsuario" class="form-label">Teléfono:</label>
                     <input type="text" class="form-control" name="txtTelefonoUsuario" id="txtTelefonoUsuario"
@@ -105,20 +85,19 @@
 
                 </div>
             </div>
+            <div>
+                <p class="text-center">¿Ya tienes una cuenta?<span><a href="login.html">Inicia sesión aquí</a></span>
+                </p>
+            </div>
             <!---------------------------------Botón Crear ------------------------------------------->
             <div class="text-end">
-                <button type="submit" id="btnEnviar" class="btn btn-primary">Crear</button>
+                <button type="submit" id="btnEnviar" class="boton boton--principal responsivo">Crear</button>
             </div>
-
         </form>
-
-        <div style="text-align: center;">
-            <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
-        </div>
-
-
+    </main>
+  <!-- Footer seccion -->
         <div id="footer-container"></div>
-
+  <!-- Scripts -->
         <script src="./JS/validacionesRegistro.js"></script>
         <script src="./JS/navbar.js"></script>
         <script src="./JS/footer.js"></script>

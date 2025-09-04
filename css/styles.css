@@ -157,6 +157,17 @@ h6 { font-size: var(--fs-xs-16); }
     }
 }
 /**=====================================| Estilos de formularios */
+/* contenedor del formulario */
+main.login, main.registro{
+    margin-top:calc(18vh - 120px);
+    margin-bottom:calc(23vh - 120px);
+}
+/* Aqui se describe al formulario */
+.tarjeta-form {
+    min-height:calc(82vh - 120px);
+    width: clamp(200px, 100%, 650px);
+    padding: clamp(1.5rem, 5%, 3rem);
+}
 label{
     font-weight: var(--wg-principal);
     font-size: var(--fs-base-20);
@@ -278,6 +289,7 @@ div.seccion-2 img{width: 38px;}
 form.seccion-4{
     border: 1px solid var(--amarillo);
     border-radius: 20px;
+    background-color: #2E2B5B;
     display: flex;
     flex-direction: column;
     padding-block: 15px;
@@ -329,18 +341,8 @@ ul.mision, p.texto {
     box-shadow:2px 2px 2px(#2e2b5b62);
 }
 /**=========================================| login  */
-/* contenedor del formulario */
-main.login{
-    margin-top:calc(18vh - 120px);
-    margin-bottom:calc(23vh - 120px);
-}
-/* Aqui se describe al formulario */
-.form-login {
-    min-height:calc(80vh - 120px);
-    width: clamp(200px, 100%, 650px);
-    padding: clamp(1.5rem, 5%, 3rem);
-}
 /* imagen burrito */
+.contenedor-img{height: 50vh;}
 .login img{ height: 100%; }
 .campo{
     display: flex;
@@ -355,5 +357,6 @@ main.login{
         flex-direction: column; /* ahora se apilan */
         align-items: stretch;
     }
+    .contenedor-img{ height: 50vh;}
 }
 
