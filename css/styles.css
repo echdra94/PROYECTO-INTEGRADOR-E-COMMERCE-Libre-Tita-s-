@@ -108,7 +108,7 @@ h6 {font-size: var(--fs-s-18);}
 
 @media (max-width: 456px){
 ul, p {font-size: var(--fs-xs-16);}
-h1 { font-size: var(--fs-xxl-36); }
+h1 { font-size: var(--fs-xxl-36);}
 h2 { font-size: var(--fs-xl-32); }
 h3 { font-size: var(--fs-l-24); }
 h4 { font-size: var(--fs-base-20); }
